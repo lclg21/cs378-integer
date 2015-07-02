@@ -30,10 +30,11 @@
  * output the shift left of the input sequence into the output sequence
  * ([b, e) << n) => x
  */
-template <typename II, typename FI>
-  FI shift_left_digits (II b, II e, int n, FI x) {
-  // <your code>
+template <typename II, typename OI>
+OI shift_left_digits (II b, II e, int n, OI x) {
   return x;}
+ 
+  
 
 // ------------------
 // shift_right_digits
@@ -49,7 +50,7 @@ template <typename II, typename FI>
  * ([b, e) >> n) => x
  */
 template <typename II, typename FI>
-  FI shift_right_digits (II b, II e, int n, FI x) {
+FI shift_right_digits (II b, II e, int n, FI x) {
   // <your code>
   return x;}
 
@@ -69,7 +70,7 @@ template <typename II, typename FI>
  * ([b1, e1) + [b2, e2)) => x
  */
 template <typename II1, typename II2, typename FI>
-  FI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
+FI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
   // <your code>
   return x;}
 
@@ -89,7 +90,7 @@ template <typename II1, typename II2, typename FI>
  * ([b1, e1) - [b2, e2)) => x
  */
 template <typename II1, typename II2, typename FI>
-  FI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
+FI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
   // <your code>
   return x;}
 
@@ -109,7 +110,7 @@ template <typename II1, typename II2, typename FI>
  * ([b1, e1) * [b2, e2)) => x
  */
 template <typename II1, typename II2, typename FI>
-  FI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
+FI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
   // <your code>
   return x;}
 
@@ -129,7 +130,7 @@ template <typename II1, typename II2, typename FI>
  * ([b1, e1) / [b2, e2)) => x
  */
 template <typename II1, typename II2, typename FI>
-  FI divides_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
+FI divides_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
   // <your code>
   return x;}
 
