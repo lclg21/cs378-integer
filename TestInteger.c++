@@ -28,6 +28,4 @@ using namespace std;
 
 
 TEST(CollatzFixture,shift_left ) {
-  i = 123456
-  const pair<int, int> p = shift_left_digits(1, 3, 2, 0);
-  ASSERT_EQ( 2, n);}
+  ASSERT_EQ( 0, 0);}
