@@ -49,8 +49,8 @@ OI shift_left_digits (II b, II e, int n, OI x) {
  * output the shift right of the input sequence into the output sequence
  * ([b, e) >> n) => x
  */
-template <typename II, typename FI>
-FI shift_right_digits (II b, II e, int n, FI x) {
+template <typename II, typename OI>
+OI shift_right_digits (II b, II e, int n, OI x) {
   // <your code>
   return x;}
 

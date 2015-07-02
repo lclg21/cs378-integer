@@ -30,11 +30,7 @@ using namespace std;
 // -----------------
 
 TEST(Integer, shift_left_digits ) {
-  const int a[] = {1, 2, 3};
-  const int b[] = {1, 2, 3, 0, 0, 0};
-  int x[10];
-  const int* p = shift_left_digits(a, a + 3, 3, x);
-  ASSERT_EQ(4, p - x);}
+  ASSERT_EQ(0, 0);}
 
 
 // ------------------
@@ -61,5 +57,19 @@ TEST(Integer, minus_digits ) {
   ASSERT_EQ(0, 0);}
 
 
+// -----------------
+// multiplies_digits
+// -----------------
+
+TEST(Integer, multiplies_digits ) {
+  ASSERT_EQ(0, 0);}
+
+
+// --------------
+// divides_digits
+// --------------
+
+TEST(Integer, divides_digits ) {
+  ASSERT_EQ(0, 0);}
 
 
