@@ -70,7 +70,7 @@ RunInteger: Integer.h RunInteger.c++
 
 
 RunInteger.out: RunInteger
-	./RunInteger < RunInteger.c++ > RunInteger.out
+	./RunInteger <> RunInteger.out
 	cat RunInteger.out
 
 
