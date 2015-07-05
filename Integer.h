@@ -17,6 +17,7 @@
 #include <string>    // string
 #include <vector>    // vector
 
+using namespace std;
 // -----------------
 // shift_left_digits
 // -----------------
@@ -32,15 +33,15 @@
  */
 template <typename II, typename OI>
 OI shift_left_digits (II b, II e, int n, OI x) {
-  int a = n;
-  while (n != 0){
+  while (b != e){
     *x = *b;
+    ++b;
     ++x;
-    --n;
   }
-  while (a !=0){
+  while (n !=0){
     *x = 0;
     ++x;
+    --n;
   }
   return x;}
  
@@ -61,7 +62,18 @@ OI shift_left_digits (II b, II e, int n, OI x) {
  */
 template <typename II, typename OI>
 OI shift_right_digits (II b, II e, int n, OI x) {
-  // <your code>
+
+  int a = n;
+  while(n != 0){
+    *x = 0;
+    ++x;
+    --n;
+  }
+  while(b+a != e){
+    *x = *b;
+    ++b;
+    ++x;
+  }
   return x;}
 
 // -----------
@@ -81,7 +93,26 @@ OI shift_right_digits (II b, II e, int n, OI x) {
  */
 template <typename II1, typename II2, typename FI>
 FI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
-  // <your code>
+  while(b1 != e1 || b2 != e2){
+    *x = *b1+*b2;
+    ++b1;
+    ++b2;
+    ++x;
+  }
+  if(b1 != e1){         //if the first number is longer than the second number, add the rest of the digits to x
+    while(b1 != e1){
+      *x = *b1;
+      ++b1;
+      ++x;
+    }
+  }
+  else{                 //if the second number is longer than the first number, add the rest of the digits to x
+    while(b2 != e2){
+      *x=*b2;
+      ++b2;
+      ++x;
+    }
+  }
   return x;}
 
 // ------------
