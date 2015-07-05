@@ -70,7 +70,7 @@ RunInteger: Integer.h RunInteger.c++
 
 
 RunInteger.out: RunInteger
-	./RunInteger <> RunInteger.out
+	./RunInteger > RunInteger.out
 	cat RunInteger.out
 
 
@@ -79,6 +79,5 @@ TestInteger: Integer.h RunInteger.c++ TestInteger.c++
 
 TestInteger.out: TestInteger
 	$(VALGRIND) ./TestInteger  >  TestInteger.out 2>&1
-	$(GCOV) -b RunInteger.c++  >> TestInteger.out
 	$(GCOV) -b TestInteger.c++ >> TestInteger.out
 	cat TestInteger.out
