@@ -97,15 +97,103 @@ TEST(Integer, shift_right_digits4 ) {
 // -----------
 
 TEST(Integer, plus_digits ) {
-  ASSERT_EQ(0, 0);}
+	const vector<int>       x = {1, 2, 3, 4, 5, 6};
+    const vector<int>		y = {0, 0, 0, 0, 0, 0};
+    vector<int>				z(6);
+    vector<int>::iterator p = plus_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
+	const list<int>       a = {1, 2, 3, 4, 5, 6};
+    ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
+TEST(Integer, plus_digits2 ) {
+	const vector<int>       x = {1, 2, 3};
+    const vector<int>		y = {4, 5, 6};
+    vector<int>				z(3);
+    vector<int>::iterator p = plus_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
+	const list<int>       a = {5, 7, 9};
+    ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
+TEST(Integer, plus_digits3 ) {
+	const vector<int>       x = {1, 2};
+    const vector<int>		y = {4, 5, 6};
+    vector<int>				z(3);
+    vector<int>::iterator p = plus_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
+	const list<int>       a = {4, 6, 8};
+    ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
+
+TEST(Integer, plus_digits4 ) {
+	const vector<int>       x = {1, 2, 3};
+    const vector<int>		y = {4, 5};
+    vector<int>				z(3);
+    vector<int>::iterator p = plus_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
+	const list<int>       a = {1, 6, 8};
+    ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
+
+TEST(Integer, plus_digits5 ) {
+	const vector<int>       x = {1, 2, 3, 4, 5, 6};
+    const vector<int>		y = {4, 5};
+    vector<int>				z(3);
+    vector<int>::iterator p = plus_digits(x.begin()+2, x.begin()+5, y.begin(), y.end(), z.begin());
+	const list<int>       a = {3, 9, 0};
+    ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
+
+TEST(Integer, plus_digits6 ) {
+	const vector<int>       x = {1, 2, 3, 4, 5, 6};
+    const vector<int>		y = {4, 5, 6, 7, 8, 9};
+    vector<int>				z(3);
+    vector<int>::iterator p = plus_digits(x.begin()+2, x.begin()+5, y.begin()+4, y.end(), z.begin());
+	const list<int>       a = {4, 3, 4};
+    ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 // ------------
 // minus_digits
 // ------------
 
 TEST(Integer, minus_digits ) {
-  ASSERT_EQ(0, 0);}
+	const vector<int>       x = {1, 2, 3, 4, 5, 6};
+    const vector<int>		y = {0, 0, 0, 0, 0, 0};
+    vector<int>				z(6);
+    vector<int>::iterator p = minus_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
+	const list<int>       a = {1, 2, 3, 4, 5, 6};
+    ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
+
+TEST(Integer, minus_digits2 ) {
+	const vector<int>       x = {4, 5, 6};
+    const vector<int>		y = {1, 2, 3};
+    vector<int>				z(3);
+    vector<int>::iterator p = minus_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
+	const list<int>       a = {3, 3, 3};
+    ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
+
+TEST(Integer, minus_digits3 ) {
+	const vector<int>       x = {4, 5, 6};
+    const vector<int>		y = {1, 2};
+    vector<int>				z(3);
+    vector<int>::iterator p = minus_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
+	const list<int>       a = {4, 4, 4};
+    ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
+
+TEST(Integer, minus_digits4 ) {
+	const vector<int>       x = {1, 2, 3};
+    const vector<int>		y = {4, 5};
+    vector<int>				z(2);
+    vector<int>::iterator p = minus_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
+	const list<int>       a = {7, 8};
+    ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
+
+TEST(Integer, minus_digits5 ) {
+	const vector<int>       x = {1, 2, 3, 4, 5, 6};
+    const vector<int>		y = {4, 5};
+    vector<int>				z(3);
+    vector<int>::iterator p = minus_digits(x.begin()+2, x.begin()+5, y.begin(), y.end(), z.begin());
+	const list<int>       a = {3, 0, 0};
+    ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
+
+TEST(Integer, minus_digits6 ) {
+	const vector<int>       x = {4, 2, 3, 4, 5, 6};
+    const vector<int>		y = {1, 5, 6, 7, 8, 9};
+    vector<int>				z(3);
+    vector<int>::iterator p = minus_digits(x.begin()+2, x.begin()+5, y.begin()+4, y.end(), z.begin());
+	const list<int>       a = {2, 5, 6};
+    ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 
 // -----------------
