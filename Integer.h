@@ -231,8 +231,40 @@ FI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
  */
 template <typename II1, typename II2, typename FI>
 FI divides_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
-  // <your code>
+  int a = 0;
+  int c = 0;
+  while(b1 != e1){                //Took each digit from first iterator and put it into an int
+    a = (a + *b1) * 10;
+    ++b1;
+  }
+  a /= 10;                        //divided by 10 to take away last multiplication of 10
+
+  while(b2 != e2){                //Took each digit from second iterator and put it into an int
+    c = (c + *b2) * 10;
+    ++b2;
+  }
+  c /= 10;                        //divided by 10 to take away last multiplication of 10
+
+  if(c > a){
+    *x=0;
+    return x;
+  }
+  
+  a /= c;
+  
+  stack<int> mystack;
+  while(a!=0){                    //push each digit onto stack because we pull them out backwards from a
+    mystack.push(a%10);
+    a = a/10;
+  }
+
+  while(!mystack.empty()){        //pop them off the stack to put them in the right order in the interator.
+    *x=mystack.top();
+    mystack.pop();
+    ++x;
+  }
   return x;}
+
 
 // -------
 // Integer

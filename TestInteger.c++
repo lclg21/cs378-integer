@@ -254,6 +254,51 @@ TEST(Integer, multiplies_digits6 ) {
 // --------------
 
 TEST(Integer, divides_digits ) {
-  ASSERT_EQ(0, 0);}
+	const vector<int>       x = {1, 2, 3, 4, 5, 6};
+    const vector<int>		y = {0, 0, 0, 0, 0, 1};
+    vector<int>				z(6);
+    vector<int>::iterator p = divides_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
+	const list<int>       a = {1, 2, 3, 4, 5, 6};
+    ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
+
+TEST(Integer, divides_digits2 ) {
+	const vector<int>       x = {1, 2, 3};
+    const vector<int>		y = {4, 5, 6};
+    vector<int>				z(1);
+    vector<int>::iterator p = divides_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
+	const list<int>       a = {0};
+    ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
+
+TEST(Integer, divides_digits3 ) {
+	const vector<int>       x = {4, 5, 6};
+    const vector<int>		y = {4, 5, 6};
+    vector<int>				z(1);
+    vector<int>::iterator p = divides_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
+	const list<int>       a = {1};
+    ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
+
+TEST(Integer, divides_digits4 ) {
+	const vector<int>       x = {1, 2, 3};
+    const vector<int>		y = {4, 5};
+    vector<int>				z(1);
+    vector<int>::iterator p = divides_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
+	const list<int>       a = {2};
+    ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
+
+TEST(Integer, divides_digits5 ) {
+	const vector<int>       x = {1, 2, 3, 4, 5, 6};
+    const vector<int>		y = {4, 5};
+    vector<int>				z(1);
+    vector<int>::iterator p = divides_digits(x.begin()+2, x.begin()+5, y.begin(), y.end(), z.begin());
+	const list<int>       a = {7};
+    ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
+
+TEST(Integer, divides_digits6 ) {
+	const vector<int>       x = {1, 2, 3, 4, 5, 6};
+    const vector<int>		y = {4, 5, 6, 7, 8, 9};
+    vector<int>				z(1);
+    vector<int>::iterator p = divides_digits(x.begin()+2, x.begin()+5, y.begin()+4, y.end(), z.begin());
+	const list<int>       a = {3};
+    ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 
