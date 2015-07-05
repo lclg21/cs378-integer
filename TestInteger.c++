@@ -14,6 +14,8 @@
 #include <sstream>  // istringtstream, ostringstream
 #include <string>   // string
 #include <utility>  // pair
+#include <vector>
+#include <list>
 
 #include "gtest/gtest.h"
 
@@ -30,7 +32,7 @@ using namespace std;
 // -----------------
 
 TEST(Integer, shift_left_digits ) {
-  ASSERT_EQ(0, 0);}
+	ASSERT_EQ(0,0);}
 
 
 // ------------------
