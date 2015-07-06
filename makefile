@@ -46,7 +46,7 @@ config:
 	git config -l
 
 
-test: RunInteger.out TestInteger.out
+test: TestInteger.out RunInteger.out
 
 
 integer-tests:
@@ -65,7 +65,7 @@ Doxyfile:
 	doxygen -g
 
 
-RunInteger: Integer.h RunInteger.c++
+RunInteger: RunInteger.c++
 	$(CXX) $(CXXFLAGS) RunInteger.c++ -o RunInteger
 
 
