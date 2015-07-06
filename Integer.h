@@ -277,18 +277,27 @@ template < typename T, typename C = std::vector<T> >
   // -----------
 
   /**
-   * <your documentation>
+   * @param lhs is the left hand side of the operator ==
+   * @param rhs is the right hand side of the operator ==
+   * @return true if lhs == rhs, false otherwise
+
    */
   friend bool operator == (const Integer& lhs, const Integer& rhs) {
-    // <your code>
-    return false;}
-
+    if(&lhs != &rhs){
+      return true;
+    }
+    else{
+      return false;
+    }}
+    
   // -----------
   // operator !=
   // -----------
 
   /**
-   * <your documentation>
+   * @param lhs is the left hand side of the operator !=
+   * @param rhs is the right hand side of the operator !=
+   * @return true if lhs != rhs, false otherwise
    */
   friend bool operator != (const Integer& lhs, const Integer& rhs) {
     return !(lhs == rhs);}
@@ -298,7 +307,9 @@ template < typename T, typename C = std::vector<T> >
   // ----------
 
   /**
-   * <your documentation>
+   * @param lhs is the left hand side of the operator <
+   * @param rhs is the right hand side of the operator <
+   * @return true if  
    */
   friend bool operator < (const Integer& lhs, const Integer& rhs) {
     // <your code>

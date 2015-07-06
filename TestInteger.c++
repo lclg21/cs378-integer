@@ -302,3 +302,31 @@ TEST(Integer, divides_digits6 ) {
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 
+// -----------
+// operator ==
+// -----------
+
+TEST(Integer, equal_to) {
+  const Integer<int> x = 0;
+  const Integer<int> y = 0;
+  ASSERT_TRUE(x == y);
+  ASSERT_TRUE(x == 0);
+  ASSERT_TRUE(0 == y);
+  ASSERT_TRUE((0 == 0));}
+
+
+TEST(Integer, equal_to2) {
+  const Integer<int> x = 123;
+  const Integer<int> y = 123;
+  ASSERT_TRUE(x == y);
+  ASSERT_TRUE(x == 123);
+  ASSERT_TRUE(123 == y);
+  ASSERT_FALSE((x != y));}
+
+TEST(Integer, equal_to3) {
+  const Integer<int> x = -23;
+  const Integer<int> y = -23;
+  ASSERT_TRUE(x == y);
+  ASSERT_TRUE(x == -23);
+  ASSERT_TRUE(-23 == x);
+  ASSERT_FALSE((x != y));}
