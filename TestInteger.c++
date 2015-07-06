@@ -343,16 +343,11 @@ TEST(Integer, less_than) {
   ASSERT_TRUE(y < x);}
 
 TEST(Integer, less_than2) {
-  const Integer<int> x = -1;
-  const Integer<int> y = 0;
-  ASSERT_TRUE(x < y);}
-
-TEST(Integer, less_than3) {
   const Integer<int> x = 125;
   const Integer<int> y = -125;
   ASSERT_TRUE(y < x);}
 
-TEST(Integer, less_than4) {
+TEST(Integer, less_than3) {
   const Integer<int> x = 100;
   const Integer<int> y = 100;
   ASSERT_FALSE(x < y);}
