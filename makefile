@@ -12,7 +12,7 @@ FILES := 				 \
 	TestInteger.out			 \
 
 ifeq ($(CXX), clang++)
-    COVFLAGS := --coverage
+    COVFLAGS := --coverage -pedantic -std=c+11 -Wall
     GCOV     := gcov-4.6
 else
     CXX      := g++-4.8
