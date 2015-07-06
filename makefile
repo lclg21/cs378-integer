@@ -70,11 +70,11 @@ RunInteger: Integer.h RunInteger.c++
 
 
 RunInteger.out: RunInteger
-	./RunInteger < RunInteger.c++ > RunInteger.out
+	./RunInteger > RunInteger.out
 	cat RunInteger.out
 
 
-TestInteger: Integer.h RunInteger.c++ TestInteger.c++
+TestInteger: Integer.h  TestInteger.c++
 	$(CXX) $(COVFLAGS) $(CXXFLAGS) Integer.h TestInteger.c++ -o TestInteger $(LDFLAGS)
 
 
