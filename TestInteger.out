@@ -1,14 +1,14 @@
-==11646== Memcheck, a memory error detector
-==11646== Copyright (C) 2002-2011, and GNU GPL'd, by Julian Seward et al.
-==11646== Using Valgrind-3.7.0 and LibVEX; rerun with -h for copyright info
-==11646== Command: ./TestInteger
-==11646== 
+==18853== Memcheck, a memory error detector
+==18853== Copyright (C) 2002-2011, and GNU GPL'd, by Julian Seward et al.
+==18853== Using Valgrind-3.7.0 and LibVEX; rerun with -h for copyright info
+==18853== Command: ./TestInteger
+==18853== 
 Running main() from gtest_main.cc
-[==========] Running 35 tests from 1 test case.
+[==========] Running 39 tests from 1 test case.
 [----------] Global test environment set-up.
-[----------] 35 tests from Integer
+[----------] 39 tests from Integer
 [ RUN      ] Integer.shift_left_digits
-[       OK ] Integer.shift_left_digits (49 ms)
+[       OK ] Integer.shift_left_digits (48 ms)
 [ RUN      ] Integer.shift_left_digits2
 [       OK ] Integer.shift_left_digits2 (13 ms)
 [ RUN      ] Integer.shift_left_digits3
@@ -22,9 +22,9 @@ Running main() from gtest_main.cc
 [ RUN      ] Integer.shift_right_digits3
 [       OK ] Integer.shift_right_digits3 (7 ms)
 [ RUN      ] Integer.shift_right_digits4
-[       OK ] Integer.shift_right_digits4 (7 ms)
+[       OK ] Integer.shift_right_digits4 (8 ms)
 [ RUN      ] Integer.plus_digits
-[       OK ] Integer.plus_digits (36 ms)
+[       OK ] Integer.plus_digits (37 ms)
 [ RUN      ] Integer.plus_digits2
 [       OK ] Integer.plus_digits2 (9 ms)
 [ RUN      ] Integer.plus_digits3
@@ -68,26 +68,42 @@ Running main() from gtest_main.cc
 [ RUN      ] Integer.divides_digits4
 [       OK ] Integer.divides_digits4 (9 ms)
 [ RUN      ] Integer.divides_digits5
-[       OK ] Integer.divides_digits5 (9 ms)
+[       OK ] Integer.divides_digits5 (10 ms)
 [ RUN      ] Integer.divides_digits6
-[       OK ] Integer.divides_digits6 (10 ms)
+[       OK ] Integer.divides_digits6 (9 ms)
 [ RUN      ] Integer.equal_to
-[       OK ] Integer.equal_to (9 ms)
+[       OK ] Integer.equal_to (8 ms)
 [ RUN      ] Integer.equal_to2
 [       OK ] Integer.equal_to2 (8 ms)
 [ RUN      ] Integer.equal_to3
-[       OK ] Integer.equal_to3 (7 ms)
-[----------] 35 tests from Integer (412 ms total)
+[       OK ] Integer.equal_to3 (8 ms)
+[ RUN      ] Integer.less_than
+[       OK ] Integer.less_than (3 ms)
+[ RUN      ] Integer.less_than2
+TestInteger.c++:348: Failure
+Value of: x < y
+  Actual: false
+Expected: true
+[  FAILED  ] Integer.less_than2 (33 ms)
+[ RUN      ] Integer.less_than3
+[       OK ] Integer.less_than3 (3 ms)
+[ RUN      ] Integer.less_than4
+[       OK ] Integer.less_than4 (3 ms)
+[----------] 39 tests from Integer (456 ms total)
 
 [----------] Global test environment tear-down
-[==========] 35 tests from 1 test case ran. (455 ms total)
-[  PASSED  ] 35 tests.
-==11646== 
-==11646== HEAP SUMMARY:
-==11646==     in use at exit: 0 bytes in 0 blocks
-==11646==   total heap usage: 1,706 allocs, 1,706 frees, 156,226 bytes allocated
-==11646== 
-==11646== All heap blocks were freed -- no leaks are possible
-==11646== 
-==11646== For counts of detected and suppressed errors, rerun with: -v
-==11646== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
+[==========] 39 tests from 1 test case ran. (501 ms total)
+[  PASSED  ] 38 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] Integer.less_than2
+
+ 1 FAILED TEST
+==18853== 
+==18853== HEAP SUMMARY:
+==18853==     in use at exit: 0 bytes in 0 blocks
+==18853==   total heap usage: 1,874 allocs, 1,874 frees, 170,103 bytes allocated
+==18853== 
+==18853== All heap blocks were freed -- no leaks are possible
+==18853== 
+==18853== For counts of detected and suppressed errors, rerun with: -v
+==18853== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
