@@ -354,3 +354,23 @@ TEST(Integer, less_than3) {
 
 
 
+// ----------
+// Integer constructor
+// ----------
+
+
+TEST(Integer, constructor) {
+  const int x = 5;
+  Integer y(x);
+  ASSERT_EQ(y,5);}
+
+/*TEST(Integer, constructor2) {
+  const Integer<int> x = 125;
+  const Integer<int> y = -125;
+  ASSERT_TRUE(y < x);}
+
+TEST(Integer, constructor3) {
+  const Integer<int> x = 100;
+  const Integer<int> y = 100;
+  ASSERT_FALSE(x < y);}
+*/

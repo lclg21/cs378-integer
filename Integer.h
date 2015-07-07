@@ -409,7 +409,6 @@ template < typename T, typename C = std::vector<T> >
    * <your documentation>
    */
   friend std::ostream& operator << (std::ostream& lhs, const Integer& rhs) {
-    // <your code>
     return lhs << "0";}
 
   // ---
@@ -441,7 +440,7 @@ template < typename T, typename C = std::vector<T> >
   // ----
 
   C _x; // the backing container
-        // <your data>
+  T _i; // <your data>
 
  private:
   // -----
@@ -449,8 +448,10 @@ template < typename T, typename C = std::vector<T> >
   // -----
 
   bool valid () const { // class invariant
-    // <your code>
-    return true;}
+    String str = _i;
+    if (std::all_of(str.begin(), str.end(), ::isdigit){
+      return true;}
+    return false;}
 
  public:
   // ------------
@@ -461,7 +462,7 @@ template < typename T, typename C = std::vector<T> >
    * <your documentation>
    */
   Integer (int value) {
-    // <your code>
+    _i = value;
     assert(valid());}
 
   /**
@@ -469,7 +470,7 @@ template < typename T, typename C = std::vector<T> >
    * @throws invalid_argument if value is not a valid representation of an Integer
    */
   explicit Integer (const std::string& value) {
-    // <your code>
+    _i = atoi(value);
     if (!valid())
       throw std::invalid_argument("Integer::Integer()");}
 
