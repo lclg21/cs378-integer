@@ -34,7 +34,7 @@ using namespace std;
  * ([b, e) << n) => x
  */
 template <typename II, typename FI>
-OI shift_left_digits (II b, II e, int n, FI x) {
+FI shift_left_digits (II b, II e, int n, FI x) {
   x = copy(b, e, x);
   fill(x, x+n, 0);
   return x+n;}
