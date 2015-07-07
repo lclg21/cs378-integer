@@ -38,20 +38,6 @@ FI shift_left_digits (II b, II e, int n, FI x) {
   x = copy(b, e, x);
   fill(x, x+n, 0);
   return x+n;}
-  /*
-  while (b != e){
-    *x = *b;
-    ++b;
-    ++x;
-  }
-  while (n !=0){
-    *x = 0;
-    ++x;
-    --n;
-  }
-  return x;}
- */
-  
 
 // ------------------
 // shift_right_digits
@@ -69,20 +55,6 @@ FI shift_left_digits (II b, II e, int n, FI x) {
 template <typename II, typename FI>
 FI shift_right_digits (II b, II e, int n, FI x) {
 return copy(b, e - n, x);}
-/*
-  int a = n;
-  while(n != 0){
-    *x = 0;
-    ++x;
-    --n;
-  }
-  while(b+a != e){
-    *x = *b;
-    ++b;
-    ++x;
-  }
-  return x;}
-  */
 
 // -----------
 // plus_digits
@@ -319,7 +291,7 @@ template < typename T, typename C = std::vector<T> >
    * @return true if  
    */
   friend bool operator < (const Integer& lhs, const Integer& rhs) {
-    return !(&lhs > &rhs);}
+    return (lhs& < rhs&);}
 
   // -----------
   // operator <=
