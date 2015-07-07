@@ -68,6 +68,7 @@ FI shift_left_digits (II b, II e, int n, FI x) {
  */
 template <typename II, typename FI>
 FI shift_right_digits (II b, II e, int n, FI x) {
+  cout << list(copy(b,e-n,x));
   return copy(b, e - n, x);}
 
  /* int a = n;
