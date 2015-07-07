@@ -1,18 +1,18 @@
 FILES := 				 \
-	.travis.yml				 \
-	integer-tests/ll9338-RunInteger.out	 \
-	integer-tests/ll9338-TestInteger.c++ \
-	integer-tests/ll9338-TestInteger.out \
-	Integer.h				 \
-	Integer.log				 \
-	html				 \
-	RunInteger.c++			 \
-	RunInteger.out			 \
-	TestInteger.c++			 \
-	TestInteger.out			 \
+    .travis.yml				 \
+    integer-tests/ll9338-RunInteger.out	 \
+    integer-tests/ll9338-TestInteger.c++ \
+    integer-tests/ll9338-TestInteger.out \
+    Integer.h				 \
+    Integer.log				 \
+    html				 \
+    RunInteger.c++			 \
+    RunInteger.out			 \
+    TestInteger.c++			 \
+    TestInteger.out			 \
 
 ifeq ($(CXX), clang++)
-    COVFLAGS := --coverage -pedantic -std=c+11 -Wall
+    COVFLAGS := --coverage
     GCOV     := gcov-4.6
 else
     CXX      := g++-4.8
@@ -46,7 +46,7 @@ config:
 	git config -l
 
 
-test: RunInteger.out TestInteger.out
+test: TestInteger.out RunInteger.out
 
 
 integer-tests:
@@ -65,7 +65,7 @@ Doxyfile:
 	doxygen -g
 
 
-RunInteger: Integer.h RunInteger.c++
+RunInteger: RunInteger.c++
 	$(CXX) $(CXXFLAGS) RunInteger.c++ -o RunInteger
 
 
@@ -74,12 +74,10 @@ RunInteger.out: RunInteger
 	cat RunInteger.out
 
 
-TestInteger: Integer.h  TestInteger.c++
+TestInteger: Integer.h RunInteger.c++ TestInteger.c++
 	$(CXX) $(COVFLAGS) $(CXXFLAGS) Integer.h TestInteger.c++ -o TestInteger $(LDFLAGS)
-
 
 TestInteger.out: TestInteger
 	$(VALGRIND) ./TestInteger  >  TestInteger.out 2>&1
-	$(GCOV) -b RunInteger.c++  >> TestInteger.out
 	$(GCOV) -b TestInteger.c++ >> TestInteger.out
 	cat TestInteger.out
