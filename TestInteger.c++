@@ -65,9 +65,9 @@ TEST(Integer, shift_left_digits4 ) {
 
 TEST(Integer, shift_right_digits ) {
 	const vector<int>       x = {1, 2, 3, 4, 5, 6};
-    vector<int>				y(6);
+    vector<int>				y(4);
     vector<int>::iterator p = shift_right_digits(x.begin(), x.end(), 2, y.begin());
-	const list<int>       a = {0, 0, 1, 2, 3, 4};
+	const list<int>       a = {1, 2, 3, 4};
     ASSERT_TRUE(equal(y.begin(), y.end(), a.begin()));}
 
 TEST(Integer, shift_right_digits2 ) {
