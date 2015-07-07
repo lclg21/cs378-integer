@@ -66,12 +66,10 @@ FI shift_left_digits (II b, II e, int n, FI x) {
  * output the shift right of the input sequence into the output sequence
  * ([b, e) >> n) => x
  */
-template <typename II, typename FI>
-FI shift_right_digits (II b, II e, int n, FI x) {
-  cout << copy(b,e-n,x);
-  return copy(b, e - n, x);}
+template <typename II, typename OI>
+OI shift_right_digits (II b, II e, int n, OI x) {
 
- /* int a = n;
+  int a = n;
   while(n != 0){
     *x = 0;
     ++x;
@@ -83,7 +81,7 @@ FI shift_right_digits (II b, II e, int n, FI x) {
     ++x;
   }
   return x;}
-  */
+  
 
 // -----------
 // plus_digits
