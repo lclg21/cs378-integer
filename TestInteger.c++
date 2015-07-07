@@ -285,6 +285,7 @@ TEST(Integer, divides_digits ) {
     vector<int>				z(6);
     vector<int>::iterator p = divides_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
 	const list<int>       a = {1, 2, 3, 4, 5, 6};
+	ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 TEST(Integer, divides_digits2 ) {
@@ -293,6 +294,7 @@ TEST(Integer, divides_digits2 ) {
     vector<int>				z(1);
     vector<int>::iterator p = divides_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
 	const list<int>       a = {0};
+	ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 TEST(Integer, divides_digits3 ) {
