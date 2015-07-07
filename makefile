@@ -78,6 +78,7 @@ TestInteger: Integer.h RunInteger.c++ TestInteger.c++
 
 TestInteger.out: TestInteger
 	$(VALGRIND) ./TestInteger  >  TestInteger.out 2>&1
+	cat TestInteger.out
 	$(GCOV) -b RunInteger.c++  >> TestInteger.out
 	$(GCOV) -b TestInteger.c++ >> TestInteger.out
 	cat TestInteger.out
