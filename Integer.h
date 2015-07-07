@@ -291,7 +291,7 @@ template < typename T, typename C = std::vector<T> >
    * @return true if  
    */
   friend bool operator < (const Integer& lhs, const Integer& rhs) {
-    return !(lhs& < rhs&);}
+    return (&lhs < &rhs);}
 
   // -----------
   // operator <=
