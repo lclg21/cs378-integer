@@ -1,15 +1,15 @@
-FLES := 				 \
-	.travis.yml				 \
+FLES := 				 				\
+	.travis.yml				 			\
 	integer-tests/ll9338-RunInteger.out	 \
 	integer-tests/ll9338-TestInteger.c++ \
 	integer-tests/ll9338-TestInteger.out \
-	Integer.h				 \
-	Integer.log				 \
-	html				 \
-	RunInteger.c++			 \
-	RunInteger.out			 \
-	TestInteger.c++			 \
-	TestInteger.out			 \
+	Integer.h							 \
+	Integer.log							 \
+	html				 			   	\
+	RunInteger.c++						 \
+	RunInteger.out						 \
+	TestInteger.c++			 			\
+	TestInteger.out						 \
 
 ifeq ($(CXX), clang++)
 	COVFLAGS := --coverage
@@ -73,12 +73,11 @@ RunInteger.out: RunInteger
 	cat RunInteger.out
 
 
-TestInteger: Integer.h RunInteger.c++ TestInteger.c++
+TestInteger: TestInteger.c++
 	$(CXX) $(COVFLAGS) $(CXXFLAGS) TestInteger.c++ -o TestInteger $(LDFLAGS)
 
 TestInteger.out: TestInteger
 	$(VALGRIND) ./TestInteger  >  TestInteger.out 2>&1
-	cat TestInteger.out
 	$(GCOV) -b RunInteger.c++  >> TestInteger.out
 	$(GCOV) -b TestInteger.c++ >> TestInteger.out
 	cat TestInteger.out
