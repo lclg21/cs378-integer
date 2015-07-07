@@ -32,10 +32,11 @@ using namespace std;
 // -----------------
 
 TEST(Integer, shift_left_digits ) {
-	vector<int>       x = {1, 2, 3, 4, 5, 6};
+    vector<int>       x = {1, 2, 3, 4, 5, 6};
     vector<int>           y(8);
     vector<int>::iterator p = shift_left_digits(x.begin(), x.end(), 2, y.begin());
-	const list<int>       a = {1, 2, 3, 4, 5, 6, 0, 0};
+    const list<int>       a = {1, 2, 3, 4, 5, 6, 0, 0};
+    ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(a.begin(), a.end(), y.begin()));}
 
 TEST(Integer, shift_left_digits2 ) {
