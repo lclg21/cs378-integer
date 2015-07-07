@@ -36,8 +36,8 @@ using namespace std;
 template <typename II, typename OI>
 OI shift_left_digits (II b, II e, int n, FI x) {
   x = copy(b, e, x);
-  fill(x, advance(x, n), 0);
-  return advance(x,n);}
+  fill(x, x+n, 0);
+  return x+n;}
   /*
   while (b != e){
     *x = *b;
