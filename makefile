@@ -1,4 +1,4 @@
-FILES := 				 \
+FLES := 				 \
 	.travis.yml				 \
 	integer-tests/ll9338-RunInteger.out	 \
 	integer-tests/ll9338-TestInteger.c++ \
@@ -75,7 +75,7 @@ RunInteger.out: Integer.h RunInteger
 
 
 TestInteger: Integer.h RunInteger.c++ TestInteger.c++
-	$(CXX) $(COVFLAGS) $(CXXFLAGS) Integer.h RunInteger.c++ TestInteger.c++ -o TestInteger $(LDFLAGS)
+	$(CXX) $(COVFLAGS) $(CXXFLAGS) Integer.h TestInteger.c++ -o TestInteger $(LDFLAGS)
 
 TestInteger.out: TestInteger
 	$(VALGRIND) ./TestInteger  >  TestInteger.out 2>&1
