@@ -448,10 +448,10 @@ template < typename T, typename C = std::vector<T> >
   // -----
 
   bool valid () const { // class invariant
-    String str = _i;
-    if (std::all_of(str.begin(), str.end(), ::isdigit){
-      return true;}
-    return false;}
+    //String str = _i;
+    //if (std::all_of(str.begin(), str.end(), ::isdigit){
+    //return true;}
+    return true;}
 
  public:
   // ------------
@@ -462,7 +462,7 @@ template < typename T, typename C = std::vector<T> >
    * <your documentation>
    */
   Integer (int value) {
-    _i = value;
+    // _i = value;
     assert(valid());}
 
   /**
@@ -470,7 +470,7 @@ template < typename T, typename C = std::vector<T> >
    * @throws invalid_argument if value is not a valid representation of an Integer
    */
   explicit Integer (const std::string& value) {
-    _i = atoi(value);
+    //_i = atoi(value);
     if (!valid())
       throw std::invalid_argument("Integer::Integer()");}
 

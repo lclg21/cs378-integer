@@ -65,17 +65,16 @@ Doxyfile:
 	doxygen -g
 
 
-RunInteger: RunInteger.c++
+RunInteger: Integer.h RunInteger.c++
 	$(CXX) $(CXXFLAGS) RunInteger.c++ -o RunInteger
 
-
-RunInteger.out: Integer.h RunInteger
+RunInteger.out: RunInteger
 	./RunInteger > RunInteger.out
 	cat RunInteger.out
 
 
 TestInteger: Integer.h RunInteger.c++ TestInteger.c++
-	$(CXX) $(COVFLAGS) $(CXXFLAGS) Integer.h TestInteger.c++ -o TestInteger $(LDFLAGS)
+	$(CXX) $(COVFLAGS) $(CXXFLAGS) Integer.h  TestInteger.c++ -o TestInteger $(LDFLAGS)
 
 TestInteger.out: TestInteger
 	$(VALGRIND) ./TestInteger  >  TestInteger.out 2>&1
