@@ -44,6 +44,7 @@ TEST(Integer, shift_left_digits2 ) {
     vector<int>           y(4);
     vector<int>::iterator p = shift_left_digits(x.begin()+1, x.begin()+3, 2, y.begin());
 	const list<int>       a = {2, 3, 0, 0};
+    ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(y.begin(), y.end(), a.begin()));}
 
 TEST(Integer, shift_left_digits3 ) {
@@ -51,6 +52,7 @@ TEST(Integer, shift_left_digits3 ) {
     vector<int>           y(8);
     vector<int>::iterator p = shift_left_digits(x.begin()+3, x.begin()+6, 5, y.begin());
 	const list<int>       a = {4, 5, 6, 0, 0, 0, 0, 0};
+    ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(y.begin(), y.end(), a.begin()));}
 
 TEST(Integer, shift_left_digits4 ) {
@@ -58,6 +60,7 @@ TEST(Integer, shift_left_digits4 ) {
     vector<int>           y(1);
     vector<int>::iterator p = shift_left_digits(x.begin(), x.begin(), 1, y.begin());
 	const list<int>       a = {0};
+    ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(y.begin(), y.end(), a.begin()));}
 
 // ------------------
@@ -69,6 +72,7 @@ TEST(Integer, shift_right_digits ) {
     vector<int>				y(4);
     vector<int>::iterator p = shift_right_digits(x.begin(), x.end(), 2, y.begin());
 	const list<int>       a = {1, 2, 3, 4};
+    ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(y.begin(), y.end(), a.begin()));}
 
 TEST(Integer, shift_right_digits2 ) {
@@ -76,6 +80,7 @@ TEST(Integer, shift_right_digits2 ) {
     vector<int>           y(1);
     vector<int>::iterator p = shift_right_digits(x.begin()+1, x.begin()+3, 2, y.begin());
 	const list<int>       a = {0};
+    ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(y.begin(), y.end(), a.begin()));}
 
 TEST(Integer, shift_right_digits3 ) {
@@ -83,6 +88,7 @@ TEST(Integer, shift_right_digits3 ) {
     vector<int>           y(2);
     vector<int>::iterator p = shift_right_digits(x.begin(), x.begin()+5, 3, y.begin());
 	const list<int>       a = {1, 2};
+    ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(y.begin(), y.end(), a.begin()));}
 
 TEST(Integer, shift_right_digits4 ) {
@@ -90,6 +96,7 @@ TEST(Integer, shift_right_digits4 ) {
     vector<int>           y(1);
     vector<int>::iterator p = shift_right_digits(x.begin(), x.begin()+1, 1, y.begin());
 	const list<int>       a = {0};
+    ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(y.begin(), y.end(), a.begin()));}
 
 
@@ -103,6 +110,7 @@ TEST(Integer, plus_digits ) {
     vector<int>				z(6);
     vector<int>::iterator p = plus_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
 	const list<int>       a = {1, 2, 3, 4, 5, 6};
+    ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 TEST(Integer, plus_digits2 ) {
@@ -111,6 +119,7 @@ TEST(Integer, plus_digits2 ) {
     vector<int>				z(3);
     vector<int>::iterator p = plus_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
 	const list<int>       a = {5, 7, 9};
+    ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 TEST(Integer, plus_digits3 ) {
@@ -119,6 +128,7 @@ TEST(Integer, plus_digits3 ) {
     vector<int>				z(3);
     vector<int>::iterator p = plus_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
 	const list<int>       a = {4, 6, 8};
+    ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 TEST(Integer, plus_digits4 ) {
@@ -127,6 +137,7 @@ TEST(Integer, plus_digits4 ) {
     vector<int>				z(3);
     vector<int>::iterator p = plus_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
 	const list<int>       a = {1, 6, 8};
+    ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 TEST(Integer, plus_digits5 ) {
@@ -135,6 +146,7 @@ TEST(Integer, plus_digits5 ) {
     vector<int>				z(3);
     vector<int>::iterator p = plus_digits(x.begin()+2, x.begin()+5, y.begin(), y.end(), z.begin());
 	const list<int>       a = {3, 9, 0};
+    ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 TEST(Integer, plus_digits6 ) {
@@ -143,6 +155,7 @@ TEST(Integer, plus_digits6 ) {
     vector<int>				z(3);
     vector<int>::iterator p = plus_digits(x.begin()+2, x.begin()+5, y.begin()+4, y.end(), z.begin());
 	const list<int>       a = {4, 3, 4};
+    ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 // ------------
 // minus_digits
@@ -154,6 +167,7 @@ TEST(Integer, minus_digits ) {
     vector<int>				z(6);
     vector<int>::iterator p = minus_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
 	const list<int>       a = {1, 2, 3, 4, 5, 6};
+    ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 TEST(Integer, minus_digits2 ) {
@@ -162,6 +176,7 @@ TEST(Integer, minus_digits2 ) {
     vector<int>				z(3);
     vector<int>::iterator p = minus_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
 	const list<int>       a = {3, 3, 3};
+    ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 TEST(Integer, minus_digits3 ) {
@@ -170,6 +185,7 @@ TEST(Integer, minus_digits3 ) {
     vector<int>				z(3);
     vector<int>::iterator p = minus_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
 	const list<int>       a = {4, 4, 4};
+    ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 TEST(Integer, minus_digits4 ) {
@@ -178,6 +194,7 @@ TEST(Integer, minus_digits4 ) {
     vector<int>				z(2);
     vector<int>::iterator p = minus_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
 	const list<int>       a = {7, 8};
+    ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 TEST(Integer, minus_digits5 ) {
@@ -186,6 +203,7 @@ TEST(Integer, minus_digits5 ) {
     vector<int>				z(3);
     vector<int>::iterator p = minus_digits(x.begin()+2, x.begin()+5, y.begin(), y.end(), z.begin());
 	const list<int>       a = {3, 0, 0};
+	ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 TEST(Integer, minus_digits6 ) {
@@ -194,6 +212,7 @@ TEST(Integer, minus_digits6 ) {
     vector<int>				z(3);
     vector<int>::iterator p = minus_digits(x.begin()+2, x.begin()+5, y.begin()+4, y.end(), z.begin());
 	const list<int>       a = {2, 5, 6};
+	ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 
@@ -207,6 +226,7 @@ TEST(Integer, multiplies_digits ) {
     vector<int>				z(1);
     vector<int>::iterator p = multiplies_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
 	const list<int>       a = {0};
+	ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 TEST(Integer, multiplies_digits2 ) {
@@ -215,6 +235,7 @@ TEST(Integer, multiplies_digits2 ) {
     vector<int>				z(5);
     vector<int>::iterator p = multiplies_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
 	const list<int>       a = {5, 6, 0, 8, 8};
+	ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 TEST(Integer, multiplies_digits3 ) {
@@ -223,6 +244,7 @@ TEST(Integer, multiplies_digits3 ) {
     vector<int>				z(4);
     vector<int>::iterator p = multiplies_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
 	const list<int>       a = {5, 4, 7, 2};
+	ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 TEST(Integer, multiplies_digits4 ) {
@@ -231,6 +253,7 @@ TEST(Integer, multiplies_digits4 ) {
     vector<int>				z(4);
     vector<int>::iterator p = multiplies_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
 	const list<int>       a = {5, 5, 3, 5};
+	ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 TEST(Integer, multiplies_digits5 ) {
@@ -239,6 +262,7 @@ TEST(Integer, multiplies_digits5 ) {
     vector<int>				z(5);
     vector<int>::iterator p = multiplies_digits(x.begin()+2, x.begin()+5, y.begin(), y.end(), z.begin());
 	const list<int>       a = {1, 5, 5, 2, 5};
+	ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 TEST(Integer, multiplies_digits6 ) {
@@ -247,6 +271,7 @@ TEST(Integer, multiplies_digits6 ) {
     vector<int>				z(5);
     vector<int>::iterator p = multiplies_digits(x.begin()+2, x.begin()+5, y.begin()+4, y.end(), z.begin());
 	const list<int>       a = {3, 0, 7, 0, 5};
+	ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 
@@ -275,6 +300,7 @@ TEST(Integer, divides_digits3 ) {
     const vector<int>		y = {4, 5, 6};
     vector<int>				z(1);
     vector<int>::iterator p = divides_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
+    ASSERT_EQ(p, p);
 	const list<int>       a = {1};
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
@@ -284,6 +310,7 @@ TEST(Integer, divides_digits4 ) {
     vector<int>				z(1);
     vector<int>::iterator p = divides_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
 	const list<int>       a = {2};
+	ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 TEST(Integer, divides_digits5 ) {
@@ -292,6 +319,7 @@ TEST(Integer, divides_digits5 ) {
     vector<int>				z(1);
     vector<int>::iterator p = divides_digits(x.begin()+2, x.begin()+5, y.begin(), y.end(), z.begin());
 	const list<int>       a = {7};
+	ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 TEST(Integer, divides_digits6 ) {
@@ -300,6 +328,7 @@ TEST(Integer, divides_digits6 ) {
     vector<int>				z(1);
     vector<int>::iterator p = divides_digits(x.begin()+2, x.begin()+5, y.begin()+4, y.end(), z.begin());
 	const list<int>       a = {3};
+	ASSERT_EQ(p, p);
     ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 
