@@ -17,6 +17,7 @@
 #include <string>    // string
 #include <vector>    // vector
 #include <stack>
+#include <iterator>
 
 using namespace std;
 // -----------------
@@ -33,7 +34,11 @@ using namespace std;
  * ([b, e) << n) => x
  */
 template <typename II, typename OI>
-OI shift_left_digits (II b, II e, int n, OI x) {
+OI shift_left_digits (II b, II e, int n, FI x) {
+  x = copy(b, e, x);
+  fill(x, advance(x, n), 0);
+  return advance(x,n);}
+  /*
   while (b != e){
     *x = *b;
     ++b;
@@ -45,7 +50,7 @@ OI shift_left_digits (II b, II e, int n, OI x) {
     --n;
   }
   return x;}
- 
+ */
   
 
 // ------------------
@@ -62,7 +67,7 @@ OI shift_left_digits (II b, II e, int n, OI x) {
  * ([b, e) >> n) => x
  */
 template <typename II, typename OI>
-OI shift_right_digits (II b, II e, int n, OI x) {
+OI shift_right_digits (II b, II e, int n, FI x) {
 
   int a = n;
   while(n != 0){
