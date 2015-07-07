@@ -288,7 +288,7 @@ template < typename T, typename C = std::vector<T> >
   /**
    * @param lhs is the left hand side of the operator <
    * @param rhs is the right hand side of the operator <
-   * @return true if  
+   * @return true if lhs Intger is less than the rhs Integer  
    */
   friend bool operator < (const Integer& lhs, const Integer& rhs) {
    if(!(&lhs < &rhs)){
@@ -302,7 +302,9 @@ template < typename T, typename C = std::vector<T> >
   // -----------
 
   /**
-   * <your documentation>
+   * @param lhs is the left hand side of the operator <=
+   * @param rhs is the right hand side of the operator <=
+   * @return true if lhs Inteer is less than or equal to rhs Integer
    */
   friend bool operator <= (const Integer& lhs, const Integer& rhs) {
     return !(rhs < lhs);}
@@ -312,7 +314,9 @@ template < typename T, typename C = std::vector<T> >
   // ----------
 
   /**
-   * <your documentation>
+   * @param lhs is the leftvhand side of the operator >
+   * @param rhs is the right hand of the operator >
+   * @return true if lhs Integer is greater than the rhs Integer
    */
   friend bool operator > (const Integer& lhs, const Integer& rhs) {
     return (rhs < lhs);}
@@ -322,7 +326,9 @@ template < typename T, typename C = std::vector<T> >
   // -----------
 
   /**
-   * <your documentation>
+   * @param lhs is the left hand side of the operator >=
+   * @param rhs is the right hand side of the operator >=
+   * @return true if lhs Integer is greater than or equal to rhs Integer
    */
   friend bool operator >= (const Integer& lhs, const Integer& rhs) {
     return !(lhs < rhs);}
@@ -332,7 +338,7 @@ template < typename T, typename C = std::vector<T> >
   // ----------
 
   /**
-   * <your documentation>
+   * 
    */
   friend Integer operator + (Integer lhs, const Integer& rhs) {
     return lhs += rhs;}

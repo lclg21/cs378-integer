@@ -74,7 +74,7 @@ RunInteger.out: RunInteger
 
 
 TestInteger: Integer.h RunInteger.c++ TestInteger.c++
-	$(CXX) $(COVFLAGS) $(CXXFLAGS) Integer.h  TestInteger.c++ -o TestInteger $(LDFLAGS)
+	$(CXX) $(COVFLAGS) $(CXXFLAGS) TestInteger.c++ -o TestInteger $(LDFLAGS)
 
 TestInteger.out: TestInteger
 	$(VALGRIND) ./TestInteger  >  TestInteger.out 2>&1
