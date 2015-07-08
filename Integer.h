@@ -73,6 +73,63 @@ return copy(b, e - n, x);}
  * output the sum of the two input sequences into the output sequence
  * ([b1, e1) + [b2, e2)) => x
  */
+ template <typename II1, typename II2, typename OI>
+OI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {           
+    int len = e1 - b1;
+    if((e2-b2)>(e1-b1)) len = e2 - b2;
+    OI endx = x+len;
+    bool stop = false;
+    int carryOver = 0;
+    while(!stop){   
+                if (b1 != e1 && b2 != e2){
+                    //std::cout << "Normal Case" << std::endl;
+                    int temp = *(e1-1) + *(e2-1) + carryOver;
+                    carryOver = 0;
+                    if(temp >= 10){
+                        carryOver = 1;
+                        temp -= 10;
+                    }
+                    *(x+len) = temp;
+                    --e1;
+                    --e2;
+                    --len;
+                } else if(b1 != e1){
+                    //std::cout << "b1 longer Case" << std::endl;
+                    int temp = *(e1-1) + carryOver;
+                    carryOver = 0;
+                    if(temp >= 10){
+                        carryOver = 1;
+                        temp -= 10;
+                    }
+                     *(x+len) = temp;
+                    --e1;
+                    --len;
+                } else if(b2 != e2){
+                    //std::cout << "b2 longer Case" << std::endl;
+                    int temp = *(e2-1) + carryOver;
+                    carryOver = 0;
+                    if(temp >= 10){
+                        carryOver = 1;
+                        temp -= 10;
+                    }
+                     *(x+len) = temp;
+                    --e2;
+                    --len;         
+                } else{
+                    //std::cout << "Else Case" << std::endl;
+                    if(carryOver != 0){
+                        *(x+len) = carryOver;
+                        carryOver = 0;
+                        ++endx;
+                    } else{
+                        endx = shift_left_digits (x+1, endx+1, 1, x);
+                        --endx;
+                    }
+                    stop = true;
+                }
+            }
+            return endx;
+      }
 /*template <typename II1, typename II2, typename FI, typename BI>
 FI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
 BI second = e2;
@@ -288,7 +345,22 @@ template < typename T, typename C = std::vector<T> >
 
    */
   friend bool operator == (const Integer& lhs, const Integer& rhs) {
-    return(&lhs != &rhs);}
+     if(lhs._x.size() != rhs._x.size() ){
+      return false;
+    }
+    if(lhs.neg != rhs.neg){
+      return false;
+    }
+    typename C::const_iterator left = lhs._x.begin();
+    typename C::const_iterator right = rhs._x.begin();
+    while(left != lhs._x.end()){
+      if(*left != *right){
+        return false;
+      }
+      ++left;
+      ++right;
+    }
+    return true;}
     
   // -----------
   // operator !=
@@ -510,6 +582,12 @@ template < typename T, typename C = std::vector<T> >
     neg = true;
     value = 0 - value;
   }
+  else if(value == 0){
+    neg = false;
+    _x = C(1);
+    _x.push_back(0);
+    return;
+  }
   else{
     neg = false;
   }
@@ -518,9 +596,8 @@ template < typename T, typename C = std::vector<T> >
   while(copyvalue != 0){
     copyvalue = copyvalue/10;
     ++numdigits;
-  }
+    }
   _x = C(numdigits);
-
   while(value != 0){
     _x[numdigits] = value%10;
     value /= 10;
