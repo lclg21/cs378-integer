@@ -621,7 +621,7 @@ template < typename T, typename C = std::vector<T> >
     for(int i = value.length()-1; i >= 1; --i){
 
       while(numdigits != value.length()-1){
-        if(isdigit(value[numdigits]){
+        if(isdigit(value[numdigits])){
           _x.push_back(value[numdigits]-'0');
         }
         else{

@@ -1,0 +1,1030 @@
+==5581== Memcheck, a memory error detector
+==5581== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==5581== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==5581== Command: ./TestInteger
+==5581== 
+Running main() from gtest_main.cc
+[==========] Running 42 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 42 tests from Integer
+[ RUN      ] Integer.shift_left_digits
+[       OK ] Integer.shift_left_digits (34 ms)
+[ RUN      ] Integer.shift_left_digits2
+[       OK ] Integer.shift_left_digits2 (9 ms)
+[ RUN      ] Integer.shift_left_digits3
+[       OK ] Integer.shift_left_digits3 (5 ms)
+[ RUN      ] Integer.shift_left_digits4
+[       OK ] Integer.shift_left_digits4 (5 ms)
+[ RUN      ] Integer.shift_right_digits
+[       OK ] Integer.shift_right_digits (5 ms)
+[ RUN      ] Integer.shift_right_digits2
+[       OK ] Integer.shift_right_digits2 (5 ms)
+[ RUN      ] Integer.shift_right_digits3
+[       OK ] Integer.shift_right_digits3 (5 ms)
+[ RUN      ] Integer.shift_right_digits4
+[       OK ] Integer.shift_right_digits4 (5 ms)
+[ RUN      ] Integer.plus_digits
+==5581== Invalid write of size 4
+==5581==    at 0x422973: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x408DF7: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c556a8 is 0 bytes after a block of size 24 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x408D00: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+==5581== Invalid read of size 2
+==5581==    at 0x4C2F647: memcpy@GLIBC_2.2.5 (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x4284BC: int* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<int>(int const*, int const*, int*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x42714C: int* std::__copy_move_a<false, int*, int*>(int*, int*, int*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425FE0: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424F52: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::copy<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421E52: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > shift_left_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x422DA0: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x408DF7: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c556a8 is 0 bytes after a block of size 24 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x408D00: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+==5581== Invalid write of size 4
+==5581==    at 0x426061: __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a<int*, int>(int*, int*, int const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425046: void std::fill<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421EB3: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > shift_left_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x422DA0: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x408DF7: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c556a8 is 0 bytes after a block of size 24 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x408D00: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+[       OK ] Integer.plus_digits (12 ms)
+[ RUN      ] Integer.plus_digits2
+==5581== Invalid write of size 4
+==5581==    at 0x422973: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x409715: Integer_plus_digits2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c55fac is 0 bytes after a block of size 12 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x40961E: Integer_plus_digits2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+==5581== Invalid read of size 2
+==5581==    at 0x4C2F638: memcpy@GLIBC_2.2.5 (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x4284BC: int* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<int>(int const*, int const*, int*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x42714C: int* std::__copy_move_a<false, int*, int*>(int*, int*, int*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425FE0: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424F52: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::copy<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421E52: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > shift_left_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x422DA0: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x409715: Integer_plus_digits2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c55fae is 2 bytes after a block of size 12 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x40961E: Integer_plus_digits2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+[       OK ] Integer.plus_digits2 (6 ms)
+[ RUN      ] Integer.plus_digits3
+==5581== Invalid write of size 4
+==5581==    at 0x422973: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x40A033: Integer_plus_digits3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c5678c is 0 bytes after a block of size 12 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x409F3C: Integer_plus_digits3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+[       OK ] Integer.plus_digits3 (7 ms)
+[ RUN      ] Integer.plus_digits4
+==5581== Invalid write of size 4
+==5581==    at 0x422973: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x40A951: Integer_plus_digits4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c56f6c is 0 bytes after a block of size 12 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x40A85A: Integer_plus_digits4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+[       OK ] Integer.plus_digits4 (7 ms)
+[ RUN      ] Integer.plus_digits5
+==5581== Invalid write of size 4
+==5581==    at 0x422973: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x40B2E9: Integer_plus_digits5_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c5775c is 0 bytes after a block of size 12 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x40B178: Integer_plus_digits5_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+[       OK ] Integer.plus_digits5 (7 ms)
+[ RUN      ] Integer.plus_digits6
+==5581== Invalid write of size 4
+==5581==    at 0x422973: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x40BCEA: Integer_plus_digits6_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c57f5c is 0 bytes after a block of size 12 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x40BB3C: Integer_plus_digits6_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+[       OK ] Integer.plus_digits6 (6 ms)
+[ RUN      ] Integer.plus_digits7
+==5581== Invalid write of size 4
+==5581==    at 0x422973: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x40C684: Integer_plus_digits7_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c589d0 is 0 bytes after a block of size 336 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x40C550: Integer_plus_digits7_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+[       OK ] Integer.plus_digits7 (6 ms)
+[ RUN      ] Integer.minus_digits
+[       OK ] Integer.minus_digits (26 ms)
+[ RUN      ] Integer.minus_digits2
+[       OK ] Integer.minus_digits2 (6 ms)
+[ RUN      ] Integer.minus_digits3
+[       OK ] Integer.minus_digits3 (6 ms)
+[ RUN      ] Integer.minus_digits4
+[       OK ] Integer.minus_digits4 (6 ms)
+[ RUN      ] Integer.minus_digits5
+[       OK ] Integer.minus_digits5 (6 ms)
+[ RUN      ] Integer.minus_digits6
+[       OK ] Integer.minus_digits6 (6 ms)
+[ RUN      ] Integer.multiplies_digits
+[       OK ] Integer.multiplies_digits (8 ms)
+[ RUN      ] Integer.multiplies_digits2
+[       OK ] Integer.multiplies_digits2 (7 ms)
+[ RUN      ] Integer.multiplies_digits3
+[       OK ] Integer.multiplies_digits3 (5 ms)
+[ RUN      ] Integer.multiplies_digits4
+[       OK ] Integer.multiplies_digits4 (5 ms)
+[ RUN      ] Integer.multiplies_digits5
+[       OK ] Integer.multiplies_digits5 (7 ms)
+[ RUN      ] Integer.multiplies_digits6
+[       OK ] Integer.multiplies_digits6 (6 ms)
+[ RUN      ] Integer.divides_digits
+[       OK ] Integer.divides_digits (10 ms)
+[ RUN      ] Integer.divides_digits2
+[       OK ] Integer.divides_digits2 (6 ms)
+[ RUN      ] Integer.divides_digits3
+[       OK ] Integer.divides_digits3 (6 ms)
+[ RUN      ] Integer.divides_digits4
+[       OK ] Integer.divides_digits4 (5 ms)
+[ RUN      ] Integer.divides_digits5
+[       OK ] Integer.divides_digits5 (6 ms)
+[ RUN      ] Integer.divides_digits6
+[       OK ] Integer.divides_digits6 (6 ms)
+[ RUN      ] Integer.equal_to
+==5581== Invalid write of size 4
+==5581==    at 0x42405D: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x417670: Integer_equal_to_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c69c44 is 0 bytes after a block of size 4 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x423FA9: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x417670: Integer_equal_to_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+==5581== Invalid write of size 4
+==5581==    at 0x42405D: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x417693: Integer_equal_to_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c69c94 is 0 bytes after a block of size 4 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x423FA9: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x417693: Integer_equal_to_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+==5581== Invalid write of size 4
+==5581==    at 0x42405D: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x4178A4: Integer_equal_to_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c69ce4 is 0 bytes after a block of size 4 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x423FA9: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x4178A4: Integer_equal_to_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+==5581== Invalid write of size 4
+==5581==    at 0x42405D: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x417AF1: Integer_equal_to_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c69d34 is 0 bytes after a block of size 4 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x423FA9: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x417AF1: Integer_equal_to_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+[       OK ] Integer.equal_to (15 ms)
+[ RUN      ] Integer.equal_to2
+==5581== Invalid write of size 4
+==5581==    at 0x42405D: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x4184C6: Integer_equal_to2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c6a35c is 0 bytes after a block of size 12 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x423FA9: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x4184C6: Integer_equal_to2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+==5581== Invalid write of size 4
+==5581==    at 0x42405D: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x4184E9: Integer_equal_to2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c6a3ac is 0 bytes after a block of size 12 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x423FA9: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x4184E9: Integer_equal_to2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+==5581== Invalid write of size 4
+==5581==    at 0x42405D: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x4186FA: Integer_equal_to2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c6a3fc is 0 bytes after a block of size 12 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x423FA9: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x4186FA: Integer_equal_to2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+==5581== Invalid write of size 4
+==5581==    at 0x42405D: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x418947: Integer_equal_to2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c6a44c is 0 bytes after a block of size 12 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x423FA9: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x418947: Integer_equal_to2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+[       OK ] Integer.equal_to2 (6 ms)
+[ RUN      ] Integer.equal_to3
+==5581== Invalid write of size 4
+==5581==    at 0x42405D: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x41934A: Integer_equal_to3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c6aa68 is 0 bytes after a block of size 8 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x423FA9: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x41934A: Integer_equal_to3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+==5581== Invalid write of size 4
+==5581==    at 0x42405D: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x41936D: Integer_equal_to3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c6aab8 is 0 bytes after a block of size 8 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x423FA9: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x41936D: Integer_equal_to3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+==5581== Invalid write of size 4
+==5581==    at 0x42405D: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x419581: Integer_equal_to3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c6ab08 is 0 bytes after a block of size 8 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x423FA9: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x419581: Integer_equal_to3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+==5581== Invalid write of size 4
+==5581==    at 0x42405D: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x4197D1: Integer_equal_to3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c6ab58 is 0 bytes after a block of size 8 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x423FA9: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x4197D1: Integer_equal_to3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+[       OK ] Integer.equal_to3 (6 ms)
+[ RUN      ] Integer.equal_to4
+==5581== Invalid write of size 4
+==5581==    at 0x42405D: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x41A1D6: Integer_equal_to4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c6b198 is 0 bytes after a block of size 40 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x423FA9: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x41A1D6: Integer_equal_to4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+==5581== Invalid write of size 4
+==5581==    at 0x42405D: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x41A1F9: Integer_equal_to4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c6b1e8 is 0 bytes after a block of size 8 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x423FA9: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x41A1F9: Integer_equal_to4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+==5581== Invalid write of size 4
+==5581==    at 0x42405D: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x41A40D: Integer_equal_to4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c6b238 is 0 bytes after a block of size 8 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x423FA9: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x41A40D: Integer_equal_to4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+==5581== Invalid write of size 4
+==5581==    at 0x42405D: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x41A65D: Integer_equal_to4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c6b288 is 0 bytes after a block of size 8 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x423FA9: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x41A65D: Integer_equal_to4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+[       OK ] Integer.equal_to4 (6 ms)
+[ RUN      ] Integer.equal_to5
+==5581== Invalid write of size 4
+==5581==    at 0x42405D: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x41B062: Integer_equal_to5_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c6b8c8 is 0 bytes after a block of size 40 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x423FA9: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x41B062: Integer_equal_to5_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+==5581== Invalid write of size 4
+==5581==    at 0x42405D: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x41B085: Integer_equal_to5_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c6b934 is 0 bytes after a block of size 36 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x423FA9: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x41B085: Integer_equal_to5_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+==5581== Invalid write of size 4
+==5581==    at 0x42405D: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x41B299: Integer_equal_to5_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c6b988 is 0 bytes after a block of size 8 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x423FA9: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x41B299: Integer_equal_to5_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+==5581== Invalid write of size 4
+==5581==    at 0x42405D: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x41B4E9: Integer_equal_to5_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44397C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443C5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x404C6F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==  Address 0x5c6b9d8 is 0 bytes after a block of size 8 alloc'd
+==5581==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5581==    by 0x427015: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425D7A: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x425E7A: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x424DD4: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x421CFD: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x423FA9: Integer<int, std::vector<int, std::allocator<int> > >::Integer(int) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x41B4E9: Integer_equal_to5_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x450B52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x44356C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443603: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581==    by 0x443704: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==5581== 
+[       OK ] Integer.equal_to5 (6 ms)
+[ RUN      ] Integer.equal_to6
+[       OK ] Integer.equal_to6 (5 ms)
+[ RUN      ] Integer.equal_to7
+[       OK ] Integer.equal_to7 (14 ms)
+[ RUN      ] Integer.equal_to8
+[       OK ] Integer.equal_to8 (4 ms)
+[ RUN      ] Integer.equal_to9
+[       OK ] Integer.equal_to9 (4 ms)
+[----------] 42 tests from Integer (336 ms total)
+
+[----------] Global test environment tear-down
+[==========] 42 tests from 1 test case ran. (364 ms total)
+[  PASSED  ] 42 tests.
+==5581== 
+==5581== HEAP SUMMARY:
+==5581==     in use at exit: 0 bytes in 0 blocks
+==5581==   total heap usage: 1,246 allocs, 1,246 frees, 136,452 bytes allocated
+==5581== 
+==5581== All heap blocks were freed -- no leaks are possible
+==5581== 
+==5581== For counts of detected and suppressed errors, rerun with: -v
+==5581== ERROR SUMMARY: 48 errors from 30 contexts (suppressed: 0 from 0)
+File 'TestInteger.c++'
+Lines executed:100.00% of 278
+Branches executed:72.74% of 1790
+Taken at least once:36.37% of 1790
+Calls executed:58.03% of 2540
+Creating 'TestInteger.c++.gcov'
+
+File '/usr/include/gtest/internal/gtest-internal.h'
+Lines executed:75.00% of 4
+Branches executed:49.41% of 170
+Taken at least once:24.71% of 170
+Calls executed:37.17% of 339
+Creating 'gtest-internal.h.gcov'
+
+File '/usr/include/c++/4.8/iostream'
+Lines executed:100.00% of 1
+No branches
+Calls executed:100.00% of 2
+Creating 'iostream.gcov'
+
+File '/usr/include/c++/4.8/bits/stl_algobase.h'
+Lines executed:77.59% of 58
+Branches executed:81.82% of 22
+Taken at least once:72.73% of 22
+Calls executed:77.50% of 80
+Creating 'stl_algobase.h.gcov'
+
+File '/usr/include/c++/4.8/bits/stl_iterator.h'
+Lines executed:100.00% of 25
+No branches
+Calls executed:100.00% of 8
+Creating 'stl_iterator.h.gcov'
+
+File '/usr/include/c++/4.8/bits/stl_iterator_base_types.h'
+Lines executed:100.00% of 6
+No branches
+Calls executed:100.00% of 3
+Creating 'stl_iterator_base_types.h.gcov'
+
+File '/usr/include/c++/4.8/bits/stl_uninitialized.h'
+Lines executed:100.00% of 16
+Branches executed:100.00% of 2
+Taken at least once:50.00% of 2
+Calls executed:100.00% of 12
+Creating 'stl_uninitialized.h.gcov'
+
+File '/usr/include/c++/4.8/bits/alloc_traits.h'
+Lines executed:76.47% of 17
+No branches
+Calls executed:80.00% of 10
+Creating 'alloc_traits.h.gcov'
+
+File '/usr/include/c++/4.8/ext/new_allocator.h'
+Lines executed:92.86% of 14
+Branches executed:100.00% of 10
+Taken at least once:50.00% of 10
+Calls executed:82.35% of 17
+Creating 'new_allocator.h.gcov'
+
+File '/usr/include/c++/4.8/bits/deque.tcc'
+Lines executed:14.58% of 48
+Branches executed:16.67% of 12
+Taken at least once:8.33% of 12
+Calls executed:8.33% of 24
+Creating 'deque.tcc.gcov'
+
+File '/usr/include/c++/4.8/bits/stl_list.h'
+Lines executed:95.08% of 61
+Branches executed:80.00% of 10
+Taken at least once:50.00% of 10
+Calls executed:81.08% of 37
+Creating 'stl_list.h.gcov'
+
+File '/usr/include/c++/4.8/bits/stl_vector.h'
+Lines executed:99.00% of 100
+Branches executed:100.00% of 18
+Taken at least once:55.56% of 18
+Calls executed:92.42% of 66
+Creating 'stl_vector.h.gcov'
+
+File '/usr/include/c++/4.8/bits/stl_deque.h'
+Lines executed:88.10% of 126
+Branches executed:81.25% of 32
+Taken at least once:46.88% of 32
+Calls executed:81.33% of 75
+Creating 'stl_deque.h.gcov'
+
+File '/usr/include/c++/4.8/bits/allocator.h'
+Lines executed:100.00% of 5
+No branches
+Calls executed:100.00% of 8
+Creating 'allocator.h.gcov'
+
+File '/usr/include/c++/4.8/bits/move.h'
+Lines executed:100.00% of 9
+No branches
+Calls executed:100.00% of 13
+Creating 'move.h.gcov'
+
+File '/usr/include/c++/4.8/bits/vector.tcc'
+Lines executed:80.65% of 31
+Branches executed:42.86% of 14
+Taken at least once:28.57% of 14
+Calls executed:63.64% of 22
+Creating 'vector.tcc.gcov'
+
+File '/usr/include/c++/4.8/bits/stl_construct.h'
+Lines executed:100.00% of 7
+No branches
+Calls executed:100.00% of 2
+Creating 'stl_construct.h.gcov'
+
+File '/usr/include/c++/4.8/bits/stl_iterator_base_funcs.h'
+Lines executed:100.00% of 4
+No branches
+Calls executed:100.00% of 2
+Creating 'stl_iterator_base_funcs.h.gcov'
+
+File '/usr/include/c++/4.8/bits/basic_string.h'
+Lines executed:0.00% of 1
+No branches
+Calls executed:0.00% of 1
+Creating 'basic_string.h.gcov'
+
+File 'Integer.h'
+Lines executed:92.26% of 168
+Branches executed:92.77% of 166
+Taken at least once:64.46% of 166
+Calls executed:74.68% of 158
+Creating 'Integer.h.gcov'
+
+File '/usr/include/c++/4.8/bits/stl_stack.h'
+Lines executed:100.00% of 12
+No branches
+Calls executed:100.00% of 8
+Creating 'stl_stack.h.gcov'
+
+File '/usr/include/c++/4.8/bits/list.tcc'
+Lines executed:100.00% of 8
+Branches executed:100.00% of 2
+Taken at least once:100.00% of 2
+Calls executed:100.00% of 3
+Creating 'list.tcc.gcov'
+
+File '/usr/include/gtest/internal/gtest-port.h'
+Lines executed:62.50% of 8
+Branches executed:16.67% of 12
+Taken at least once:8.33% of 12
+Calls executed:14.29% of 7
+Creating 'gtest-port.h.gcov'
+
+File '/usr/include/c++/4.8/ext/alloc_traits.h'
+Lines executed:100.00% of 2
+No branches
+No calls
+Creating 'alloc_traits.h.gcov'
+
+File '/usr/include/c++/4.8/initializer_list'
+Lines executed:100.00% of 3
+No branches
+Calls executed:100.00% of 2
+Creating 'initializer_list.gcov'
+
+File '/usr/include/gtest/gtest.h'
+Lines executed:83.33% of 6
+No branches
+Calls executed:100.00% of 2
+Creating 'gtest.h.gcov'
+
+File '/usr/include/gtest/gtest-message.h'
+Lines executed:0.00% of 1
+No branches
+Calls executed:0.00% of 1
+Creating 'gtest-message.h.gcov'
+
+File '/usr/include/c++/4.8/new'
+Lines executed:100.00% of 2
+No branches
+No calls
+Creating 'new.gcov'
+
+File '/usr/include/c++/4.8/ext/atomicity.h'
+Lines executed:0.00% of 10
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 3
+Creating 'atomicity.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h'
+Lines executed:0.00% of 2
+No branches
+No calls
+Creating 'gthr-default.h.gcov'
+

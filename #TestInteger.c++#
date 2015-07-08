@@ -11,7 +11,7 @@
 // --------
 
 #include <iostream> // cout, endl
-#include <sstream>  // istringtstream, ostringstream
+OA#include <sstream>  // istringtstream, ostringstream
 #include <string>   // string
 #include <utility>  // pair
 #include <vector>
@@ -354,40 +354,33 @@ TEST(Integer, equal_to5) {
   ASSERT_FALSE(x == -23);
   ASSERT_FALSE(-23 == x);
   ASSERT_TRUE((x != y));}
-
-TEST(Integer, equal_to6) {
+/*TEST(Integer, equal_to4) {
   Integer<int> x("1");
   Integer<int> y("1");
-  //ASSERT_TRUE(x == 1);
-  //ASSERT_TRUE(y == 1);
   ASSERT_TRUE(x == y);
-  ASSERT_FALSE(x != y);}
+  ASSERT_TRUE(x == 1);
+  ASSERT_TRUE(1 == y);
+  ASSERT_TRUE((1 == 1));}
 
-
-
-TEST(Integer, equal_to7) {
+TEST(Integer, equal_to5) {
   const Integer<int> x("123");
   const Integer<int> y("123");
   ASSERT_TRUE(x == y);
-  //ASSERT_TRUE(x == 123);
-  //ASSERT_TRUE(y == 123);
+  ASSERT_TRUE(x == 123);
+  ASSERT_TRUE(123 == y);
   ASSERT_FALSE((x != y));}
 
-TEST(Integer, equal_to8) {
-  const Integer<int> x("-23000000000000000000000000");
-  const Integer<int> y("-23000000000000000000000000");
+TEST(Integer, equal_to6) {
+  const Integer<int> x("-23");
+  const Integer<int> y("-23");
   ASSERT_TRUE(x == y);
+  ASSERT_TRUE(x == -23);
+  ASSERT_TRUE(-23 == x);
   ASSERT_FALSE((x != y));}
-
-TEST(Integer, equal_to9) {
-  const Integer<int> x("-23000000000000000000000000");
-  const Integer<int> y("23000000000000000000000000");
-  ASSERT_FALSE(x == y);
-  ASSERT_TRUE(x != y);}
+// ----------
+// operator <
 // ----------
 
-// ----------
-/*
 
 TEST(Integer, less_than) {
   const Integer<int> x = 5;
