@@ -1,23 +1,23 @@
-FILES := 				 \
-    .travis.yml				 \
-    integer-tests/ll9338-RunInteger.out	 \
-    integer-tests/ll9338-TestInteger.c++ \
-    integer-tests/ll9338-TestInteger.out \
-    Integer.h				 \
-    Integer.log				 \
-    html				 \
-    RunInteger.c++			 \
-    RunInteger.out			 \
-    TestInteger.c++			 \
-    TestInteger.out			 \
+FLES := 				 				\
+	.travis.yml				 			\
+	integer-tests/ll9338-RunInteger.out	 \
+	integer-tests/ll9338-TestInteger.c++ \
+	integer-tests/ll9338-TestInteger.out \
+	Integer.h							 \
+	Integer.log							 \
+	html				 			   	\
+	RunInteger.c++						 \
+	RunInteger.out						 \
+	TestInteger.c++			 			\
+	TestInteger.out						 \
 
 ifeq ($(CXX), clang++)
-    COVFLAGS := --coverage
-    GCOV     := gcov-4.6
+	COVFLAGS := --coverage
+	GCOV     := gcov-4.6
 else
-    CXX      := g++-4.8
-    COVFLAGS := -fprofile-arcs -ftest-coverage
-    GCOV     := gcov-4.8
+	CXX      := g++-4.8
+	COVFLAGS := -fprofile-arcs -ftest-coverage
+	GCOV     := gcov-4.8
 endif
 
 CXXFLAGS := -pedantic -std=c++11 -Wall
@@ -29,8 +29,8 @@ all: RunInteger TestInteger
 check:
 	@for i in $(FILES);                                         \
 	do                                                          \
-        [ -e $$i ] && echo "$$i found" || echo "$$i NOT FOUND"; \
-    done
+		[ -e $$i ] && echo "$$i found" || echo "$$i NOT FOUND"; \
+	done
 
 clean:
 	rm -f *.gcda
@@ -50,7 +50,7 @@ test: RunInteger.out TestInteger.out
 
 
 integer-tests:
-	git clone https://github.com/cs378-summer-2015/integer-tests.git
+	git clone https://github.com/cs378-summer-2015/integer-tests
 
 
 html: Doxyfile Integer.h RunInteger.c++ TestInteger.c++
@@ -68,15 +68,13 @@ Doxyfile:
 RunInteger: Integer.h RunInteger.c++
 	$(CXX) $(CXXFLAGS) RunInteger.c++ -o RunInteger
 
-
 RunInteger.out: RunInteger
-	./RunInteger < RunInteger.c++ > RunInteger.out
+	./RunInteger > RunInteger.out
 	cat RunInteger.out
 
 
-TestInteger: Integer.h RunInteger.c++ TestInteger.c++
-	$(CXX) $(COVFLAGS) $(CXXFLAGS) RunInteger.c++ TestInteger.c++ -o TestInteger $(LDFLAGS)
-
+TestInteger: TestInteger.c++
+	$(CXX) $(COVFLAGS) $(CXXFLAGS) TestInteger.c++ -o TestInteger $(LDFLAGS)
 
 TestInteger.out: TestInteger
 	$(VALGRIND) ./TestInteger  >  TestInteger.out 2>&1
