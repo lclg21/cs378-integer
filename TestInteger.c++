@@ -374,16 +374,12 @@ TEST(Integer, equal_to6) {
   const Integer<int> x("-23000000000000000000000000");
   const Integer<int> y("-23000000000000000000000000");
   ASSERT_TRUE(x == y);
-  ASSERT_TRUE(x == -23);
-  ASSERT_TRUE(-23 == x);
   ASSERT_FALSE((x != y));}
 
 TEST(Integer, equal_to7) {
   const Integer<int> x("-23000000000000000000000000");
   const Integer<int> y("23000000000000000000000000");
   ASSERT_TRUE(x == y);
-  ASSERT_TRUE(x == -23);
-  ASSERT_TRUE(-23 == x);
   ASSERT_FALSE((x != y));}
 // ----------
 // operator <
