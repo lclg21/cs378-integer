@@ -610,31 +610,32 @@ template < typename T, typename C = std::vector<T> >
    * @throws invalid_argument if value is not a valid representation of an Integer
    */
   explicit Integer (const std::string& value) {
-      if (!valid())
-      throw std::invalid_argument("Integer::Integer()");
     int numdigits = 0;
     if(value[0] == '-'){
       neg = true;
-    for(string::const_iterator it = (value).begin()+1; it != (value).end(); ++it){
-      while(numdigits != value.length()-1){
-        _x[numdigits] = (*it-'0');
-        ++numdigits;
-      }
-
+      numdigits = 1;
     }
-  }
     else{
       neg = false;
-      _x = C(value.length());
-    for(string::const_iterator it = (value).begin(); it != (value).end(); ++it){
-      while(numdigits != value.length()){
-        _x[numdigits] = (*it-'0');
+    }
+    for(int i = value.length()-1; i >= 1; --i){
+
+      while(numdigits != value.length()-1){
+        if(isdigit(value[numdigits]){
+          _x.push_back(value[numdigits]-'0');
+        }
+        else{
+          throw std::invalid_argument("Integer::Integer()");
+        }
         ++numdigits;
       }
     }
+    if (!valid())
+      throw std::invalid_argument("Integer::Integer()");}
 
-}}
 
+
+   
   // Default copy, destructor, and copy assignment.
   // Integer (const Integer&);
   // ~Integer ();
