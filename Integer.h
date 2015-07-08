@@ -18,6 +18,8 @@
 #include <vector>    // vector
 #include <stack>
 #include <iterator>
+#include <algorithm>
+#include <stdlib.h>
 
 using namespace std;
 // -----------------
@@ -71,9 +73,32 @@ return copy(b, e - n, x);}
  * output the sum of the two input sequences into the output sequence
  * ([b1, e1) + [b2, e2)) => x
  */
-template <typename II1, typename II2, typename FI>
+/*template <typename II1, typename II2, typename FI, typename BI>
 FI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
-  int a = 0;
+BI second = e2;
+BI first = e1;
+BI final;
+int carry = 0;
+while(b1 != e1 && b2 != e2){
+  *final = *second + *first;
+  if(*final>9){
+    *final = *final-10 + carry;
+    carry = 1;
+  }
+else{
+  carry = 0;
+  }
+  ++b1;
+  ++b2;
+  ++final;
+}
+while(final.begin() != final){
+  *x = *final;
+  --final;
+  ++x;
+}
+return x;}
+/*  int a = 0;
   int c = 0;
   while(b1 != e1){                //Took each digit from first iterator and put it into an int
     a = (a + *b1) * 10;
@@ -101,11 +126,12 @@ FI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
   }
 
   return x;}
+  */
 // ------------
 // minus_digits
 // ------------
 
-/**
+/*
  * @param b  an iterator to the beginning of an input  sequence (inclusive)
  * @param e  an iterator to the end       of an input  sequence (exclusive)
  * @param b2 an iterator to the beginning of an input  sequence (inclusive)
@@ -262,12 +288,7 @@ template < typename T, typename C = std::vector<T> >
 
    */
   friend bool operator == (const Integer& lhs, const Integer& rhs) {
-    if(&lhs != &rhs){
-      return true;
-    }
-    else{
-      return false;
-    }}
+    return(&lhs != &rhs);}
     
   // -----------
   // operator !=
@@ -291,12 +312,7 @@ template < typename T, typename C = std::vector<T> >
    * @return true if lhs Intger is less than the rhs Integer  
    */
   friend bool operator < (const Integer& lhs, const Integer& rhs) {
-   if(!(&lhs < &rhs)){
-      return true;
-    }
-    else{
-      return false;
-    }}
+   return(!(&lhs >= &rhs));}
   // -----------
   // operator <=
   // -----------
@@ -338,7 +354,9 @@ template < typename T, typename C = std::vector<T> >
   // ----------
 
   /**
-   * 
+   * @param lhs is the left hand side of the operator +
+   * @param rhs is the right hand side of the operator +
+   * @return sum between an Integer and a const Integer 
    */
   friend Integer operator + (Integer lhs, const Integer& rhs) {
     return lhs += rhs;}
@@ -348,7 +366,9 @@ template < typename T, typename C = std::vector<T> >
   // ----------
 
   /**
-   * <your documentation>
+   * @param lhs is the left hand side of the operator -
+   * @param rhs is the right hand side of the operator -
+   * @return difference between an Integer lhs and a const Integer rhs
    */
   friend Integer operator - (Integer lhs, const Integer& rhs) {
     return lhs -= rhs;}
@@ -358,7 +378,9 @@ template < typename T, typename C = std::vector<T> >
   // ----------
 
   /**
-   * <your documentation>
+   * @param lhs is the left hand side of the operator *
+   * @param rhs is the righ hand side of the operator *
+   * @return product between an Integer lhs and a const Integer rhs
    */
   friend Integer operator * (Integer lhs, const Integer& rhs) {
     return lhs *= rhs;}
@@ -368,7 +390,9 @@ template < typename T, typename C = std::vector<T> >
   // ----------
 
   /**
-   * <your documentation>
+   * @param lhs is the left hand side of the operator /
+   * @param rhs is the right hand side of the operator /
+   * @return  Integer, division between an Integer lhs and const Integer rhs
    * @throws invalid_argument if (rhs == 0)
    */
   friend Integer operator / (Integer lhs, const Integer& rhs) {
@@ -379,7 +403,9 @@ template < typename T, typename C = std::vector<T> >
   // ----------
 
   /**
-   * <your documentation>
+   * @param lhs is the left hand side of the operator %
+   * @param rhs is the right hand side of the operator %
+   * @return Integer, modulus between an Integer lhs and a const Integer rhs 
    * @throws invalid_argument if (rhs <= 0)
    */
   friend Integer operator % (Integer lhs, const Integer& rhs) {
@@ -390,7 +416,9 @@ template < typename T, typename C = std::vector<T> >
   // -----------
 
   /**
-   * <your documentation>
+   * @param lhs is the left hand of the oeprator <<
+   * @param rhs is the right hand side of the operator <<
+   * @return shifts lhs rhs amount of places to the left
    * @throws invalid_argument if (rhs < 0)
    */
   friend Integer operator << (Integer lhs, int rhs) {
@@ -401,7 +429,9 @@ template < typename T, typename C = std::vector<T> >
   // -----------
 
   /**
-   * <your documentation>
+   * @param lhs is the left hand side of the operator >>
+   * @param rhs is the right hand side of the operator >>
+   * @result shifts lhs rhs amount of places to the right
    * @throws invalid_argument if (rhs < 0)
    */
   friend Integer operator >> (Integer lhs, int rhs) {
@@ -412,9 +442,12 @@ template < typename T, typename C = std::vector<T> >
   // -----------
 
   /**
-   * <your documentation>
+   * @param lhs ostream by reference
+   * @param rhs const Integer by reference
+   * @return ostream 
    */
   friend std::ostream& operator << (std::ostream& lhs, const Integer& rhs) {
+
     return lhs << "0";}
 
   // ---
@@ -423,7 +456,8 @@ template < typename T, typename C = std::vector<T> >
 
   /**
    * absolute value
-   * <your documentation>
+   * @param x Integer
+   * @return absolute value of x
    */
   friend Integer abs (Integer x) {
     return x.abs();}
@@ -434,7 +468,8 @@ template < typename T, typename C = std::vector<T> >
 
   /**
    * power
-   * <your documentation>
+   * @param x Integer
+   * @param e int 
    * @throws invalid_argument if ((x == 0) && (e == 0)) || (e < 0)
    */
   friend Integer pow (Integer x, int e) {
@@ -446,7 +481,8 @@ template < typename T, typename C = std::vector<T> >
   // ----
 
   C _x; // the backing container
-  T _i; // <your data>
+  T _i; // 
+  bool neg;
 
  private:
   // -----
@@ -454,9 +490,11 @@ template < typename T, typename C = std::vector<T> >
   // -----
 
   bool valid () const { // class invariant
-    //String str = _i;
-    //if (std::all_of(str.begin(), str.end(), ::isdigit){
-    //return true;}
+//    string str = to_string(_x);
+//    if (std::all_of(str.begin(), str.end(), ::isdigit)){
+ //   return true;}
+
+
     return true;}
 
  public:
@@ -468,7 +506,26 @@ template < typename T, typename C = std::vector<T> >
    * <your documentation>
    */
   Integer (int value) {
-    // _i = value;
+  if (value < 0){
+    neg = true;
+    value = 0 - value;
+  }
+  else{
+    neg = false;
+  }
+  int copyvalue = value;
+  int numdigits = 0;
+  while(copyvalue != 0){
+    copyvalue = copyvalue/10;
+    ++numdigits;
+  }
+  _x = C(numdigits);
+
+  while(value != 0){
+    _x[numdigits] = value%10;
+    value /= 10;
+    --numdigits;
+  }
     assert(valid());}
 
   /**
@@ -476,9 +533,30 @@ template < typename T, typename C = std::vector<T> >
    * @throws invalid_argument if value is not a valid representation of an Integer
    */
   explicit Integer (const std::string& value) {
-    //_i = atoi(value);
-    if (!valid())
-      throw std::invalid_argument("Integer::Integer()");}
+      if (!valid())
+      throw std::invalid_argument("Integer::Integer()");
+    int numdigits = 0;
+    if(value[0] == '-'){
+      neg = true;
+    for(string::const_iterator it = (value).begin()+1; it != (value).end(); ++it){
+      while(numdigits != value.length()-1){
+        _x[numdigits] = (*it-'0');
+        ++numdigits;
+      }
+
+    }
+  }
+    else{
+      neg = false;
+      _x = C(value.length());
+    for(string::const_iterator it = (value).begin(); it != (value).end(); ++it){
+      while(numdigits != value.length()){
+        _x[numdigits] = (*it-'0');
+        ++numdigits;
+      }
+    }
+
+}}
 
   // Default copy, destructor, and copy assignment.
   // Integer (const Integer&);
@@ -493,8 +571,9 @@ template < typename T, typename C = std::vector<T> >
    * <your documentation>
    */
   Integer operator - () const {
-    // <your code>
-    return Integer(0);}
+    cout << *(_x.begin());
+    Integer i = 0-*this;
+    return i;}
 
   // -----------
   // operator ++
@@ -542,7 +621,8 @@ template < typename T, typename C = std::vector<T> >
    * <your documentation>
    */
   Integer& operator += (const Integer& rhs) {
-    // <your code>
+        // <your code>
+    *this =*this + &rhs;
     return *this;}
 
   // -----------
@@ -553,7 +633,8 @@ template < typename T, typename C = std::vector<T> >
    * <your documentation>
    */
   Integer& operator -= (const Integer& rhs) {
-    // <your code>
+        // <your code>
+    //*this = *this - &rhs;
     return *this;}
 
   // -----------
@@ -564,8 +645,9 @@ template < typename T, typename C = std::vector<T> >
    * <your documentation>
    */
   Integer& operator *= (const Integer& rhs) {
-    // <your code>
-    return *this;}
+        // <your code>
+      Integer  i = *this * &rhs;
+    return i;}
 
   // -----------
   // operator /=
@@ -576,7 +658,11 @@ template < typename T, typename C = std::vector<T> >
    * @throws invalid_argument if (rhs == 0)
    */
   Integer& operator /= (const Integer& rhs) {
-    // <your code>
+        // <your code>
+    if(rhs == 0){
+      throw std::invalid_argument("Integer::Integer()");
+    }
+  //   *this = *this / &rhs;
     return *this;}
 
   // -----------
@@ -589,6 +675,7 @@ template < typename T, typename C = std::vector<T> >
    */
   Integer& operator %= (const Integer& rhs) {
     // <your code>
+ //    *this = *this % &rhs;
     return *this;}
 
   // ------------
@@ -635,7 +722,13 @@ template < typename T, typename C = std::vector<T> >
    * @throws invalid_argument if ((this == 0) && (e == 0)) or (e < 0)
    */
   Integer& pow (int e) {
-    // <your code>
+    // your code
+    if( (*this == 0) && (e == 0) ){
+      throw std::invalid_argument("Integer::Integer()");
+    }
+    if (e < 0) {
+      throw std::invalid_argument("Integer::Integer()");
+    }
     return *this;}};
 
 #endif // Integer_h
