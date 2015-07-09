@@ -202,6 +202,7 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
   II1 e1copy = e1;
   vector<int> toptotal = {0};
   vector<int> bottomtotal = {0};
+  vector<int> finalx = {0};
   if(length1 >= length2){
  /*  while(b2!=e2){
       topshift = 0;
@@ -261,7 +262,13 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
         --e1copy;
         ++topshift;
       }
-x = plus_digits(toptotal.begin(), toptotal.end(), bottomtotal.begin(), bottomtotal.end(), x);
+      if(distance(toptotal.begin(), toptotal.end())>distance(bottomtotal.begin(), bottomtotal.end())){
+        finalx.resize(distance(toptotal.begin(),toptotal.end()) + 1);
+      }
+      else{
+        finalx.resize(distance(bottomtotal.begin(),bottomtotal.end()) + 1);
+      }
+      plus_digits(toptotal.begin(), toptotal.end(), bottomtotal.begin(), bottomtotal.end(), finalx.begin());
 	/*cout << "this is the running total in the outer loop: " << endl;
 	II1 obeg = total.begin();
 	II1 oend = total.end();
@@ -300,7 +307,19 @@ x = plus_digits(toptotal.begin(), toptotal.end(), bottomtotal.begin(), bottomtot
 
  
     }}*/
-
+      cout << "this is what is in the finalx " << endl;
+      II1 beg = finalx.begin();
+      II1 end = finalx.end();
+      while(beg != end){
+        cout << *beg << endl;
+        ++beg;
+      }
+      II1 zeroes = finalx.begin();
+      int count = 0;
+      while(*zeroes == 0 && zeroes != finalx.end()){
+        ++count;
+      }
+      copy(finalx.begin()+count; finalx.end(), x);
   return x;}
 
 
