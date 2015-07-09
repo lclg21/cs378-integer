@@ -212,8 +212,8 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
           temp /= 10;
 	       --i;
         }
-        vector<int> topshiftedproduct(1);
-        vector<int> bottomshiftedproduct(1);
+        vector<int> topshiftedproduct(2+topshift);
+        vector<int> bottomshiftedproduct(dist(topshiftedproduct.begin(),topshiftedproduct,end()) + bottomshift);
         vector<int> runningtotal(1);
         shift_left_digits(producttosum.begin(), producttosum.end(), topshift, topshiftedproduct.begin());
         II1 beg = topshiftedproduct.begin();
