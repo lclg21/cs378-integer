@@ -194,31 +194,8 @@ FI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
  * ([b1, e1) * [b2, e2)) => x
  */
 template <typename II1, typename II2, typename FI>
-FI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) { return x;}
-  /*int len1 = distance(b1, e1);
-  int len2 = distance(b2, e2);
-  
-  if (len1 > len2){
+FI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) { return x;}0
 
-
-    for (int i = 0; i <= [?]; ++i){
-      x =  plus_digits(b1, e1, b1, e1, x);
-
-    }
-  }
-}
-  for(){
-    x = plus_digits(b1,e1,b1,e1,x);
-  }
-  vector<int> myvect(distance(b1,e1));
-  while(b1 != e1){
-    myvect.push_back(*b1);
-    ++b1;
-  }
-
-    x = plus_digits(b1,e1,b1,e1,x);
-
-  }*/
 
 
 // --------------
@@ -603,32 +580,7 @@ template < typename T, typename C = std::vector<T> >
    */
   Integer (int value) {
   str v = to_string(value);
-  Integer(v);/*
-  if (value < 0){
-    neg = true;
-    value = 0 - value;
-  }
-  else if(value == 0){
-    neg = false;
-    _x = C(1);
-    _x.push_back(0);
-    return;
-  }
-  else{
-    neg = false;
-  }
-  int copyvalue = value;
-  int numdigits = 0;
-  while(copyvalue != 0){
-    copyvalue = copyvalue/10;
-    ++numdigits;
-    }
-  _x = C(numdigits);
-  while(value != 0){
-    _x[numdigits] = value%10;
-    value /= 10;
-    --numdigits;
-  }*/
+  Integer(v);
     assert(valid());}
 
   /**
