@@ -579,8 +579,8 @@ template < typename T, typename C = std::vector<T> >
    * <your documentation>
    */
   Integer (int value) {
-  str v = to_string(value);
-  Integer(v);
+  const string v = to_string(value);
+  Integer<int> y(v);
     assert(valid());}
 
   /**
