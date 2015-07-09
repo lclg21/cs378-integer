@@ -579,8 +579,32 @@ template < typename T, typename C = std::vector<T> >
    * <your documentation>
    */
   Integer (int value) {
-  const string v = to_string(value);
-  Integer<int> y(v);
+  
+  if (value < 0){
+    neg = true;
+    value = -value;
+  }
+  else if(value == 0){
+    neg = false;
+    _x = C(1);
+    _x.push_back(0);
+    return;
+  }
+  else{
+    neg = false;
+  }
+  int copyvalue = value;
+  int numdigits = 0;
+  while(copyvalue != 0){
+    copyvalue = copyvalue/10;
+    ++numdigits;
+    }
+  _x = C(numdigits);
+  while(value != 0){
+    _x[numdigits-1] = value%10;
+    value /= 10;
+    --numdigits;
+  }
     assert(valid());}
 
   /**
