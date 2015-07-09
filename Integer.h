@@ -200,14 +200,15 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
   int topshift = 0;
   int bottomshift=0;
   II1 e1copy = e1;
-  vector<int> total = {0};
+  vector<int> toptotal = {0};
+  vector<int> bottomtotal = {0};
   if(length1 >= length2){
  /*  while(b2!=e2){
       topshift = 0;
       e1copy = e1;*/
       while(b1 != e1copy){
         int temp = *(e2-1) * *(e1copy-1);
-        cout << "this is temp " << temp << endl;
+
 	     vector<int> producttosum(2);
 	     int i = 2;
         while(i != 0){
@@ -215,34 +216,53 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
           temp /= 10;
 	       --i;
         }
-	cout << "this is what is in product sum " << producttosum[0] << " " << producttosum[1] << endl;
-	cout << "top shift amount should be zero and is " << topshift << endl;
 
         vector<int> topshiftedproduct(2+topshift);
         vector<int> bottomshiftedproduct(distance(topshiftedproduct.begin(),topshiftedproduct.end()) + bottomshift);
-        vector<int> runningtotal(total.size() + 1);
+        vector<int> runningtotal(toptotal.size() + 1);
         
-	cout << "size of topshiftproduct should be 2 and is " << topshiftedproduct.size() << endl;
 
       	shift_left_digits(producttosum.begin(), producttosum.end(), topshift, topshiftedproduct.begin());
 
 
         shift_left_digits(topshiftedproduct.begin(), topshiftedproduct.end(), bottomshift, bottomshiftedproduct.begin());
 
-        plus_digits(total.begin(), total.end(), bottomshiftedproduct.begin(), bottomshiftedproduct.end(), runningtotal.begin());
-        total.resize(runningtotal.size());
-	      copy(runningtotal.begin(), runningtotal.end(), total.begin());
+        plus_digits(toptotal.begin(), toptotal.end(), bottomshiftedproduct.begin(), bottomshiftedproduct.end(), runningtotal.begin());
+        toptotal.resize(runningtotal.size());
+	      copy(runningtotal.begin(), runningtotal.end(), toptotal.begin());
         --e1copy;
         ++topshift;
-	cout << "this is the running total in the inner loop: " << endl;
-	II1 ibeg = total.begin();
-	II1 iend = total.end();
-	while(ibeg != iend){
-	cout << *ibeg << endl;
-	++ibeg;
-      }}
+      }
+      --e2;
+      topshift = 0;
+      e1copy = e1;
+      while(b1 != e1copy){
+        ++bottomshift;
+        int temp = *(e2-1) * *(e1copy-1);
+        int temp2 = temp;
+        vector<int> producttosum(2);
+        int i = 2;
+        while(i != 0){
+         producttosum[i-1]=temp%10;
+          temp /= 10;
+         --i;
+        }
+        vector<int> topshiftedproduct(2+topshift);
+        vector<int> runningtotal(bottomtotal.size() + 1);
+        shift_left_digits(producttosum.begin(), producttosum.end(), topshift, topshiftedproduct.begin());
+        if(*(topshiftedproduct.end()-1) == 0 && temp2<10){
+          topshiftedproduct.pop_back();
+        }
+        vector<int> bottomshiftedproduct(distance(topshiftedproduct.begin(),topshiftedproduct.end()) + bottomshift);
+        shift_left_digits(topshiftedproduct.begin(), topshiftedproduct.end(), bottomshift, bottomshiftedproduct.begin());
+        plus_digits(bottomtotal.begin(), bottomtotal.end(), bottomshiftedproduct.begin(), bottomshiftedproduct.end(), runningtotal.begin());
+        bottomtotal.resize(runningtotal.size());
+        copy(runningtotal.begin(), runningtotal.end(), bottomtotal.begin());
+        --e1copy;
+        ++topshift;
+      }
 
-
+x = plus_digits(toptotal.begin(), toptotal.end(), bottomtotal.begin(), bottomtotal.end(), x);
 	/*cout << "this is the running total in the outer loop: " << endl;
 	II1 obeg = total.begin();
 	II1 oend = total.end();
@@ -254,7 +274,7 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
       ++bottomshift;
     }*/
   }
-  else{
+  /*else{
     while(b1!=e1){
       while(b2 != e2){
         int temp = *(e2-1) * *(e1-1);
@@ -272,44 +292,29 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
   shift_left_digits(topshiftedproduct.begin(), topshiftedproduct.end(), bottomshift, bottomshiftedproduct.begin());
   plus_digits(total.begin(), total.end(), bottomshiftedproduct.begin(), bottomshiftedproduct.end(), runningtotal.begin());
   copy(runningtotal.begin(), runningtotal.end(), total.begin());
-cout << "i reach the part after copy" << endl;      
   --e2;
         ++bottomshift;
-   cout << "this is the running total in the inner loop : " << endl;  
-  II1 ibeg = total.begin();
-  II2 iend = total.end();
-  while(ibeg != iend){
-    cout<< *ibeg << endl;
-    ++ibeg;
-  }
 
  }
       --e1;
       ++topshift;
-	cout<< "this is the running total of the outer loop: " <<endl;
 
-  II1 obeg = total.begin();
-  II2 oend = total.end();
-  while(obeg != oend){
-    cout<< *obeg << endl;
-    ++obeg;
-  }
-    }}
- int count = 0;
- II1 countzeroes = total.begin();
-while(*countzeroes == 0){
-++count;
-++countzeroes;
-}
-  II1 beg = total.begin()+count;
-  II2 end = total.end();
-  while(beg != end){
-    cout<< *beg << endl;
-    ++beg;
-  }
-  cout<< "thats what was in total at the end" << endl;
-  x = copy(total.begin()+count, total.end(), x);
-  return x;}
+ 
+    }}*/
+    II1 frontzeros = x.begin();
+    int count = 0;
+    while(*frontzeros == 0){
+      ++count;
+    }
+
+    II1 beg = x.begin();
+    II1 end = x.end():
+    cout << "this is what is in x to return : " << endl;
+    while(beg != end){
+      cout<< *beg << endl;
+      ++beg;
+    }
+  return x+count;}
 
 
 
