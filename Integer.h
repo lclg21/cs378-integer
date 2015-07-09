@@ -207,7 +207,7 @@ FI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) { return x;}
     }
   }
 }
-  /*for(){
+  for(){
     x = plus_digits(b1,e1,b1,e1,x);
   }
   vector<int> myvect(distance(b1,e1));
