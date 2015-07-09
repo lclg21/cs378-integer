@@ -216,58 +216,55 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
         vector<int> bottomshiftedproduct(1);
         vector<int> runningtotal(1);
         shift_left_digits(producttosum.begin(), producttosum.end(), topshift, topshiftedproduct.begin());
-	shift_left_digits(topshiftedproduct.begin(), topshiftedproduct.end(), bottomshift, bottomshiftedproduct.begin());
-	plus_digits(total.begin(), total.end(), bottomshiftedproduct.begin(), bottomshiftedproduct.end(), runningtotal.begin());
+        II1 beg = topshiftedproduct.begin();
+        II2 end = topshiftedproduct.end();
+        while(beg != end){
+          cout << *beg << endl;
+          ++beg;
+        }
+        cout << "that was the end of the first left shift" << endl;
+        shift_left_digits(topshiftedproduct.begin(), topshiftedproduct.end(), bottomshift, bottomshiftedproduct.begin());
+	              II1 beg2 = bottomshiftedproduct.begin();
+        II2 end2 = bottomshiftedproduct.end();
+        while(beg2 != end2){
+          cout << *beg2 << endl;
+          ++beg2;
+        }
+        cout << "that was the end of the second left shift" << endl; 
+        plus_digits(total.begin(), total.end(), bottomshiftedproduct.begin(), bottomshiftedproduct.end(), runningtotal.begin());
 	copy(runningtotal.begin(), runningtotal.end(), total.begin());
         --e1;
         ++topshift;
-
-	II1 rtb = runningtotal.begin();
-	II1 rte = runningtotal.end();
-	while(rtb != rte){
-	cout << "running total has in it " << *rtb << endl;
-	++rtb;
-      }}
+      }
       --e2;
       ++bottomshift;
     }
   }
   else{
-  while(b1!=e1){
+    while(b1!=e1){
       while(b2 != e2){
         int temp = *(e2-1) * *(e1-1);
         vector<int> producttosum(2);
-        int i = 2;
+       int i = 2;
         while(i != 0){
-          producttosum[i-1]=temp%10;
+         producttosum[i-1]=temp%10;
           temp /= 10;
-          --i;
+         --i;
         }
         vector<int> topshiftedproduct(1);
         vector<int> bottomshiftedproduct(1);
         vector<int> runningtotal(1);
         shift_left_digits(producttosum.begin(), producttosum.end(), topshift, topshiftedproduct.begin());
-        shift_left_digits(topshiftedproduct.begin(), topshiftedproduct.end(), bottomshift, bottomshiftedproduct.begin());
-        plus_digits(total.begin(), total.end(), bottomshiftedproduct.begin(), bottomshiftedproduct.end(), runningtotal.begin());
-        copy(runningtotal.begin(), runningtotal.end(), total.begin());
+  shift_left_digits(topshiftedproduct.begin(), topshiftedproduct.end(), bottomshift, bottomshiftedproduct.begin());
+  plus_digits(total.begin(), total.end(), bottomshiftedproduct.begin(), bottomshiftedproduct.end(), runningtotal.begin());
+  copy(runningtotal.begin(), runningtotal.end(), total.begin());
         --e2;
         ++bottomshift;
-	II1 rtb = runningtotal.begin();
-	II1 rte = runningtotal.end();
-	while(rtb != rte){
-	cout << "running total has in it " << *rtb << endl;
-	++rtb;
       }
-cout<< "that was one full running total " << endl;}
       --e1;
       ++topshift;
     }
   }
-  II1 beginningofx = total.begin();
-  II1 endofx = total.end();
-  while(beginningofx != endofx){
-    cout<< *beginningofx << endl; 
-	++beginningofx; }
   x = copy(total.begin(), total.end(), x);
   return x;}
 
