@@ -364,7 +364,7 @@ TEST(Integer, equal_to5) {
 
 TEST(Integer, equal_to6) {
   const Integer<int> x("1");
-  const Integer<int> y("1");
+  const Integer<int> y = 1;
   ASSERT_TRUE(x == y);
   ASSERT_FALSE(x != y);}
 
@@ -451,6 +451,11 @@ TEST(Integer, less_than12) {
   const Integer<int> x = -2000000000;
   const Integer<int> y = -100;
   ASSERT_TRUE(x < y);}
+
+TEST(Integer, less_than13) {
+  const Integer<int> x = -2000000000;
+  const Integer<int> y("-100");
+  ASSERT_TRUE(x < y);}
 //-----------
 // operator -
 //-----------
@@ -480,6 +485,12 @@ TEST(Integer, negation4) {
     ASSERT_EQ(a, r);
 }
 
+TEST(Integer, negation5) {
+    Integer<int> a("10");
+    Integer<int> r = -10;
+    a = -a; 
+    ASSERT_EQ(a, r);
+}
 //-----------
 // abs
 //-----------
@@ -544,6 +555,12 @@ TEST(Integer, ostream5) {
     w << n << endl;
     ASSERT_EQ("-215204524605487065486704654864703543720647867086786745346540231523745312300000\n", w.str());}
 
+TEST(Integer, ostream6) {
+    ostringstream w;
+    Integer<int> n = 154321;
+    w << n << endl;
+    ASSERT_EQ("154321\n", w.str());
+}
 TEST(Integer, left_shift_equals) {
     Integer<int> a("1");
     int n = 3;
@@ -565,6 +582,20 @@ TEST(Integer, left_shift_equals3) {
     int n = -45;
     a <<= n;
     Integer<int> b("88");
+    ASSERT_EQ(b, a);}
+
+TEST(Integer, left_shift_equals4) {
+    Integer<int> a("88888888888888888888888888888888888888888888888");
+    int n = -45;
+    a <<= n;
+    Integer<int> b = 88;
+    ASSERT_EQ(b, a);}
+
+TEST(Integer, left_shift_equals5) {
+    Integer<int> a = 141540;
+    int n = 50;
+    a <<= n;
+    Integer<int> b("14154000000000000000000000000000000000000000000000000000");
     ASSERT_EQ(b, a);}
 
 TEST(Integer, right_shift_equals) {
@@ -590,3 +621,22 @@ TEST(Integer, right_shift_equals3) {
     Integer<int> b("14545513000");
     ASSERT_EQ(b, a);
 }
+
+TEST(Integer, right_shift_equals4) {
+    Integer<int> a = 1000;
+    int n = 3;
+    a >>= n;
+    Integer<int> b = 1;
+    ASSERT_EQ(b, a);
+}
+
+
+TEST(Integer, right_shift_equals5) {
+    Integer<int> a = 1000;
+    int n = 3;
+    a >>= n;
+    Integer<int> b("1");
+    ASSERT_EQ(b, a);
+}
+
+

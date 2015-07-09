@@ -1,14 +1,14 @@
-==6064== Memcheck, a memory error detector
-==6064== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
-==6064== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
-==6064== Command: ./TestInteger
-==6064== 
+==6636== Memcheck, a memory error detector
+==6636== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==6636== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==6636== Command: ./TestInteger
+==6636== 
 Running main() from gtest_main.cc
-[==========] Running 68 tests from 1 test case.
+[==========] Running 75 tests from 1 test case.
 [----------] Global test environment set-up.
-[----------] 68 tests from Integer
+[----------] 75 tests from Integer
 [ RUN      ] Integer.shift_left_digits
-[       OK ] Integer.shift_left_digits (35 ms)
+[       OK ] Integer.shift_left_digits (34 ms)
 [ RUN      ] Integer.shift_left_digits2
 [       OK ] Integer.shift_left_digits2 (9 ms)
 [ RUN      ] Integer.shift_left_digits3
@@ -16,275 +16,275 @@ Running main() from gtest_main.cc
 [ RUN      ] Integer.shift_left_digits4
 [       OK ] Integer.shift_left_digits4 (5 ms)
 [ RUN      ] Integer.shift_right_digits
-[       OK ] Integer.shift_right_digits (5 ms)
+[       OK ] Integer.shift_right_digits (6 ms)
 [ RUN      ] Integer.shift_right_digits2
 [       OK ] Integer.shift_right_digits2 (5 ms)
 [ RUN      ] Integer.shift_right_digits3
-[       OK ] Integer.shift_right_digits3 (4 ms)
+[       OK ] Integer.shift_right_digits3 (5 ms)
 [ RUN      ] Integer.shift_right_digits4
-[       OK ] Integer.shift_right_digits4 (4 ms)
+[       OK ] Integer.shift_right_digits4 (5 ms)
 [ RUN      ] Integer.plus_digits
-==6064== Invalid write of size 4
-==6064==    at 0x42D1D9: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x409377: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==  Address 0x5c5c948 is 0 bytes after a block of size 24 alloc'd
-==6064==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6064==    by 0x4345EB: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x432948: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x432A48: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4308FA: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42C5A1: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x409280: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Invalid read of size 2
-==6064==    at 0x4C2F647: memcpy@GLIBC_2.2.5 (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6064==    by 0x4363C6: int* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<int>(int const*, int const*, int*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x434722: int* std::__copy_move_a<false, int*, int*>(int*, int*, int*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x432BAE: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x430A78: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::copy<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42C6F6: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > shift_left_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42D606: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x409377: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==  Address 0x5c5c948 is 0 bytes after a block of size 24 alloc'd
-==6064==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6064==    by 0x4345EB: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x432948: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x432A48: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4308FA: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42C5A1: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x409280: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Invalid write of size 4
-==6064==    at 0x432C2F: __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a<int*, int>(int*, int*, int const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x430B6C: void std::fill<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42C757: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > shift_left_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42D606: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x409377: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==  Address 0x5c5c948 is 0 bytes after a block of size 24 alloc'd
-==6064==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6064==    by 0x4345EB: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x432948: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x432A48: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4308FA: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42C5A1: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x409280: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
+==6636== Invalid write of size 4
+==6636==    at 0x42F5DD: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x4090C7: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x465E52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x45886C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458903: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458A04: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458C7C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458F5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x404F3F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==  Address 0x5c5e698 is 0 bytes after a block of size 24 alloc'd
+==6636==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6636==    by 0x436B09: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x434ED6: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x434FD6: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x432EBE: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x42E9A5: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x408FD0: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x465E52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x45886C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458903: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458A04: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458C7C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636== 
+==6636== Invalid read of size 2
+==6636==    at 0x4C2F647: memcpy@GLIBC_2.2.5 (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6636==    by 0x43858E: int* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<int>(int const*, int const*, int*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x436C40: int* std::__copy_move_a<false, int*, int*>(int*, int*, int*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x43513C: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x43303C: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::copy<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x42EAFA: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > shift_left_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x42FA0A: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x4090C7: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x465E52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x45886C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458903: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458A04: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==  Address 0x5c5e698 is 0 bytes after a block of size 24 alloc'd
+==6636==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6636==    by 0x436B09: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x434ED6: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x434FD6: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x432EBE: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x42E9A5: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x408FD0: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x465E52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x45886C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458903: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458A04: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458C7C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636== 
+==6636== Invalid write of size 4
+==6636==    at 0x4351BD: __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a<int*, int>(int*, int*, int const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x433130: void std::fill<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x42EB5B: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > shift_left_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x42FA0A: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x4090C7: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x465E52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x45886C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458903: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458A04: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458C7C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458F5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x404F3F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==  Address 0x5c5e698 is 0 bytes after a block of size 24 alloc'd
+==6636==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6636==    by 0x436B09: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x434ED6: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x434FD6: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x432EBE: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x42E9A5: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x408FD0: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x465E52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x45886C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458903: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458A04: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458C7C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636== 
 [       OK ] Integer.plus_digits (12 ms)
 [ RUN      ] Integer.plus_digits2
-==6064== Invalid write of size 4
-==6064==    at 0x42D1D9: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x409C95: Integer_plus_digits2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==  Address 0x5c5d24c is 0 bytes after a block of size 12 alloc'd
-==6064==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6064==    by 0x4345EB: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x432948: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x432A48: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4308FA: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42C5A1: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x409B9E: Integer_plus_digits2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Invalid read of size 2
-==6064==    at 0x4C2F638: memcpy@GLIBC_2.2.5 (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6064==    by 0x4363C6: int* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<int>(int const*, int const*, int*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x434722: int* std::__copy_move_a<false, int*, int*>(int*, int*, int*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x432BAE: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x430A78: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::copy<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42C6F6: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > shift_left_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42D606: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x409C95: Integer_plus_digits2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==  Address 0x5c5d24e is 2 bytes after a block of size 12 alloc'd
-==6064==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6064==    by 0x4345EB: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x432948: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x432A48: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4308FA: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42C5A1: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x409B9E: Integer_plus_digits2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
+==6636== Invalid write of size 4
+==6636==    at 0x42F5DD: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x4099E5: Integer_plus_digits2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x465E52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x45886C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458903: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458A04: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458C7C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458F5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x404F3F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==  Address 0x5c5ef9c is 0 bytes after a block of size 12 alloc'd
+==6636==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6636==    by 0x436B09: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x434ED6: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x434FD6: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x432EBE: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x42E9A5: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x4098EE: Integer_plus_digits2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x465E52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x45886C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458903: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458A04: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458C7C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636== 
+==6636== Invalid read of size 2
+==6636==    at 0x4C2F638: memcpy@GLIBC_2.2.5 (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6636==    by 0x43858E: int* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<int>(int const*, int const*, int*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x436C40: int* std::__copy_move_a<false, int*, int*>(int*, int*, int*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x43513C: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x43303C: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::copy<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x42EAFA: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > shift_left_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x42FA0A: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x4099E5: Integer_plus_digits2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x465E52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x45886C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458903: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458A04: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==  Address 0x5c5ef9e is 2 bytes after a block of size 12 alloc'd
+==6636==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6636==    by 0x436B09: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x434ED6: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x434FD6: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x432EBE: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x42E9A5: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x4098EE: Integer_plus_digits2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x465E52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x45886C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458903: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458A04: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458C7C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636== 
 [       OK ] Integer.plus_digits2 (6 ms)
 [ RUN      ] Integer.plus_digits3
-==6064== Invalid write of size 4
-==6064==    at 0x42D1D9: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x40A5B3: Integer_plus_digits3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==  Address 0x5c5da2c is 0 bytes after a block of size 12 alloc'd
-==6064==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6064==    by 0x4345EB: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x432948: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x432A48: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4308FA: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42C5A1: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x40A4BC: Integer_plus_digits3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-[       OK ] Integer.plus_digits3 (8 ms)
+==6636== Invalid write of size 4
+==6636==    at 0x42F5DD: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x40A303: Integer_plus_digits3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x465E52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x45886C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458903: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458A04: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458C7C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458F5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x404F3F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==  Address 0x5c5f77c is 0 bytes after a block of size 12 alloc'd
+==6636==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6636==    by 0x436B09: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x434ED6: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x434FD6: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x432EBE: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x42E9A5: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x40A20C: Integer_plus_digits3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x465E52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x45886C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458903: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458A04: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458C7C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636== 
+[       OK ] Integer.plus_digits3 (7 ms)
 [ RUN      ] Integer.plus_digits4
-==6064== Invalid write of size 4
-==6064==    at 0x42D1D9: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x40AED1: Integer_plus_digits4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==  Address 0x5c5e20c is 0 bytes after a block of size 12 alloc'd
-==6064==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6064==    by 0x4345EB: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x432948: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x432A48: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4308FA: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42C5A1: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x40ADDA: Integer_plus_digits4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
+==6636== Invalid write of size 4
+==6636==    at 0x42F5DD: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x40AC21: Integer_plus_digits4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x465E52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x45886C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458903: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458A04: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458C7C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458F5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x404F3F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==  Address 0x5c5ff5c is 0 bytes after a block of size 12 alloc'd
+==6636==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6636==    by 0x436B09: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x434ED6: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x434FD6: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x432EBE: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x42E9A5: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x40AB2A: Integer_plus_digits4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x465E52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x45886C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458903: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458A04: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458C7C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636== 
 [       OK ] Integer.plus_digits4 (7 ms)
 [ RUN      ] Integer.plus_digits5
-==6064== Invalid write of size 4
-==6064==    at 0x42D1D9: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x40B869: Integer_plus_digits5_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==  Address 0x5c5e9fc is 0 bytes after a block of size 12 alloc'd
-==6064==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6064==    by 0x4345EB: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x432948: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x432A48: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4308FA: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42C5A1: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x40B6F8: Integer_plus_digits5_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-[       OK ] Integer.plus_digits5 (6 ms)
+==6636== Invalid write of size 4
+==6636==    at 0x42F5DD: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x40B5B9: Integer_plus_digits5_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x465E52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x45886C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458903: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458A04: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458C7C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458F5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x404F3F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==  Address 0x5c6074c is 0 bytes after a block of size 12 alloc'd
+==6636==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6636==    by 0x436B09: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x434ED6: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x434FD6: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x432EBE: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x42E9A5: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x40B448: Integer_plus_digits5_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x465E52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x45886C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458903: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458A04: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458C7C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636== 
+[       OK ] Integer.plus_digits5 (7 ms)
 [ RUN      ] Integer.plus_digits6
-==6064== Invalid write of size 4
-==6064==    at 0x42D1D9: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x40C26A: Integer_plus_digits6_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==  Address 0x5c5f1fc is 0 bytes after a block of size 12 alloc'd
-==6064==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6064==    by 0x4345EB: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x432948: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x432A48: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4308FA: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42C5A1: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x40C0BC: Integer_plus_digits6_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-[       OK ] Integer.plus_digits6 (7 ms)
+==6636== Invalid write of size 4
+==6636==    at 0x42F5DD: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x40BFBA: Integer_plus_digits6_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x465E52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x45886C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458903: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458A04: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458C7C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458F5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x404F3F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==  Address 0x5c60f4c is 0 bytes after a block of size 12 alloc'd
+==6636==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6636==    by 0x436B09: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x434ED6: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x434FD6: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x432EBE: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x42E9A5: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x40BE0C: Integer_plus_digits6_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x465E52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x45886C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458903: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458A04: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458C7C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636== 
+[       OK ] Integer.plus_digits6 (6 ms)
 [ RUN      ] Integer.plus_digits7
-==6064== Invalid write of size 4
-==6064==    at 0x42D1D9: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x40CC04: Integer_plus_digits7_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==  Address 0x5c5fc70 is 0 bytes after a block of size 336 alloc'd
-==6064==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6064==    by 0x4345EB: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x432948: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x432A48: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4308FA: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42C5A1: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x40CAD0: Integer_plus_digits7_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
+==6636== Invalid write of size 4
+==6636==    at 0x42F5DD: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x40C954: Integer_plus_digits7_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x465E52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x45886C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458903: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458A04: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458C7C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458F5D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x404F3F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==  Address 0x5c619c0 is 0 bytes after a block of size 336 alloc'd
+==6636==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6636==    by 0x436B09: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x434ED6: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x434FD6: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x432EBE: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x42E9A5: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x40C820: Integer_plus_digits7_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x465E52: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x45886C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458903: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458A04: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636==    by 0x458C7C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==6636== 
 [       OK ] Integer.plus_digits7 (7 ms)
 [ RUN      ] Integer.plus_digits8
 [       OK ] Integer.plus_digits8 (6 ms)
@@ -293,11 +293,11 @@ Running main() from gtest_main.cc
 [ RUN      ] Integer.minus_digits2
 [       OK ] Integer.minus_digits2 (6 ms)
 [ RUN      ] Integer.minus_digits3
-[       OK ] Integer.minus_digits3 (5 ms)
+[       OK ] Integer.minus_digits3 (6 ms)
 [ RUN      ] Integer.minus_digits4
-[       OK ] Integer.minus_digits4 (5 ms)
+[       OK ] Integer.minus_digits4 (6 ms)
 [ RUN      ] Integer.minus_digits5
-[       OK ] Integer.minus_digits5 (7 ms)
+[       OK ] Integer.minus_digits5 (6 ms)
 [ RUN      ] Integer.minus_digits6
 [       OK ] Integer.minus_digits6 (6 ms)
 [ RUN      ] Integer.divides_digits
@@ -307,188 +307,23 @@ Running main() from gtest_main.cc
 [ RUN      ] Integer.divides_digits3
 [       OK ] Integer.divides_digits3 (6 ms)
 [ RUN      ] Integer.divides_digits4
-[       OK ] Integer.divides_digits4 (5 ms)
+[       OK ] Integer.divides_digits4 (6 ms)
 [ RUN      ] Integer.divides_digits5
-[       OK ] Integer.divides_digits5 (7 ms)
+[       OK ] Integer.divides_digits5 (6 ms)
 [ RUN      ] Integer.divides_digits6
 [       OK ] Integer.divides_digits6 (6 ms)
 [ RUN      ] Integer.equal_to
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x414D09: Integer_equal_to_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-TestInteger.c++:327: Failure
-Value of: x == y
-  Actual: false
-Expected: true
-[  FAILED  ] Integer.equal_to (40 ms)
+[       OK ] Integer.equal_to (16 ms)
 [ RUN      ] Integer.equal_to2
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x415B5F: Integer_equal_to2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-TestInteger.c++:336: Failure
-Value of: x == y
-  Actual: false
-Expected: true
-[  FAILED  ] Integer.equal_to2 (5 ms)
+[       OK ] Integer.equal_to2 (6 ms)
 [ RUN      ] Integer.equal_to3
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4169E3: Integer_equal_to3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x416C15: Integer_equal_to3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x416E65: Integer_equal_to3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42E5CC: operator!=(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x417074: Integer_equal_to3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-[       OK ] Integer.equal_to3 (6 ms)
+[       OK ] Integer.equal_to3 (5 ms)
 [ RUN      ] Integer.equal_to4
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41786F: Integer_equal_to4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x417AA1: Integer_equal_to4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x417CF1: Integer_equal_to4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42E5CC: operator!=(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x417F00: Integer_equal_to4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-[       OK ] Integer.equal_to4 (7 ms)
+[       OK ] Integer.equal_to4 (6 ms)
 [ RUN      ] Integer.equal_to5
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4186FB: Integer_equal_to5_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41892D: Integer_equal_to5_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x418B7D: Integer_equal_to5_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42E5CC: operator!=(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x418D8C: Integer_equal_to5_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
 [       OK ] Integer.equal_to5 (5 ms)
 [ RUN      ] Integer.equal_to6
-[       OK ] Integer.equal_to6 (5 ms)
+[       OK ] Integer.equal_to6 (15 ms)
 [ RUN      ] Integer.equal_to7
 [       OK ] Integer.equal_to7 (4 ms)
 [ RUN      ] Integer.equal_to8
@@ -496,575 +331,360 @@ Expected: true
 [ RUN      ] Integer.equal_to9
 [       OK ] Integer.equal_to9 (4 ms)
 [ RUN      ] Integer.less_than
-[       OK ] Integer.less_than (8 ms)
+[       OK ] Integer.less_than (9 ms)
 [ RUN      ] Integer.less_than2
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42EDBE: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41BFC9: Integer_less_than2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42EEB2: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41BFC9: Integer_less_than2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42EFA6: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41BFC9: Integer_less_than2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42F097: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41BFC9: Integer_less_than2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42F14F: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41BFC9: Integer_less_than2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42F1A5: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41BFC9: Integer_less_than2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-[       OK ] Integer.less_than2 (4 ms)
+[       OK ] Integer.less_than2 (5 ms)
 [ RUN      ] Integer.less_than3
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42EDBE: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41C41F: Integer_less_than3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42EEB2: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41C41F: Integer_less_than3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42EFA6: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41C41F: Integer_less_than3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42F097: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41C41F: Integer_less_than3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42F14F: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41C41F: Integer_less_than3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42F1A5: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41C41F: Integer_less_than3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
 [       OK ] Integer.less_than3 (3 ms)
 [ RUN      ] Integer.less_than4
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42EDBE: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41C875: Integer_less_than4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42EEB2: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41C875: Integer_less_than4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42EFA6: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41C875: Integer_less_than4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42F097: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41C875: Integer_less_than4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42F14F: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41C875: Integer_less_than4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42F1A5: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41C875: Integer_less_than4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-[       OK ] Integer.less_than4 (4 ms)
+[       OK ] Integer.less_than4 (3 ms)
 [ RUN      ] Integer.less_than5
 [       OK ] Integer.less_than5 (3 ms)
 [ RUN      ] Integer.less_than6
-[       OK ] Integer.less_than6 (3 ms)
+[       OK ] Integer.less_than6 (4 ms)
 [ RUN      ] Integer.less_than7
-[       OK ] Integer.less_than7 (3 ms)
+[       OK ] Integer.less_than7 (4 ms)
 [ RUN      ] Integer.less_than8
 [       OK ] Integer.less_than8 (3 ms)
 [ RUN      ] Integer.less_than9
-[       OK ] Integer.less_than9 (3 ms)
+[       OK ] Integer.less_than9 (4 ms)
 [ RUN      ] Integer.less_than10
 [       OK ] Integer.less_than10 (3 ms)
 [ RUN      ] Integer.less_than11
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42EDBE: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41F103: Integer_less_than11_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42EEB2: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41F103: Integer_less_than11_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42EFA6: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41F103: Integer_less_than11_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42F097: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41F103: Integer_less_than11_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42F14F: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41F103: Integer_less_than11_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42F1A5: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41F103: Integer_less_than11_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
 [       OK ] Integer.less_than11 (3 ms)
 [ RUN      ] Integer.less_than12
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42EDBE: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41F559: Integer_less_than12_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42EEB2: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41F559: Integer_less_than12_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42EFA6: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41F559: Integer_less_than12_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42F097: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41F559: Integer_less_than12_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42F14F: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41F559: Integer_less_than12_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42F1A5: operator<(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41F559: Integer_less_than12_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-TestInteger.c++:453: Failure
-Value of: x < y
-  Actual: false
-Expected: true
-[  FAILED  ] Integer.less_than12 (4 ms)
+[       OK ] Integer.less_than12 (3 ms)
+[ RUN      ] Integer.less_than13
+[       OK ] Integer.less_than13 (3 ms)
 [ RUN      ] Integer.negation
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42F9A2: Integer<int, std::vector<int, std::allocator<int> > >::operator-() const (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41F9AB: Integer_negation_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42FA60: Integer<int, std::vector<int, std::allocator<int> > >::operator-() const (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41F9AB: Integer_negation_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x431AC4: testing::AssertionResult testing::internal::CmpHelperEQ<Integer<int, std::vector<int, std::allocator<int> > >, Integer<int, std::vector<int, std::allocator<int> > > >(char const*, char const*, Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42FBFB: testing::AssertionResult testing::internal::EqHelper<false>::Compare<Integer<int, std::vector<int, std::allocator<int> > >, Integer<int, std::vector<int, std::allocator<int> > > >(char const*, char const*, Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x41FA24: Integer_negation_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42FCAA: operator<<(std::ostream&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x438B8E: void testing_internal::DefaultPrintNonContainerTo<Integer<int, std::vector<int, std::allocator<int> > > >(Integer<int, std::vector<int, std::allocator<int> > > const&, std::ostream*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x438987: void testing::internal::DefaultPrintTo<Integer<int, std::vector<int, std::allocator<int> > > >(char, testing::internal::bool_constant<false>, Integer<int, std::vector<int, std::allocator<int> > > const&, std::ostream*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4386F7: void testing::internal::PrintTo<Integer<int, std::vector<int, std::allocator<int> > > >(Integer<int, std::vector<int, std::allocator<int> > > const&, std::ostream*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x43845C: testing::internal::UniversalPrinter<Integer<int, std::vector<int, std::allocator<int> > > >::Print(Integer<int, std::vector<int, std::allocator<int> > > const&, std::ostream*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4381B8: void testing::internal::UniversalPrint<Integer<int, std::vector<int, std::allocator<int> > > >(Integer<int, std::vector<int, std::allocator<int> > > const&, std::ostream*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x437A2A: testing::internal::UniversalTersePrinter<Integer<int, std::vector<int, std::allocator<int> > > >::Print(Integer<int, std::vector<int, std::allocator<int> > > const&, std::ostream*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4370E6: std::string testing::PrintToString<Integer<int, std::vector<int, std::allocator<int> > > >(Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4359E4: testing::internal::FormatForComparison<Integer<int, std::vector<int, std::allocator<int> > >, Integer<int, std::vector<int, std::allocator<int> > > >::Format(Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x433C13: std::string testing::internal::FormatForComparisonFailureMessage<Integer<int, std::vector<int, std::allocator<int> > >, Integer<int, std::vector<int, std::allocator<int> > > >(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x431B26: testing::AssertionResult testing::internal::CmpHelperEQ<Integer<int, std::vector<int, std::allocator<int> > >, Integer<int, std::vector<int, std::allocator<int> > > >(char const*, char const*, Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42FBFB: testing::AssertionResult testing::internal::EqHelper<false>::Compare<Integer<int, std::vector<int, std::allocator<int> > >, Integer<int, std::vector<int, std::allocator<int> > > >(char const*, char const*, Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-TestInteger.c++:462: Failure
-Value of: r
-  Actual: -
-Expected: a
-Which is: 
-[  FAILED  ] Integer.negation (24 ms)
+[       OK ] Integer.negation (10 ms)
 [ RUN      ] Integer.negation2
-[       OK ] Integer.negation2 (4 ms)
+[       OK ] Integer.negation2 (3 ms)
 [ RUN      ] Integer.negation3
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42F9A2: Integer<int, std::vector<int, std::allocator<int> > >::operator-() const (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4203F1: Integer_negation3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42FA60: Integer<int, std::vector<int, std::allocator<int> > >::operator-() const (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4203F1: Integer_negation3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x431AC4: testing::AssertionResult testing::internal::CmpHelperEQ<Integer<int, std::vector<int, std::allocator<int> > >, Integer<int, std::vector<int, std::allocator<int> > > >(char const*, char const*, Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42FBFB: testing::AssertionResult testing::internal::EqHelper<false>::Compare<Integer<int, std::vector<int, std::allocator<int> > >, Integer<int, std::vector<int, std::allocator<int> > > >(char const*, char const*, Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42046A: Integer_negation3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-TestInteger.c++:474: Failure
-Value of: a
-  Actual: 
-Expected: r
-Which is: -
-[  FAILED  ] Integer.negation3 (4 ms)
+[       OK ] Integer.negation3 (3 ms)
 [ RUN      ] Integer.negation4
-[       OK ] Integer.negation4 (4 ms)
+[       OK ] Integer.negation4 (3 ms)
+[ RUN      ] Integer.negation5
+[       OK ] Integer.negation5 (4 ms)
 [ RUN      ] Integer.abs1
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x431AC4: testing::AssertionResult testing::internal::CmpHelperEQ<Integer<int, std::vector<int, std::allocator<int> > >, Integer<int, std::vector<int, std::allocator<int> > > >(char const*, char const*, Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42FBFB: testing::AssertionResult testing::internal::EqHelper<false>::Compare<Integer<int, std::vector<int, std::allocator<int> > >, Integer<int, std::vector<int, std::allocator<int> > > >(char const*, char const*, Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x420EFF: Integer_abs1_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-TestInteger.c++:491: Failure
-Value of: r
-  Actual: -
-Expected: a
-Which is: 
-[  FAILED  ] Integer.abs1 (5 ms)
+[       OK ] Integer.abs1 (3 ms)
 [ RUN      ] Integer.abs2
-[       OK ] Integer.abs2 (3 ms)
+[       OK ] Integer.abs2 (4 ms)
 [ RUN      ] Integer.abs3
-==6064== Conditional jump or move depends on uninitialised value(s)
-==6064==    at 0x42E357: operator==(Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x431AC4: testing::AssertionResult testing::internal::CmpHelperEQ<Integer<int, std::vector<int, std::allocator<int> > >, Integer<int, std::vector<int, std::allocator<int> > > >(char const*, char const*, Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x42FBFB: testing::AssertionResult testing::internal::EqHelper<false>::Compare<Integer<int, std::vector<int, std::allocator<int> > >, Integer<int, std::vector<int, std::allocator<int> > > >(char const*, char const*, Integer<int, std::vector<int, std::allocator<int> > > const&, Integer<int, std::vector<int, std::allocator<int> > > const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x421A77: Integer_abs3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x462CE2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4556FC: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455793: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455894: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455B0C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x455DED: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064==    by 0x4051EF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==6064== 
-TestInteger.c++:503: Failure
-Value of: r
-  Actual: -
-Expected: a
-Which is: 
-[  FAILED  ] Integer.abs3 (5 ms)
+[       OK ] Integer.abs3 (3 ms)
 [ RUN      ] Integer.abs4
 [       OK ] Integer.abs4 (3 ms)
 [ RUN      ] Integer.ostream1
 [       OK ] Integer.ostream1 (8 ms)
 [ RUN      ] Integer.ostream2
-[       OK ] Integer.ostream2 (3 ms)
+[       OK ] Integer.ostream2 (4 ms)
 [ RUN      ] Integer.ostream3
 [       OK ] Integer.ostream3 (4 ms)
 [ RUN      ] Integer.ostream4
 [       OK ] Integer.ostream4 (4 ms)
 [ RUN      ] Integer.ostream5
 [       OK ] Integer.ostream5 (4 ms)
+[ RUN      ] Integer.ostream6
+[       OK ] Integer.ostream6 (2 ms)
 [ RUN      ] Integer.left_shift_equals
 [       OK ] Integer.left_shift_equals (7 ms)
 [ RUN      ] Integer.left_shift_equals2
-[       OK ] Integer.left_shift_equals2 (3 ms)
+[       OK ] Integer.left_shift_equals2 (4 ms)
 [ RUN      ] Integer.left_shift_equals3
-[       OK ] Integer.left_shift_equals3 (6 ms)
+[       OK ] Integer.left_shift_equals3 (7 ms)
+[ RUN      ] Integer.left_shift_equals4
+[       OK ] Integer.left_shift_equals4 (3 ms)
+[ RUN      ] Integer.left_shift_equals5
+[       OK ] Integer.left_shift_equals5 (3 ms)
 [ RUN      ] Integer.right_shift_equals
 [       OK ] Integer.right_shift_equals (3 ms)
 [ RUN      ] Integer.right_shift_equals2
-[       OK ] Integer.right_shift_equals2 (4 ms)
+[       OK ] Integer.right_shift_equals2 (3 ms)
 [ RUN      ] Integer.right_shift_equals3
-[       OK ] Integer.right_shift_equals3 (3 ms)
-[----------] 68 tests from Integer (469 ms total)
+[       OK ] Integer.right_shift_equals3 (4 ms)
+[ RUN      ] Integer.right_shift_equals4
+[       OK ] Integer.right_shift_equals4 (2 ms)
+[ RUN      ] Integer.right_shift_equals5
+[       OK ] Integer.right_shift_equals5 (3 ms)
+[----------] 75 tests from Integer (453 ms total)
 
 [----------] Global test environment tear-down
-[==========] 68 tests from 1 test case ran. (498 ms total)
-[  PASSED  ] 61 tests.
-[  FAILED  ] 7 tests, listed below:
-[  FAILED  ] Integer.equal_to
-[  FAILED  ] Integer.equal_to2
-[  FAILED  ] Integer.less_than12
-[  FAILED  ] Integer.negation
-[  FAILED  ] Integer.negation3
-[  FAILED  ] Integer.abs1
-[  FAILED  ] Integer.abs3
+[==========] 75 tests from 1 test case ran. (482 ms total)
+[  PASSED  ] 75 tests.
+==6636== 
+==6636== HEAP SUMMARY:
+==6636==     in use at exit: 0 bytes in 0 blocks
+==6636==   total heap usage: 2,037 allocs, 2,037 frees, 192,705 bytes allocated
+==6636== 
+==6636== All heap blocks were freed -- no leaks are possible
+==6636== 
+==6636== For counts of detected and suppressed errors, rerun with: -v
+==6636== ERROR SUMMARY: 28 errors from 10 contexts (suppressed: 0 from 0)
+File 'TestInteger.c++'
+Lines executed:100.00% of 431
+Branches executed:72.21% of 2706
+Taken at least once:36.10% of 2706
+Calls executed:57.60% of 3660
+Creating 'TestInteger.c++.gcov'
 
- 7 FAILED TESTS
-==6064== 
-==6064== HEAP SUMMARY:
-==6064==     in use at exit: 0 bytes in 0 blocks
-==6064==   total heap usage: 2,198 allocs, 2,198 frees, 226,729 bytes allocated
-==6064== 
-==6064== All heap blocks were freed -- no leaks are possible
-==6064== 
-==6064== For counts of detected and suppressed errors, rerun with: -v
-==6064== Use --track-origins=yes to see where uninitialised values come from
-==6064== ERROR SUMMARY: 84 errors from 63 contexts (suppressed: 0 from 0)
+File '/usr/include/gtest/internal/gtest-internal.h'
+Lines executed:60.00% of 5
+Branches executed:49.67% of 302
+Taken at least once:24.83% of 302
+Calls executed:37.31% of 603
+Creating 'gtest-internal.h.gcov'
+
+File '/usr/include/c++/4.8/iostream'
+Lines executed:100.00% of 1
+No branches
+Calls executed:100.00% of 2
+Creating 'iostream.gcov'
+
+File '/usr/include/c++/4.8/bits/stl_algobase.h'
+Lines executed:77.59% of 58
+Branches executed:81.82% of 22
+Taken at least once:72.73% of 22
+Calls executed:79.31% of 87
+Creating 'stl_algobase.h.gcov'
+
+File '/usr/include/c++/4.8/bits/stl_iterator.h'
+Lines executed:100.00% of 25
+No branches
+Calls executed:100.00% of 9
+Creating 'stl_iterator.h.gcov'
+
+File '/usr/include/gtest/gtest-printers.h'
+Lines executed:0.00% of 30
+Branches executed:0.00% of 26
+Taken at least once:0.00% of 26
+Calls executed:0.00% of 37
+Creating 'gtest-printers.h.gcov'
+
+File '/usr/include/c++/4.8/bits/stl_iterator_base_types.h'
+Lines executed:100.00% of 6
+No branches
+Calls executed:100.00% of 3
+Creating 'stl_iterator_base_types.h.gcov'
+
+File '/usr/include/c++/4.8/ext/new_allocator.h'
+Lines executed:92.86% of 14
+Branches executed:100.00% of 10
+Taken at least once:50.00% of 10
+Calls executed:82.35% of 17
+Creating 'new_allocator.h.gcov'
+
+File '/usr/include/c++/4.8/bits/stl_uninitialized.h'
+Lines executed:100.00% of 16
+Branches executed:100.00% of 2
+Taken at least once:50.00% of 2
+Calls executed:100.00% of 15
+Creating 'stl_uninitialized.h.gcov'
+
+File '/usr/include/c++/4.8/bits/alloc_traits.h'
+Lines executed:80.95% of 21
+No branches
+Calls executed:83.33% of 12
+Creating 'alloc_traits.h.gcov'
+
+File '/usr/include/c++/4.8/bits/deque.tcc'
+Lines executed:14.58% of 48
+Branches executed:16.67% of 12
+Taken at least once:8.33% of 12
+Calls executed:8.33% of 24
+Creating 'deque.tcc.gcov'
+
+File '/usr/include/c++/4.8/bits/stl_list.h'
+Lines executed:95.08% of 61
+Branches executed:80.00% of 10
+Taken at least once:50.00% of 10
+Calls executed:81.08% of 37
+Creating 'stl_list.h.gcov'
+
+File '/usr/include/c++/4.8/bits/stl_iterator_base_funcs.h'
+Lines executed:100.00% of 4
+Branches executed:100.00% of 2
+Taken at least once:50.00% of 2
+Calls executed:71.43% of 7
+Creating 'stl_iterator_base_funcs.h.gcov'
+
+File '/usr/include/c++/4.8/bits/stl_deque.h'
+Lines executed:88.10% of 126
+Branches executed:81.25% of 32
+Taken at least once:46.88% of 32
+Calls executed:81.33% of 75
+Creating 'stl_deque.h.gcov'
+
+File '/usr/include/c++/4.8/bits/allocator.h'
+Lines executed:71.43% of 7
+No branches
+Calls executed:100.00% of 8
+Creating 'allocator.h.gcov'
+
+File '/usr/include/c++/4.8/bits/basic_string.h'
+Lines executed:28.57% of 7
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
+Calls executed:25.00% of 4
+Creating 'basic_string.h.gcov'
+
+File '/usr/include/c++/4.8/ext/type_traits.h'
+Lines executed:0.00% of 2
+No branches
+No calls
+Creating 'type_traits.h.gcov'
+
+File '/usr/include/c++/4.8/bits/stl_vector.h'
+Lines executed:99.19% of 124
+Branches executed:100.00% of 26
+Taken at least once:57.69% of 26
+Calls executed:91.40% of 93
+Creating 'stl_vector.h.gcov'
+
+File '/usr/include/c++/4.8/bits/move.h'
+Lines executed:100.00% of 9
+No branches
+Calls executed:100.00% of 13
+Creating 'move.h.gcov'
+
+File '/usr/include/c++/4.8/bits/basic_string.tcc'
+Lines executed:0.00% of 16
+Branches executed:0.00% of 16
+Taken at least once:0.00% of 16
+Calls executed:0.00% of 19
+Creating 'basic_string.tcc.gcov'
+
+File '/usr/include/gtest/gtest.h'
+Lines executed:45.45% of 22
+Branches executed:31.58% of 38
+Taken at least once:15.79% of 38
+Calls executed:22.47% of 89
+Creating 'gtest.h.gcov'
+
+File '/usr/include/c++/4.8/bits/vector.tcc'
+Lines executed:76.27% of 59
+Branches executed:53.85% of 26
+Taken at least once:30.77% of 26
+Calls executed:60.00% of 40
+Creating 'vector.tcc.gcov'
+
+File '/usr/include/c++/4.8/bits/stl_construct.h'
+Lines executed:100.00% of 7
+No branches
+Calls executed:100.00% of 2
+Creating 'stl_construct.h.gcov'
+
+File '/usr/include/c++/4.8/streambuf'
+No executable lines
+No branches
+No calls
+Removing 'streambuf.gcov'
+
+File '/usr/include/c++/4.8/bits/basic_ios.h'
+Lines executed:0.00% of 4
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 1
+Creating 'basic_ios.h.gcov'
+
+File '/usr/include/c++/4.8/istream'
+No executable lines
+No branches
+No calls
+Removing 'istream.gcov'
+
+File 'Integer.h'
+Lines executed:93.22% of 236
+Branches executed:90.85% of 284
+Taken at least once:61.27% of 284
+Calls executed:82.13% of 235
+Creating 'Integer.h.gcov'
+
+File '/usr/include/c++/4.8/sstream'
+Lines executed:0.00% of 1
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 5
+Creating 'sstream.gcov'
+
+File '/usr/include/c++/4.8/ostream'
+No executable lines
+No branches
+No calls
+Removing 'ostream.gcov'
+
+File '/usr/include/c++/4.8/ext/alloc_traits.h'
+Lines executed:100.00% of 4
+No branches
+Calls executed:100.00% of 1
+Creating 'alloc_traits.h.gcov'
+
+File '/usr/include/c++/4.8/bits/stl_stack.h'
+Lines executed:100.00% of 12
+No branches
+Calls executed:100.00% of 8
+Creating 'stl_stack.h.gcov'
+
+File '/usr/include/c++/4.8/bits/list.tcc'
+Lines executed:100.00% of 8
+Branches executed:100.00% of 2
+Taken at least once:100.00% of 2
+Calls executed:100.00% of 3
+Creating 'list.tcc.gcov'
+
+File '/usr/include/gtest/internal/gtest-port.h'
+Lines executed:50.00% of 10
+Branches executed:16.67% of 12
+Taken at least once:8.33% of 12
+Calls executed:14.29% of 7
+Creating 'gtest-port.h.gcov'
+
+File '/usr/include/c++/4.8/initializer_list'
+Lines executed:100.00% of 3
+No branches
+Calls executed:100.00% of 2
+Creating 'initializer_list.gcov'
+
+File '/usr/include/gtest/gtest-message.h'
+Lines executed:0.00% of 1
+No branches
+Calls executed:0.00% of 1
+Creating 'gtest-message.h.gcov'
+
+File '/usr/include/c++/4.8/bits/locale_facets.h'
+Lines executed:0.00% of 5
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 2
+Creating 'locale_facets.h.gcov'
+
+File '/usr/include/c++/4.8/bits/ios_base.h'
+Lines executed:0.00% of 4
+No branches
+No calls
+Creating 'ios_base.h.gcov'
+
+File '/usr/include/c++/4.8/new'
+Lines executed:100.00% of 2
+No branches
+No calls
+Creating 'new.gcov'
+
+File '/usr/include/c++/4.8/ext/atomicity.h'
+Lines executed:0.00% of 10
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 3
+Creating 'atomicity.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h'
+Lines executed:0.00% of 2
+No branches
+No calls
+Creating 'gthr-default.h.gcov'
+
+File '/usr/include/c++/4.8/bits/char_traits.h'
+Lines executed:0.00% of 6
+No branches
+No calls
+Creating 'char_traits.h.gcov'
+
