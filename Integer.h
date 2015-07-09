@@ -193,151 +193,62 @@ FI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
  * output the product of the two input sequences into the output sequence
  * ([b1, e1) * [b2, e2)) => x
  */
-template <typename II1, typename II2, typename OI>
-OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
-  int length1 = distance(b1,e1);
-  int length2 = distance(b2,e2);
-  int topshift = 0;
-  int bottomshift=0;
-  II1 e1copy = e1;
-  vector<int> toptotal = {0};
-  vector<int> bottomtotal = {0};
-  vector<int> finalx = {0};
-  if(length1 >= length2){
- /*  while(b2!=e2){
-      topshift = 0;
-      e1copy = e1;*/
-      while(b1 != e1copy){
-        int temp = *(e2-1) * *(e1copy-1);
-        int temp2 = temp;
-	     vector<int> producttosum(2);
-	     int i = 2;
-        while(i != 0){
-	       producttosum[i-1]=temp%10;
-          temp /= 10;
-	       --i;
-        }
-
-        vector<int> topshiftedproduct(2+topshift);
-        vector<int> bottomshiftedproduct(distance(topshiftedproduct.begin(),topshiftedproduct.end()) + bottomshift);
-        vector<int> runningtotal(toptotal.size() + 1);
-        
-
-      	shift_left_digits(producttosum.begin(), producttosum.end(), topshift, topshiftedproduct.begin());
-        if(*(topshiftedproduct.end()-1) == 0 && temp2<10){
-          topshiftedproduct.pop_back();
-        }
-
-        shift_left_digits(topshiftedproduct.begin(), topshiftedproduct.end(), bottomshift, bottomshiftedproduct.begin());
-
-        plus_digits(toptotal.begin(), toptotal.end(), bottomshiftedproduct.begin(), bottomshiftedproduct.end(), runningtotal.begin());
-        toptotal.resize(runningtotal.size());
-	      copy(runningtotal.begin(), runningtotal.end(), toptotal.begin());
-        --e1copy;
-        ++topshift;
-      }
-      cout << "this is what ended up in toptotal after the loop: " << endl;
-      II1 topb = toptotal.begin();
-      II2 tope = toptotal.end();
-      while(topb != tope){
-        cout<<*topb<<endl;
-        ++topb;
-      }
-      --e2;
-      topshift = 0;
-      e1copy = e1;
-      while(b1 != e1copy){
-        ++bottomshift;
-        int temp = *(e2-1) * *(e1copy-1);
-        int temp2 = temp;
-        vector<int> producttosum(2);
-        int i = 2;
-        while(i != 0){
-         producttosum[i-1]=temp%10;
-          temp /= 10;
-         --i;
-        }
-        vector<int> topshiftedproduct(2+topshift);
-        vector<int> runningtotal(bottomtotal.size() + 1);
-        shift_left_digits(producttosum.begin(), producttosum.end(), topshift, topshiftedproduct.begin());
-        if(*(topshiftedproduct.end()-1) == 0 && temp2<10){
-          topshiftedproduct.pop_back();
-        }
-        vector<int> bottomshiftedproduct(distance(topshiftedproduct.begin(),topshiftedproduct.end()) + bottomshift);
-        shift_left_digits(topshiftedproduct.begin(), topshiftedproduct.end(), bottomshift, bottomshiftedproduct.begin());
-        plus_digits(bottomtotal.begin(), bottomtotal.end(), bottomshiftedproduct.begin(), bottomshiftedproduct.end(), runningtotal.begin());
-        bottomtotal.resize(runningtotal.size());
-        copy(runningtotal.begin(), runningtotal.end(), bottomtotal.begin());
-        --e1copy;
-        ++topshift;
-      }
-            cout << "this is what ended up in bottomtotal after the loop: " << endl;
-      II1 bottomb = bottomtotal.begin();
-      II2 bottome = bottomtotal.end();
-      while(bottomb != bottome){
-        cout<<*bottomb<<endl;
-        ++bottomb;
-      }
-      if(distance(toptotal.begin(), toptotal.end())>distance(bottomtotal.begin(), bottomtotal.end())){
-        finalx.resize(distance(toptotal.begin(),toptotal.end()) + 1);
+ template <typename II>
+ vector<int> find_multiples(II b1, II e1, int n) {
+   vector<int> multiples;
+   if (n == 0){
+    multiples.push_back(0);
+   }
+   else{
+    int carry = 0;
+    while(b1 != e1){
+      int temp = *(e1-1) * n;
+      multiples.push_back(temp%10 + carry);
+      if(temp>9){
+        carry = temp/10;
       }
       else{
-        finalx.resize(distance(bottomtotal.begin(),bottomtotal.end()) + 1);
+        carry = 0;
       }
-      plus_digits(toptotal.begin(), toptotal.end(), bottomtotal.begin(), bottomtotal.end(), finalx.begin());
-	/*cout << "this is the running total in the outer loop: " << endl;
-	II1 obeg = total.begin();
-	II1 oend = total.end();
-	while(obeg != oend){
-	cout << *obeg << endl;
-	++obeg;
-}
-      --e2;
-      ++bottomshift;
-    }*/
-  }
-  /*else{
-    while(b1!=e1){
-      while(b2 != e2){
-        int temp = *(e2-1) * *(e1-1);
-        vector<int> producttosum(2);
-       int i = 2;
-        while(i != 0){
-         producttosum[i-1]=temp%10;
-          temp /= 10;
-         --i;
-        }
-        vector<int> topshiftedproduct(1);
-        vector<int> bottomshiftedproduct(1);
-        vector<int> runningtotal(1);
-        shift_left_digits(producttosum.begin(), producttosum.end(), topshift, topshiftedproduct.begin());
-  shift_left_digits(topshiftedproduct.begin(), topshiftedproduct.end(), bottomshift, bottomshiftedproduct.begin());
-  plus_digits(total.begin(), total.end(), bottomshiftedproduct.begin(), bottomshiftedproduct.end(), runningtotal.begin());
-  copy(runningtotal.begin(), runningtotal.end(), total.begin());
-  --e2;
-        ++bottomshift;
-
- }
       --e1;
-      ++topshift;
+    }
+   if (carry > 0){
+    multiples.push_back(carry);
+    }
+   }
+   return multiples;
+}
+template <typename II1, typename II2, typename OI>
+OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
+    vector<vector<int>> listofmultiples(10);
+    for(int i=0; i<10; ++i){
+        vector<int> temp = find_multiples(b1, e1, i);
+        cache[i] = temp;
+    }
+    
+   
+    vector<int>::reverse_iterator productb = cache[*(e2-1)].rbegin();
+    vector<int>::reverse_iterator producte = cache[*(e2-1)].rend();
+    int len = (e2-b2);
+    vector<int> tempCons((e1-b1) + len + 1);
+    
+    for(int i=1; i<len; ++i){
+        --e2;
+        vector<int>::reverse_iterator cb = cache[*(e2-1)].rbegin();
+        vector<int>::reverse_iterator ce = cache[*(e2-1)].rend();
+        vector<int> temp((e1-b1)+1+i);
+        vector<int>::iterator tempe = shift_left_digits (cb, ce, i, temp.begin());      
+        producte = plus_digits(productb, producte, temp.begin(), tempe, tempCons.rbegin());
+        productb = tempCons.rbegin();
+    }
 
- 
-    }}*/
-      cout << "this is what is in the finalx " << endl;
-      II1 beg = finalx.begin();
-      II1 end = finalx.end();
-      while(beg != end){
-        cout << *beg << endl;
-        ++beg;
-      }
-      II1 zeroes = finalx.begin();
-      int count = 0;
-      while(*zeroes == 0 && zeroes != finalx.end()){
-        ++count;
-     	++zeroes;
-	 }
-      copy(finalx.begin()+count, finalx.end(), x);
-  return x;}
+    while(productb != producte){
+        *x = *productb;
+        ++x;
+        ++productb;
+    }
+
+    return x;}
 
 
 
