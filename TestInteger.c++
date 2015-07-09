@@ -595,12 +595,32 @@ TEST(Integer, right_shift_equals3) {
 //------------
 // operator += 
 //------------
-/*
+
 TEST(Integer, plus_equals) {
+    Integer<int> a(24);
+    Integer<int> b(15);
+    a += b;
+    ASSERT_EQ(a, 39);}
+
+TEST(Integer, plus_equals2) {
     Integer<int> a(-24);
     Integer<int> b(-15);
     a += b;
     ASSERT_EQ(a, -39);}
+
+TEST(Integer, plus_equals3) {
+    Integer<int> a(2412);
+    Integer<int> b(15);
+    a += b;
+    ASSERT_EQ(a, 2427);}
+
+TEST(Integer, plus_equals4) {
+    Integer<int> a(24);
+    Integer<int> b(1512);
+    a += b;
+    ASSERT_EQ(a, 1536);}
+
+
 
 
 //------------
@@ -612,4 +632,4 @@ TEST(Integer, minus_equals) {
     Integer<int> b(5);
     a -= b;
     ASSERT_EQ(a, 15);}
-*/
+

@@ -193,62 +193,6 @@ OI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
   return x;}
 
 
-    // int len = distance(b1,e1);
-    // if(len < distance(b2, e2)){
-    //   len = distance(b2,e2);}
-    // OI endx = x+len;
-    // bool stop = false;
-    // int carryOver = 0;
-    // while(!stop){   
-    //             if (b1 != e1 && b2 != e2){
-    //                 //std::cout << "Normal Case" << std::endl;
-    //                 int temp = *(e1-1) + *(e2-1) + carryOver;
-    //                 carryOver = 0;
-    //                 if(temp >= 10){
-    //                     carryOver = 1;
-    //                     temp -= 10;
-    //                 }
-    //                 *(x+len) = temp;
-    //                 --e1;
-    //                 --e2;
-    //                 --len;
-    //             } else if(b1 != e1){
-    //                 //std::cout << "b1 longer Case" << std::endl;
-    //                 int temp = *(e1-1) + carryOver;
-    //                 carryOver = 0;
-    //                 if(temp >= 10){
-    //                     carryOver = 1;
-    //                     temp -= 10;
-    //                 }
-    //                  *(x+len) = temp;
-    //                 --e1;
-    //                 --len;
-    //             } else if(b2 != e2){
-    //                 //std::cout << "b2 longer Case" << std::endl;
-    //                 int temp = *(e2-1) + carryOver;
-    //                 carryOver = 0;
-    //                 if(temp >= 10){
-    //                     carryOver = 1;
-    //                     temp -= 10;
-    //                 }
-    //                  *(x+len) = temp;
-    //                 --e2;
-    //                 --len;         
-    //             } else{
-    //                 //std::cout << "Else Case" << std::endl;
-    //                 if(carryOver != 0){
-    //                     *(x+len) = carryOver;
-    //                     carryOver = 0;
-    //                     ++endx;
-    //                 } else{
-    //                     endx = shift_left_digits (x+1, endx+1, 1, x);
-    //                     --endx;
-    //                 }
-    //                 stop = true;
-    //             }
-    //         }
-    //         return endx;
-    //   }
 
 // ------------
 // minus_digits
@@ -881,7 +825,6 @@ template < typename T, typename C = std::vector<T> >
    */
   Integer& operator += (const Integer& rhs) {
     Integer lhs = *this;
- 
     if (lhs.neg == rhs.neg){
       plus_digits(lhs._x.begin(), lhs._x.end(), rhs._x.begin(), rhs._x.end(), _x.begin());
       this->neg = rhs.neg;
@@ -950,7 +893,7 @@ template < typename T, typename C = std::vector<T> >
    * @throws invalid_argument if (rhs == 0)
    */
   Integer& operator /= (const Integer& rhs) {
-        // <your code>
+    //your code
     if(rhs == 0){
       throw std::invalid_argument("Integer::Integer()");
     }
