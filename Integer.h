@@ -221,7 +221,13 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
 	copy(runningtotal.begin(), runningtotal.end(), total.begin());
         --e1;
         ++topshift;
-      }
+
+	II1 rtb = runningtotal.begin();
+	II1 rte = runningtotal.end();
+	while(rtb != rte){
+	cout << "running total has in it " << *rtb << endl;
+	++rtb;
+      }}
       --e2;
       ++bottomshift;
     }
@@ -246,11 +252,22 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
         copy(runningtotal.begin(), runningtotal.end(), total.begin());
         --e2;
         ++bottomshift;
+	II1 rtb = runningtotal.begin();
+	II1 rte = runningtotal.end();
+	while(rtb != rte){
+	cout << "running total has in it " << *rtb << endl;
+	++rtb;
       }
+cout<< "that was one full running total " << endl;}
       --e1;
       ++topshift;
     }
   }
+  II1 beginningofx = total.begin();
+  II1 endofx = total.end();
+  while(beginningofx != endofx){
+    cout<< *beginningofx << endl; 
+	++beginningofx; }
   x = copy(total.begin(), total.end(), x);
   return x;}
 
