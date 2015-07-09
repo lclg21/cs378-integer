@@ -261,7 +261,6 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
         --e1copy;
         ++topshift;
       }
-
 x = plus_digits(toptotal.begin(), toptotal.end(), bottomtotal.begin(), bottomtotal.end(), x);
 	/*cout << "this is the running total in the outer loop: " << endl;
 	II1 obeg = total.begin();
@@ -301,20 +300,8 @@ x = plus_digits(toptotal.begin(), toptotal.end(), bottomtotal.begin(), bottomtot
 
  
     }}*/
-    II1 frontzeros = x.begin();
-    int count = 0;
-    while(*frontzeros == 0){
-      ++count;
-    }
 
-    II1 beg = x.begin();
-    II1 end = x.end():
-    cout << "this is what is in x to return : " << endl;
-    while(beg != end){
-      cout<< *beg << endl;
-      ++beg;
-    }
-  return x+count;}
+  return x;}
 
 
 

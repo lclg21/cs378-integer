@@ -1,14 +1,14 @@
-==11971== Memcheck, a memory error detector
-==11971== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
-==11971== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
-==11971== Command: ./TestInteger
-==11971== 
+==12549== Memcheck, a memory error detector
+==12549== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==12549== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==12549== Command: ./TestInteger
+==12549== 
 Running main() from gtest_main.cc
 [==========] Running 76 tests from 1 test case.
 [----------] Global test environment set-up.
 [----------] 76 tests from Integer
 [ RUN      ] Integer.shift_left_digits
-[       OK ] Integer.shift_left_digits (34 ms)
+[       OK ] Integer.shift_left_digits (35 ms)
 [ RUN      ] Integer.shift_left_digits2
 [       OK ] Integer.shift_left_digits2 (10 ms)
 [ RUN      ] Integer.shift_left_digits3
@@ -18,273 +18,273 @@ Running main() from gtest_main.cc
 [ RUN      ] Integer.shift_right_digits
 [       OK ] Integer.shift_right_digits (5 ms)
 [ RUN      ] Integer.shift_right_digits2
-[       OK ] Integer.shift_right_digits2 (5 ms)
+[       OK ] Integer.shift_right_digits2 (6 ms)
 [ RUN      ] Integer.shift_right_digits3
-[       OK ] Integer.shift_right_digits3 (5 ms)
+[       OK ] Integer.shift_right_digits3 (4 ms)
 [ RUN      ] Integer.shift_right_digits4
-[       OK ] Integer.shift_right_digits4 (5 ms)
+[       OK ] Integer.shift_right_digits4 (4 ms)
 [ RUN      ] Integer.plus_digits
-==11971== Invalid write of size 4
-==11971==    at 0x4300B7: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x409157: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C79C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45CA7D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x404FCF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==  Address 0x5c5eac8 is 0 bytes after a block of size 24 alloc'd
-==11971==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11971==    by 0x43A36F: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438638: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438738: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x435D18: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x42F47F: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x409060: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C79C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971== 
-==11971== Invalid read of size 2
-==11971==    at 0x4C2F647: memcpy@GLIBC_2.2.5 (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11971==    by 0x43BE48: int* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<int>(int const*, int const*, int*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x43A4A6: int* std::__copy_move_a<false, int*, int*>(int*, int*, int*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x43889E: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x435E96: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::copy<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x42F5D4: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > shift_left_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x4304E4: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x409157: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==  Address 0x5c5eac8 is 0 bytes after a block of size 24 alloc'd
-==11971==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11971==    by 0x43A36F: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438638: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438738: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x435D18: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x42F47F: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x409060: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C79C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971== 
-==11971== Invalid write of size 4
-==11971==    at 0x43891F: __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a<int*, int>(int*, int*, int const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x435F8A: void std::fill<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x42F635: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > shift_left_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x4304E4: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x409157: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C79C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45CA7D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x404FCF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==  Address 0x5c5eac8 is 0 bytes after a block of size 24 alloc'd
-==11971==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11971==    by 0x43A36F: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438638: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438738: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x435D18: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x42F47F: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x409060: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C79C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971== 
-[       OK ] Integer.plus_digits (12 ms)
+==12549== Invalid write of size 4
+==12549==    at 0x430027: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4090C7: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BF0D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x404F3F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==  Address 0x5c5eac8 is 0 bytes after a block of size 24 alloc'd
+==12549==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12549==    by 0x439841: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437B4E: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437C4E: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4351B2: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x42F3EF: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x408FD0: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549== 
+==12549== Invalid read of size 2
+==12549==    at 0x4C2F647: memcpy@GLIBC_2.2.5 (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12549==    by 0x43B372: int* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<int>(int const*, int const*, int*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x439978: int* std::__copy_move_a<false, int*, int*>(int*, int*, int*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437DB4: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x435330: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::copy<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x42F544: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > shift_left_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x430454: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4090C7: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==  Address 0x5c5eac8 is 0 bytes after a block of size 24 alloc'd
+==12549==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12549==    by 0x439841: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437B4E: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437C4E: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4351B2: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x42F3EF: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x408FD0: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549== 
+==12549== Invalid write of size 4
+==12549==    at 0x437E35: __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a<int*, int>(int*, int*, int const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x435424: void std::fill<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x42F5A5: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > shift_left_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x430454: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4090C7: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BF0D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x404F3F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==  Address 0x5c5eac8 is 0 bytes after a block of size 24 alloc'd
+==12549==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12549==    by 0x439841: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437B4E: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437C4E: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4351B2: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x42F3EF: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x408FD0: Integer_plus_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549== 
+[       OK ] Integer.plus_digits (11 ms)
 [ RUN      ] Integer.plus_digits2
-==11971== Invalid write of size 4
-==11971==    at 0x4300B7: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x409A75: Integer_plus_digits2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C79C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45CA7D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x404FCF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==  Address 0x5c5f3cc is 0 bytes after a block of size 12 alloc'd
-==11971==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11971==    by 0x43A36F: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438638: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438738: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x435D18: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x42F47F: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x40997E: Integer_plus_digits2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C79C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971== 
-==11971== Invalid read of size 2
-==11971==    at 0x4C2F638: memcpy@GLIBC_2.2.5 (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11971==    by 0x43BE48: int* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<int>(int const*, int const*, int*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x43A4A6: int* std::__copy_move_a<false, int*, int*>(int*, int*, int*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x43889E: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x435E96: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::copy<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x42F5D4: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > shift_left_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x4304E4: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x409A75: Integer_plus_digits2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==  Address 0x5c5f3ce is 2 bytes after a block of size 12 alloc'd
-==11971==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11971==    by 0x43A36F: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438638: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438738: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x435D18: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x42F47F: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x40997E: Integer_plus_digits2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C79C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971== 
+==12549== Invalid write of size 4
+==12549==    at 0x430027: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4099E5: Integer_plus_digits2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BF0D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x404F3F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==  Address 0x5c5f3cc is 0 bytes after a block of size 12 alloc'd
+==12549==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12549==    by 0x439841: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437B4E: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437C4E: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4351B2: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x42F3EF: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4098EE: Integer_plus_digits2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549== 
+==12549== Invalid read of size 2
+==12549==    at 0x4C2F638: memcpy@GLIBC_2.2.5 (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12549==    by 0x43B372: int* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<int>(int const*, int const*, int*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x439978: int* std::__copy_move_a<false, int*, int*>(int*, int*, int*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437DB4: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x435330: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::copy<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x42F544: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > shift_left_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x430454: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4099E5: Integer_plus_digits2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==  Address 0x5c5f3ce is 2 bytes after a block of size 12 alloc'd
+==12549==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12549==    by 0x439841: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437B4E: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437C4E: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4351B2: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x42F3EF: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4098EE: Integer_plus_digits2_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549== 
 [       OK ] Integer.plus_digits2 (6 ms)
 [ RUN      ] Integer.plus_digits3
-==11971== Invalid write of size 4
-==11971==    at 0x4300B7: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x40A393: Integer_plus_digits3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C79C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45CA7D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x404FCF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==  Address 0x5c5fbac is 0 bytes after a block of size 12 alloc'd
-==11971==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11971==    by 0x43A36F: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438638: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438738: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x435D18: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x42F47F: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x40A29C: Integer_plus_digits3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C79C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971== 
-[       OK ] Integer.plus_digits3 (7 ms)
+==12549== Invalid write of size 4
+==12549==    at 0x430027: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x40A303: Integer_plus_digits3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BF0D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x404F3F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==  Address 0x5c5fbac is 0 bytes after a block of size 12 alloc'd
+==12549==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12549==    by 0x439841: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437B4E: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437C4E: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4351B2: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x42F3EF: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x40A20C: Integer_plus_digits3_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549== 
+[       OK ] Integer.plus_digits3 (8 ms)
 [ RUN      ] Integer.plus_digits4
-==11971== Invalid write of size 4
-==11971==    at 0x4300B7: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x40ACB1: Integer_plus_digits4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C79C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45CA7D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x404FCF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==  Address 0x5c6038c is 0 bytes after a block of size 12 alloc'd
-==11971==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11971==    by 0x43A36F: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438638: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438738: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x435D18: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x42F47F: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x40ABBA: Integer_plus_digits4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C79C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971== 
+==12549== Invalid write of size 4
+==12549==    at 0x430027: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x40AC21: Integer_plus_digits4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BF0D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x404F3F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==  Address 0x5c6038c is 0 bytes after a block of size 12 alloc'd
+==12549==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12549==    by 0x439841: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437B4E: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437C4E: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4351B2: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x42F3EF: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x40AB2A: Integer_plus_digits4_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549== 
 [       OK ] Integer.plus_digits4 (7 ms)
 [ RUN      ] Integer.plus_digits5
-==11971== Invalid write of size 4
-==11971==    at 0x4300B7: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x40B649: Integer_plus_digits5_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C79C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45CA7D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x404FCF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==  Address 0x5c60b7c is 0 bytes after a block of size 12 alloc'd
-==11971==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11971==    by 0x43A36F: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438638: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438738: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x435D18: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x42F47F: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x40B4D8: Integer_plus_digits5_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C79C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971== 
+==12549== Invalid write of size 4
+==12549==    at 0x430027: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x40B5B9: Integer_plus_digits5_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BF0D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x404F3F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==  Address 0x5c60b7c is 0 bytes after a block of size 12 alloc'd
+==12549==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12549==    by 0x439841: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437B4E: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437C4E: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4351B2: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x42F3EF: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x40B448: Integer_plus_digits5_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549== 
 [       OK ] Integer.plus_digits5 (6 ms)
 [ RUN      ] Integer.plus_digits6
-==11971== Invalid write of size 4
-==11971==    at 0x4300B7: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x40C04A: Integer_plus_digits6_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C79C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45CA7D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x404FCF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==  Address 0x5c6137c is 0 bytes after a block of size 12 alloc'd
-==11971==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11971==    by 0x43A36F: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438638: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438738: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x435D18: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x42F47F: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x40BE9C: Integer_plus_digits6_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C79C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971== 
+==12549== Invalid write of size 4
+==12549==    at 0x430027: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x40BFBA: Integer_plus_digits6_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BF0D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x404F3F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==  Address 0x5c6137c is 0 bytes after a block of size 12 alloc'd
+==12549==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12549==    by 0x439841: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437B4E: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437C4E: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4351B2: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x42F3EF: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x40BE0C: Integer_plus_digits6_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549== 
 [       OK ] Integer.plus_digits6 (7 ms)
 [ RUN      ] Integer.plus_digits7
-==11971== Invalid write of size 4
-==11971==    at 0x4300B7: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x40C9E4: Integer_plus_digits7_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C79C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45CA7D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x404FCF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==  Address 0x5c61df0 is 0 bytes after a block of size 336 alloc'd
-==11971==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11971==    by 0x43A36F: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438638: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438738: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x435D18: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x42F47F: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x40C8B0: Integer_plus_digits7_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C79C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971== 
+==12549== Invalid write of size 4
+==12549==    at 0x430027: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x40C954: Integer_plus_digits7_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BF0D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x404F3F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==  Address 0x5c61df0 is 0 bytes after a block of size 336 alloc'd
+==12549==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12549==    by 0x439841: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437B4E: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437C4E: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4351B2: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x42F3EF: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x40C820: Integer_plus_digits7_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549== 
 [       OK ] Integer.plus_digits7 (7 ms)
 [ RUN      ] Integer.plus_digits8
 [       OK ] Integer.plus_digits8 (6 ms)
@@ -293,107 +293,181 @@ Running main() from gtest_main.cc
 [ RUN      ] Integer.minus_digits2
 [       OK ] Integer.minus_digits2 (6 ms)
 [ RUN      ] Integer.minus_digits3
-[       OK ] Integer.minus_digits3 (5 ms)
+[       OK ] Integer.minus_digits3 (6 ms)
 [ RUN      ] Integer.minus_digits4
-[       OK ] Integer.minus_digits4 (6 ms)
+[       OK ] Integer.minus_digits4 (5 ms)
 [ RUN      ] Integer.minus_digits5
-[       OK ] Integer.minus_digits5 (6 ms)
+[       OK ] Integer.minus_digits5 (7 ms)
 [ RUN      ] Integer.minus_digits6
 [       OK ] Integer.minus_digits6 (6 ms)
 [ RUN      ] Integer.multiplies_digits
-this is temp 18
-this is what is in product sum 1 8
-top shift amount should be zero and is 0
-size of topshiftproduct should be 2 and is 2
-==11971== Invalid write of size 4
-==11971==    at 0x436DA1: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x43151A: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > multiplies_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x411487: Integer_multiplies_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C79C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45CA7D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x404FCF: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==  Address 0x5c69f58 is 0 bytes after a block of size 8 alloc'd
-==11971==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11971==    by 0x43A36F: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438638: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438738: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x435D18: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x42F47F: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x431249: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > multiplies_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x411487: Integer_multiplies_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971== 
-==11971== Invalid write of size 4
-==11971==    at 0x43891F: __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a<int*, int>(int*, int*, int const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x435F8A: void std::fill<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x42F635: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > shift_left_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x4371CE: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x43151A: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > multiplies_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x411487: Integer_multiplies_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C79C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45CA7D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==  Address 0x5c69f58 is 0 bytes after a block of size 8 alloc'd
-==11971==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11971==    by 0x43A36F: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438638: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x438738: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x435D18: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x42F47F: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x431249: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > multiplies_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x411487: Integer_multiplies_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x469972: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C38C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C423: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971==    by 0x45C524: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
-==11971== 
-this is the running total in the inner loop: 
-1
-8
-this is temp 6
-this is what is in product sum 0 6
-top shift amount should be zero and is 1
-size of topshiftproduct should be 2 and is 3
-this is the running total in the inner loop: 
-0
-7
-8
-this is temp 4
-this is what is in product sum 0 4
-top shift amount should be zero and is 2
-size of topshiftproduct should be 2 and is 4
-this is the running total in the inner loop: 
-0
-4
-7
-8
-4
-7
-8
-thats what was in total at the end
+==12549== Invalid write of size 4
+==12549==    at 0x43623B: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4311DF: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > multiplies_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4113F7: Integer_multiplies_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BF0D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x404F3F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==  Address 0x5c69fa8 is 0 bytes after a block of size 8 alloc'd
+==12549==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12549==    by 0x439841: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437B4E: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437C4E: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4351B2: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x42F3EF: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x430FD5: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > multiplies_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4113F7: Integer_multiplies_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549== 
+==12549== Invalid write of size 4
+==12549==    at 0x437E35: __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a<int*, int>(int*, int*, int const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x435424: void std::fill<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x42F5A5: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > shift_left_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x436668: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4311DF: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > multiplies_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4113F7: Integer_multiplies_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BF0D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==  Address 0x5c69fa8 is 0 bytes after a block of size 8 alloc'd
+==12549==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12549==    by 0x439841: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437B4E: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437C4E: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4351B2: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x42F3EF: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x430FD5: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > multiplies_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4113F7: Integer_multiplies_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549== 
+==12549== Invalid write of size 4
+==12549==    at 0x43623B: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x431B69: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > multiplies_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4113F7: Integer_multiplies_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BF0D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x404F3F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==  Address 0x5c6a3bc is 4 bytes after a block of size 8 alloc'd
+==12549==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12549==    by 0x439841: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437B4E: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437C4E: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4351B2: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x42F3EF: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4316FD: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > multiplies_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4113F7: Integer_multiplies_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549== 
+==12549== Invalid write of size 4
+==12549==    at 0x436525: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x431B69: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > multiplies_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4113F7: Integer_multiplies_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BF0D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x404F3F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==  Address 0x5c6a3b8 is 0 bytes after a block of size 8 alloc'd
+==12549==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12549==    by 0x439841: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437B4E: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437C4E: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4351B2: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x42F3EF: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4316FD: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > multiplies_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4113F7: Integer_multiplies_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549== 
+==12549== Invalid write of size 2
+==12549==    at 0x4C2F63B: memcpy@GLIBC_2.2.5 (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12549==    by 0x43B372: int* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<int>(int const*, int const*, int*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x439978: int* std::__copy_move_a<false, int*, int*>(int*, int*, int*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437DB4: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x435330: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::copy<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x42F544: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > shift_left_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x436668: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x431B69: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > multiplies_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4113F7: Integer_multiplies_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==  Address 0x5c6a3b8 is 0 bytes after a block of size 8 alloc'd
+==12549==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12549==    by 0x439841: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437B4E: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437C4E: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4351B2: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x42F3EF: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4316FD: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > multiplies_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4113F7: Integer_multiplies_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549== 
+==12549== Invalid write of size 4
+==12549==    at 0x43623B: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > plus_digits<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x431E32: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > multiplies_digits<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4113F7: Integer_multiplies_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BF0D: testing::UnitTest::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x404F3F: main (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==  Address 0x5c69dd0 is 0 bytes after a block of size 16 alloc'd
+==12549==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12549==    by 0x439841: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437B4E: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x437C4E: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x4351B2: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x42F3EF: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x411300: Integer_multiplies_digits_Test::TestBody() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x468E02: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B81C: testing::Test::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B8B3: testing::TestInfo::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45B9B4: testing::TestCase::Run() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549==    by 0x45BC2C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/sa4265/GP/cs378-integer/TestInteger)
+==12549== 
 TestInteger.c++:224: Failure
 Value of: equal(z.begin(), z.end(), a.begin())
   Actual: false
 Expected: true
-[  FAILED  ] Integer.multiplies_digits (61 ms)
+[  FAILED  ] Integer.multiplies_digits (62 ms)
 [ RUN      ] Integer.divides_digits
-[       OK ] Integer.divides_digits (10 ms)
+[       OK ] Integer.divides_digits (9 ms)
 [ RUN      ] Integer.divides_digits2
 [       OK ] Integer.divides_digits2 (6 ms)
 [ RUN      ] Integer.divides_digits3
 [       OK ] Integer.divides_digits3 (6 ms)
 [ RUN      ] Integer.divides_digits4
-[       OK ] Integer.divides_digits4 (5 ms)
+[       OK ] Integer.divides_digits4 (6 ms)
 [ RUN      ] Integer.divides_digits5
 [       OK ] Integer.divides_digits5 (6 ms)
 [ RUN      ] Integer.divides_digits6
@@ -439,29 +513,29 @@ Expected: true
 [ RUN      ] Integer.less_than11
 [       OK ] Integer.less_than11 (2 ms)
 [ RUN      ] Integer.less_than12
-[       OK ] Integer.less_than12 (2 ms)
+[       OK ] Integer.less_than12 (3 ms)
 [ RUN      ] Integer.less_than13
 [       OK ] Integer.less_than13 (3 ms)
 [ RUN      ] Integer.negation
 [       OK ] Integer.negation (10 ms)
 [ RUN      ] Integer.negation2
-[       OK ] Integer.negation2 (4 ms)
+[       OK ] Integer.negation2 (3 ms)
 [ RUN      ] Integer.negation3
 [       OK ] Integer.negation3 (2 ms)
 [ RUN      ] Integer.negation4
-[       OK ] Integer.negation4 (3 ms)
+[       OK ] Integer.negation4 (4 ms)
 [ RUN      ] Integer.negation5
 [       OK ] Integer.negation5 (3 ms)
 [ RUN      ] Integer.abs1
-[       OK ] Integer.abs1 (4 ms)
+[       OK ] Integer.abs1 (3 ms)
 [ RUN      ] Integer.abs2
-[       OK ] Integer.abs2 (3 ms)
+[       OK ] Integer.abs2 (4 ms)
 [ RUN      ] Integer.abs3
 [       OK ] Integer.abs3 (3 ms)
 [ RUN      ] Integer.abs4
 [       OK ] Integer.abs4 (4 ms)
 [ RUN      ] Integer.ostream1
-[       OK ] Integer.ostream1 (7 ms)
+[       OK ] Integer.ostream1 (8 ms)
 [ RUN      ] Integer.ostream2
 [       OK ] Integer.ostream2 (3 ms)
 [ RUN      ] Integer.ostream3
@@ -471,9 +545,9 @@ Expected: true
 [ RUN      ] Integer.ostream5
 [       OK ] Integer.ostream5 (4 ms)
 [ RUN      ] Integer.ostream6
-[       OK ] Integer.ostream6 (3 ms)
+[       OK ] Integer.ostream6 (2 ms)
 [ RUN      ] Integer.left_shift_equals
-[       OK ] Integer.left_shift_equals (4 ms)
+[       OK ] Integer.left_shift_equals (5 ms)
 [ RUN      ] Integer.left_shift_equals2
 [       OK ] Integer.left_shift_equals2 (4 ms)
 [ RUN      ] Integer.left_shift_equals3
@@ -485,28 +559,28 @@ Expected: true
 [ RUN      ] Integer.right_shift_equals
 [       OK ] Integer.right_shift_equals (3 ms)
 [ RUN      ] Integer.right_shift_equals2
-[       OK ] Integer.right_shift_equals2 (3 ms)
+[       OK ] Integer.right_shift_equals2 (4 ms)
 [ RUN      ] Integer.right_shift_equals3
-[       OK ] Integer.right_shift_equals3 (4 ms)
+[       OK ] Integer.right_shift_equals3 (3 ms)
 [ RUN      ] Integer.right_shift_equals4
-[       OK ] Integer.right_shift_equals4 (2 ms)
+[       OK ] Integer.right_shift_equals4 (3 ms)
 [ RUN      ] Integer.right_shift_equals5
-[       OK ] Integer.right_shift_equals5 (3 ms)
-[----------] 76 tests from Integer (505 ms total)
+[       OK ] Integer.right_shift_equals5 (2 ms)
+[----------] 76 tests from Integer (506 ms total)
 
 [----------] Global test environment tear-down
-[==========] 76 tests from 1 test case ran. (533 ms total)
+[==========] 76 tests from 1 test case ran. (534 ms total)
 [  PASSED  ] 75 tests.
 [  FAILED  ] 1 test, listed below:
 [  FAILED  ] Integer.multiplies_digits
 
  1 FAILED TEST
-==11971== 
-==11971== HEAP SUMMARY:
-==11971==     in use at exit: 0 bytes in 0 blocks
-==11971==   total heap usage: 2,109 allocs, 2,109 frees, 201,189 bytes allocated
-==11971== 
-==11971== All heap blocks were freed -- no leaks are possible
-==11971== 
-==11971== For counts of detected and suppressed errors, rerun with: -v
-==11971== ERROR SUMMARY: 40 errors from 12 contexts (suppressed: 0 from 0)
+==12549== 
+==12549== HEAP SUMMARY:
+==12549==     in use at exit: 0 bytes in 0 blocks
+==12549==   total heap usage: 2,124 allocs, 2,124 frees, 201,362 bytes allocated
+==12549== 
+==12549== All heap blocks were freed -- no leaks are possible
+==12549== 
+==12549== For counts of detected and suppressed errors, rerun with: -v
+==12549== ERROR SUMMARY: 76 errors from 16 contexts (suppressed: 0 from 0)
