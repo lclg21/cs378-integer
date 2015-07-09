@@ -209,7 +209,7 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
       e1copy = e1;*/
       while(b1 != e1copy){
         int temp = *(e2-1) * *(e1copy-1);
-
+        int temp2 = temp;
 	     vector<int> producttosum(2);
 	     int i = 2;
         while(i != 0){
@@ -224,7 +224,9 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
         
 
       	shift_left_digits(producttosum.begin(), producttosum.end(), topshift, topshiftedproduct.begin());
-
+        if(*(topshiftedproduct.end()-1) == 0 && temp2<10){
+          topshiftedproduct.pop_back();
+        }
 
         shift_left_digits(topshiftedproduct.begin(), topshiftedproduct.end(), bottomshift, bottomshiftedproduct.begin());
 
@@ -233,6 +235,13 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
 	      copy(runningtotal.begin(), runningtotal.end(), toptotal.begin());
         --e1copy;
         ++topshift;
+      }
+      cout << "this is what ended up in toptotal after the loop: " << endl;
+      II1 topb = toptotal.begin();
+      II2 tope = toptotal.end();
+      while(topb != tope){
+        cout<<*topb<<endl;
+        ++topb;
       }
       --e2;
       topshift = 0;
@@ -261,6 +270,13 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
         copy(runningtotal.begin(), runningtotal.end(), bottomtotal.begin());
         --e1copy;
         ++topshift;
+      }
+            cout << "this is what ended up in bottomtotal after the loop: " << endl;
+      II1 bottomb = bottomtotal.begin();
+      II2 bottome = bottomtotal.end();
+      while(bottomb != bottome){
+        cout<<*bottomb<<endl;
+        ++bottomb;
       }
       if(distance(toptotal.begin(), toptotal.end())>distance(bottomtotal.begin(), bottomtotal.end())){
         finalx.resize(distance(toptotal.begin(),toptotal.end()) + 1);
