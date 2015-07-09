@@ -214,29 +214,19 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
         }
 
 
-        cout<< "this is the beginning of produt to sum " << producttosum[0] << endl;
+
         vector<int> topshiftedproduct(2+topshift);
         vector<int> bottomshiftedproduct(distance(topshiftedproduct.begin(),topshiftedproduct.end()) + bottomshift);
-        vector<int> runningtotal(distance(bottomshiftedproduct.begin(),bottomshiftedproduct.end()) + distance(total.begin(), total.end()));
-        cout<< "this is the beginning of produt to sum " << producttosum[0] << endl;
-	shift_left_digits(producttosum.begin(), producttosum.end(), topshift, topshiftedproduct.begin());
-        II1 beg = topshiftedproduct.begin();
-        II2 end = topshiftedproduct.end();
-        while(beg != end){
-          cout << *beg << endl;
-          ++beg;
-        }
-        cout << "that was the end of the first left shift" << endl;
+        vector<int> runningtotal(total + 1);
+        
+
+      	shift_left_digits(producttosum.begin(), producttosum.end(), topshift, topshiftedproduct.begin());
+
         shift_left_digits(topshiftedproduct.begin(), topshiftedproduct.end(), bottomshift, bottomshiftedproduct.begin());
-	              II1 beg2 = bottomshiftedproduct.begin();
-        II2 end2 = bottomshiftedproduct.end();
-        while(beg2 != end2){
-          cout << *beg2 << endl;
-          ++beg2;
-        }
-        cout << "that was the end of the second left shift" << endl; 
+
         plus_digits(total.begin(), total.end(), bottomshiftedproduct.begin(), bottomshiftedproduct.end(), runningtotal.begin());
-	copy(runningtotal.begin(), runningtotal.end(), total.begin());
+        total.reize(runningtotal);
+	      copy(runningtotal.begin(), runningtotal.end(), total.begin());
         --e1;
         ++topshift;
       }
@@ -269,6 +259,13 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
       ++topshift;
     }
   }
+  II1 beg = total.begin();
+  II2 end = total.end();
+  while(beg != end){
+    cout<< *beg << endl;
+    ++beg;
+  }
+  cout<< "thats what was in total at the end" << endl;
   x = copy(total.begin(), total.end(), x);
   return x;}
 
