@@ -75,62 +75,180 @@ return copy(b, e - n, x);}
  */
  template <typename II1, typename II2, typename OI>
 OI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
-    int len = distance(b1,e1);
-    if(len < distance(b2, e2)){
-      len = distance(b2,e2);}
-    OI endx = x+len;
-    bool stop = false;
-    int carryOver = 0;
-    while(!stop){   
-                if (b1 != e1 && b2 != e2){
-                    //std::cout << "Normal Case" << std::endl;
-                    int temp = *(e1-1) + *(e2-1) + carryOver;
-                    carryOver = 0;
-                    if(temp >= 10){
-                        carryOver = 1;
-                        temp -= 10;
-                    }
-                    *(x+len) = temp;
-                    --e1;
-                    --e2;
-                    --len;
-                } else if(b1 != e1){
-                    //std::cout << "b1 longer Case" << std::endl;
-                    int temp = *(e1-1) + carryOver;
-                    carryOver = 0;
-                    if(temp >= 10){
-                        carryOver = 1;
-                        temp -= 10;
-                    }
-                     *(x+len) = temp;
-                    --e1;
-                    --len;
-                } else if(b2 != e2){
-                    //std::cout << "b2 longer Case" << std::endl;
-                    int temp = *(e2-1) + carryOver;
-                    carryOver = 0;
-                    if(temp >= 10){
-                        carryOver = 1;
-                        temp -= 10;
-                    }
-                     *(x+len) = temp;
-                    --e2;
-                    --len;         
-                } else{
-                    //std::cout << "Else Case" << std::endl;
-                    if(carryOver != 0){
-                        *(x+len) = carryOver;
-                        carryOver = 0;
-                        ++endx;
-                    } else{
-                        endx = shift_left_digits (x+1, endx+1, 1, x);
-                        --endx;
-                    }
-                    stop = true;
-                }
-            }
-            return endx;
+  int carry = 0;
+  int num = 0;
+  int sum = 0;
+  int length1 = distance(b1, e1);
+  int length2 = distance(b2, e2); 
+  deque<int> container;
+
+  if (length1 == length2){
+    while(b1 != e1){
+      num = *(e1-1) + *(e2-1) + carry;
+      sum = num % 10;
+      container.push_front(sum);
+      if (num > 9){
+        carry = 1;
       }
+      else{
+        carry = 0;
+      }
+      --e1;
+      --e2;
+    }
+
+    if (carry == 1){
+      container.resize(length1 + 1);
+      container.push_front(carry);
+    }
+    else{
+      container.resize(length1);
+    }
+
+    for (deque<int>::iterator v = container.begin(); v != container.end(); ++v){
+      *x++ = *v;
+      cout << *v;
+    }
+  }
+  else if (length1 > length2){
+    while (b2 != e2){
+      num = *(e1-1) + *(e2-1) + carry;
+      sum = num % 10;
+      container.push_front(sum);
+      if (num > 9){
+        carry = 1;
+      }
+      else{
+        carry = 0;
+      }
+      --e1;
+      --e2;
+    }
+    while (b1 != e1){
+      num = *(e1 - 1) + carry;
+      sum = num % 10;
+      container.push_front(sum);
+      if (num > 9){
+        carry = 1;
+      }
+      else {
+        carry = 0;
+      }
+      --e1;
+    }
+        
+    if (carry == 1){
+      container.resize(length1 + 1);
+      container.push_front(carry);
+    }
+    else{
+      container.resize(length1);
+    }
+
+    for (deque<int>::iterator v = container.begin(); v != container.end(); ++v){
+      *x++ = *v;
+      cout << *v;
+    }
+  }
+  else if (length2 > length1){
+    while (b1 != e1){
+      num = *(e1-1) + *(e2-1) + carry;
+      sum = num % 10;
+      container.push_front(sum);
+      if (num > 9){
+        carry = 1;
+      }
+      else{
+        carry = 0;
+      }
+      --e1;
+      --e2;
+    }
+    while (b2 != e2){
+      num = *(e2 - 1) + carry;
+      sum = num % 10;
+      container.push_front(sum);
+      if (num > 9){
+        carry = 1;
+      }
+      else {
+        carry = 0;
+      }
+      --e2;
+    }
+        
+    if (carry == 1){
+      container.resize(length2 + 1);
+      container.push_front(carry);
+    }
+    else{
+      container.resize(length2);
+    }
+
+    for (deque<int>::iterator v = container.begin(); v != container.end(); ++v){
+      *x++ = *v;
+      cout << *v;
+    }
+  }
+  return x;}
+
+
+    // int len = distance(b1,e1);
+    // if(len < distance(b2, e2)){
+    //   len = distance(b2,e2);}
+    // OI endx = x+len;
+    // bool stop = false;
+    // int carryOver = 0;
+    // while(!stop){   
+    //             if (b1 != e1 && b2 != e2){
+    //                 //std::cout << "Normal Case" << std::endl;
+    //                 int temp = *(e1-1) + *(e2-1) + carryOver;
+    //                 carryOver = 0;
+    //                 if(temp >= 10){
+    //                     carryOver = 1;
+    //                     temp -= 10;
+    //                 }
+    //                 *(x+len) = temp;
+    //                 --e1;
+    //                 --e2;
+    //                 --len;
+    //             } else if(b1 != e1){
+    //                 //std::cout << "b1 longer Case" << std::endl;
+    //                 int temp = *(e1-1) + carryOver;
+    //                 carryOver = 0;
+    //                 if(temp >= 10){
+    //                     carryOver = 1;
+    //                     temp -= 10;
+    //                 }
+    //                  *(x+len) = temp;
+    //                 --e1;
+    //                 --len;
+    //             } else if(b2 != e2){
+    //                 //std::cout << "b2 longer Case" << std::endl;
+    //                 int temp = *(e2-1) + carryOver;
+    //                 carryOver = 0;
+    //                 if(temp >= 10){
+    //                     carryOver = 1;
+    //                     temp -= 10;
+    //                 }
+    //                  *(x+len) = temp;
+    //                 --e2;
+    //                 --len;         
+    //             } else{
+    //                 //std::cout << "Else Case" << std::endl;
+    //                 if(carryOver != 0){
+    //                     *(x+len) = carryOver;
+    //                     carryOver = 0;
+    //                     ++endx;
+    //                 } else{
+    //                     endx = shift_left_digits (x+1, endx+1, 1, x);
+    //                     --endx;
+    //                 }
+    //                 stop = true;
+    //             }
+    //         }
+    //         return endx;
+    //   }
 
 // ------------
 // minus_digits
@@ -149,87 +267,65 @@ OI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
  */
 template <typename II1, typename II2, typename OI>
 OI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
-     int len1 = e1 - b1;
-    //b1 is the larger number at the point
-    --len1;
-    OI endx = x+len1;
-    
-    bool stop = false;
-    int carryOver = 0;
-    while(!stop){   
-                if (b1 != e1 && b2 != e2){
-                    //std::cout << "Normal Case" << std::endl;
-                    int temp = *(e1-1) - *(e2-1) + carryOver;
-                    carryOver = 0;
-                    if(temp < 0){
-                        carryOver = -1;
-                        temp += 10;
-                    }
-                    *(x+len1) = temp;
-                    --e1;
-                    --e2;
-                    --len1;
-                } else if(b1 != e1){
-                    //std::cout << "b1 longer Case" << std::endl;
-                    int temp = *(e1-1) + carryOver;
-                    carryOver = 0;
-                    if(temp < 0){
-                        carryOver = -1;
-                        temp += 10;
-                    }
-                     *(x+len1) = temp;
-                    --e1;
-                    --len1;
-                } else{
-                    //std::cout << "Else Case" << std::endl;
-                    if(carryOver != 0){
-                        *(x+len1) = carryOver;
-                        carryOver = 0;
-                    } else{
-                        int counter = 0;
-                        OI counterX = x;
-                        while(counterX != endx){
-                            if(*counterX != 0) break;
-                            ++counter;
-                            ++counterX;
-                        }
-                        endx = shift_left_digits (x+counter, endx+1, counter, x);
-                        endx -= counter;
-                    }
-                    stop = true;
-                }
-            }
-            return endx;}
 
-  // }
-  /*int a = 0;
-  int c = 0;
-  while(b1 != e1){                //Took each digit from first iterator and put it into an int
-    a = (a + *b1) * 10;
-    ++b1;
+  //Need to remove leading 00s from the actual result
+  //example 123 - 122 = 001 -> 1
+
+  int carry = 0;
+  int num = 0;
+  int diff = 0;
+  int length1 = distance(b1, e1);
+  int length2 = distance(b2, e2); 
+  deque<int> container;
+
+  if (length1 == length2){
+    while(b1 != e1){
+       if (*(e1 -1) < *(e2-1)){
+        num = (*(e1-1) + 10) - (*(e2-1) + carry);
+        container.push_front(num);
+        carry = 1; 
+      }
+      else {
+        num = *(e1 - 1) - (*(e2 - 1) + carry);
+        container.push_front(num);
+        carry = 0;
+      }
+      --e1;
+      --e2;
+    }
+
+    for (deque<int>::iterator v = container.begin(); v != container.end(); ++v){
+      *x++ = *v;
+    }
   }
-  a /= 10;                        //divided by 10 to take away last multiplication of 10
-
-  while(b2 != e2){                //Took each digit from second iterator and put it into an int
-    c = (c + *b2) * 10;
-    ++b2;
-  }
-  c /= 10;                        //divided by 10 to take away last multiplication of 10
-
-  a -= c;
-  
-  stack<int> mystack;
-  while(a!=0){                    //push each digit onto stack because we pull them out backwards from a
-    mystack.push(a%10);
-    a = a/10;
+  else if (length1 > length2){
+    while (b2 != e2){
+      if (*(e1 -1) < *(e2-1)){
+        num = (*(e1-1) + 10) - (*(e2-1) + carry);
+        container.push_front(num);
+        carry = 1; 
+      }
+      else {
+        num = *(e1 - 1) - (*(e2 - 1) + carry);
+        container.push_front(num);
+        carry = 0;
+      }
+      --e1;
+      --e2;
+    }
+    while (b1 != e1){
+        num = *(e1 - 1) - carry;
+        carry = 0;
+        container.push_front(num);
+        --e1;
+    }
+    for (deque<int>::iterator v = container.begin(); v != container.end(); ++v){
+      *x++ = *v;
+      
+    }
   }
 
-  while(!mystack.empty()){        //pop them off the stack to put them in the right order in the interator.
-    *x=mystack.top();
-    mystack.pop();
-    ++x;
-  }
-  return x;}*/
+  return x;}
 
 // -----------------
 // multiplies_digits
