@@ -223,19 +223,19 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
     vector<vector<int>> listofmultiples(10);
     for(int i=0; i<10; ++i){
         vector<int> temp = find_multiples(b1, e1, i);
-        cache[i] = temp;
+        listofmultiples[i] = temp;
     }
     
    
-    vector<int>::reverse_iterator productb = cache[*(e2-1)].rbegin();
-    vector<int>::reverse_iterator producte = cache[*(e2-1)].rend();
+    vector<int>::reverse_iterator productb = listofmultiples[*(e2-1)].rbegin();
+    vector<int>::reverse_iterator producte = listofmultiples[*(e2-1)].rend();
     int len = (e2-b2);
     vector<int> tempCons((e1-b1) + len + 1);
     
     for(int i=1; i<len; ++i){
         --e2;
-        vector<int>::reverse_iterator cb = cache[*(e2-1)].rbegin();
-        vector<int>::reverse_iterator ce = cache[*(e2-1)].rend();
+        vector<int>::reverse_iterator cb = listofmultiples[*(e2-1)].rbegin();
+        vector<int>::reverse_iterator ce = listofmultiples[*(e2-1)].rend();
         vector<int> temp((e1-b1)+1+i);
         vector<int>::iterator tempe = shift_left_digits (cb, ce, i, temp.begin());      
         producte = plus_digits(productb, producte, temp.begin(), tempe, tempCons.rbegin());
