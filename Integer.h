@@ -194,7 +194,7 @@ FI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
  * ([b1, e1) * [b2, e2)) => x
  */
 template <typename II1, typename II2, typename FI>
-FI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) { return x;}0
+FI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) { return x;}
 
 
 
