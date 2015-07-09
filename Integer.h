@@ -207,22 +207,29 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
       e1copy = e1;
       while(b1 != e1copy){
         int temp = *(e2-1) * *(e1copy-1);
-        vector<int> producttosum(2);
+	int temp2 = temp;
+        cout << "this is temp " << temp << endl;
+	vector<int> producttosum(2);
 	     int i = 2;
         while(i != 0){
 	       producttosum[i-1]=temp%10;
           temp /= 10;
 	       --i;
         }
-
-
+	cout << "this is what is in product sum " << producttosum[0] << " " << producttosum[1] << endl;
+	cout << "top shift amount should be zero and is " << topshift << endl;
 
         vector<int> topshiftedproduct(2+topshift);
         vector<int> bottomshiftedproduct(distance(topshiftedproduct.begin(),topshiftedproduct.end()) + bottomshift);
         vector<int> runningtotal(total.size() + 1);
         
+	cout << "size of topshiftproduct should be 2 and is " << topshiftedproduct.size() << endl;
 
       	shift_left_digits(producttosum.begin(), producttosum.end(), topshift, topshiftedproduct.begin());
+
+        if(temp2<10){
+          topshiftedproduct.pop_back();
+        }
 
         shift_left_digits(topshiftedproduct.begin(), topshiftedproduct.end(), bottomshift, bottomshiftedproduct.begin());
 
