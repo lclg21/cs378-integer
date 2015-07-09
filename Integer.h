@@ -206,20 +206,18 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
       while(b1 != e1){
         int temp = *(e2-1) * *(e1-1);
         vector<int> producttosum(2);
-	int i = 2;
+	     int i = 2;
         while(i != 0){
-	 producttosum[i-1]=temp%10;
+	       producttosum[i-1]=temp%10;
           temp /= 10;
-	--i;
+	       --i;
         }
         vector<int> topshiftedproduct(1);
         vector<int> bottomshiftedproduct(1);
         vector<int> runningtotal(1);
         shift_left_digits(producttosum.begin(), producttosum.end(), topshift, topshiftedproduct.begin());
 	shift_left_digits(topshiftedproduct.begin(), topshiftedproduct.end(), bottomshift, bottomshiftedproduct.begin());
-	cout<< "going into plus digits and total.begin is " << *total.begin() << "and bottomshifted .begin is " << *bottomshiftedproduct.begin() << " and running total begin is " << *runningtotal.begin() << endl;
 	plus_digits(total.begin(), total.end(), bottomshiftedproduct.begin(), bottomshiftedproduct.end(), runningtotal.begin());
-        cout << "i made it out of plus digits" << endl;
 	copy(runningtotal.begin(), runningtotal.end(), total.begin());
         --e1;
         ++topshift;
@@ -229,19 +227,19 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
     }
   }
   else{
-    while(b1!=e1){
+  while(b1!=e1){
       while(b2 != e2){
         int temp = *(e2-1) * *(e1-1);
-        int i = 0;
-        vector<int> producttosum = {};
-        while(temp != 0){
-          producttosum[i]=temp%10;
+        vector<int> producttosum(2);
+        int i = 2;
+        while(i != 0){
+          producttosum[i-1]=temp%10;
           temp /= 10;
-          ++i;
+          --i;
         }
-        vector<int> topshiftedproduct = {};
-        vector<int> bottomshiftedproduct = {};
-        vector<int> runningtotal = {};
+        vector<int> topshiftedproduct(1);
+        vector<int> bottomshiftedproduct(1);
+        vector<int> runningtotal(1);
         shift_left_digits(producttosum.begin(), producttosum.end(), topshift, topshiftedproduct.begin());
         shift_left_digits(topshiftedproduct.begin(), topshiftedproduct.end(), bottomshift, bottomshiftedproduct.begin());
         plus_digits(total.begin(), total.end(), bottomshiftedproduct.begin(), bottomshiftedproduct.end(), runningtotal.begin());
