@@ -107,7 +107,6 @@ OI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
 
     for (deque<int>::iterator v = container.begin(); v != container.end(); ++v){
       *x++ = *v;
-      cout << *v;
     }
   }
   else if (length1 > length2){
@@ -147,7 +146,6 @@ OI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
 
     for (deque<int>::iterator v = container.begin(); v != container.end(); ++v){
       *x++ = *v;
-      cout << *v;
     }
   }
   else if (length2 > length1){
@@ -187,7 +185,6 @@ OI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
 
     for (deque<int>::iterator v = container.begin(); v != container.end(); ++v){
       *x++ = *v;
-      cout << *v;
     }
   }
   return x;}
@@ -286,32 +283,63 @@ OI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
  * output the product of the two input sequences into the output sequence
  * ([b1, e1) * [b2, e2)) => x
  */
-template <typename II1, typename II2, typename FI>
-FI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) { return x;}
-  /*int len1 = distance(b1, e1);
-  int len2 = distance(b2, e2);
-  
-  if (len1 > len2){
-
-
-    for (int i = 0; i <= [?]; ++i){
-      x =  plus_digits(b1, e1, b1, e1, x);
-
+ template <typename II>
+ vector<int> find_multiples(II b1, II e1, int n) {
+   vector<int> multiples;
+   if (n == 0){
+    multiples.push_back(0);
+   }
+   else{
+    int carry = 0;
+    while(b1 != e1){
+      int temp = *(e1-1) * n;
+      multiples.push_back(temp%10 + carry);
+      if(temp>9){
+        carry = temp/10;
+      }
+      else{
+        carry = 0;
+      }
+      --e1;
     }
-  }
+   if (carry > 0){
+    multiples.push_back(carry);
+    }
+   }
+   return multiples;
 }
-  /*for(){
-    x = plus_digits(b1,e1,b1,e1,x);
-  }
-  vector<int> myvect(distance(b1,e1));
-  while(b1 != e1){
-    myvect.push_back(*b1);
-    ++b1;
-  }
+template <typename II1, typename II2, typename OI>
+OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
+    vector<vector<int>> listofmultiples(10);
+    for(int i=0; i<10; ++i){
+        vector<int> temp = find_multiples(b1, e1, i);
+        listofmultiples[i] = temp;
+    }
+    
+   
+    vector<int>::reverse_iterator productb = listofmultiples[*(e2-1)].rbegin();
+    vector<int>::reverse_iterator producte = listofmultiples[*(e2-1)].rend();
+    int len = (e2-b2);
+    vector<int> tempCons((e1-b1) + len + 1);
+    
+    for(int i=1; i<len; ++i){
+        --e2;
+        vector<int>::reverse_iterator cb = listofmultiples[*(e2-1)].rbegin();
+        vector<int>::reverse_iterator ce = listofmultiples[*(e2-1)].rend();
+        vector<int> temp((e1-b1)+1+i);
+        vector<int>::iterator tempe = shift_left_digits (cb, ce, i, temp.begin());      
+        producte = plus_digits(productb, producte, temp.begin(), tempe, tempCons.rbegin());
+        productb = tempCons.rbegin();
+    }
 
-    x = plus_digits(b1,e1,b1,e1,x);
+    while(productb != producte){
+        *x = *productb;
+        ++x;
+        ++productb;
+    }
 
-  }*/
+    return x;}
+
 
 
 // --------------
@@ -695,9 +723,10 @@ template < typename T, typename C = std::vector<T> >
    * <your documentation>
    */
   Integer (int value) {
+  
   if (value < 0){
     neg = true;
-    value = 0 - value;
+    value = -value;
   }
   else if(value == 0){
     neg = false;
@@ -716,7 +745,7 @@ template < typename T, typename C = std::vector<T> >
     }
   _x = C(numdigits);
   while(value != 0){
-    _x[numdigits] = value%10;
+    _x[numdigits-1] = value%10;
     value /= 10;
     --numdigits;
   }
@@ -825,21 +854,46 @@ template < typename T, typename C = std::vector<T> >
    */
   Integer& operator += (const Integer& rhs) {
     Integer lhs = *this;
-    if (lhs.neg == rhs.neg){
-      plus_digits(lhs._x.begin(), lhs._x.end(), rhs._x.begin(), rhs._x.end(), _x.begin());
+    C sum(lhs._x.size() + rhs._x.size() + 1, 0);
+            
+    typename C::iterator x = sum.begin();
+    typename C::iterator p;
+    
+    if(lhs.neg == rhs.neg){
+      p = plus_digits(lhs._x.begin(),lhs._x.end(),rhs._x.begin(),rhs._x.end(),x);
       this->neg = rhs.neg;
     }
     else{
-      minus_digits(lhs._x.begin(), lhs._x.end(), rhs._x.begin(), rhs._x.end(), _x.begin() );
-      if (lhs > rhs){
+      p = minus_digits(lhs._x.begin(),lhs._x.end(),rhs._x.begin(),rhs._x.end(),x);
+      if(lhs > rhs){
         this->neg = lhs.neg;
       }
       else{
         this->neg = rhs.neg;
       }
     }
-    cout << *this;
+    C sum_result = C(x,p);
+    this->_x = sum_result;
+
     return *this;}
+
+
+    // Integer lhs = *this;
+    // if (lhs.neg == rhs.neg){
+    //   plus_digits(lhs._x.begin(), lhs._x.end(), rhs._x.begin(), rhs._x.end(), _x.begin());
+    //   this->neg = rhs.neg;
+    // }
+    // else{
+    //   minus_digits(lhs._x.begin(), lhs._x.end(), rhs._x.begin(), rhs._x.end(), _x.begin() );
+    //   if (lhs > rhs){
+    //     this->neg = lhs.neg;
+    //   }
+    //   else{
+    //     this->neg = rhs.neg;
+    //   }
+    // }
+    // cout << *this;
+    // return *this;}
 
   // -----------
   // operator -=
@@ -869,7 +923,6 @@ template < typename T, typename C = std::vector<T> >
         this->neg = true;
       }
     }
-    cout << *this;
     return *this;}
 
   // -----------

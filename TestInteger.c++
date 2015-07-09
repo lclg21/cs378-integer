@@ -215,7 +215,15 @@ TEST(Integer, minus_digits6 ) {
 // -----------------
 // multiplies_digits
 // -----------------
-/*TEST(Integer, multiplies_digits ) {
+  TEST(Integer, multiplies_digits ) {
+  const vector<int>       x = {2, 3, 9};
+  const vector<int>   y = {1, 2};
+  vector<int>       z(4);
+  multiplies_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
+  const list<int>       a = {2, 8, 6, 8};
+  ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
+  
+  /*TEST(Integer, multiplies_digits2 ) {
 	const vector<int>       x = {1, 2, 3, 4, 5, 6};
   const vector<int>		y = {0, 0, 0, 0, 0, 0};
   vector<int>				z(1);
@@ -223,7 +231,7 @@ TEST(Integer, minus_digits6 ) {
 	const list<int>       a = {0};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
-TEST(Integer, multiplies_digits2 ) {
+TEST(Integer, multiplies_digits3 ) {
 	const vector<int>       x = {1, 2, 3};
   const vector<int>		y = {4, 5, 6};
   vector<int>				z(5);
@@ -231,7 +239,7 @@ TEST(Integer, multiplies_digits2 ) {
 	const list<int>       a = {5, 6, 0, 8, 8};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
-TEST(Integer, multiplies_digits3 ) {
+TEST(Integer, multiplies_digits4 ) {
 	const vector<int>       x = {1, 2};
   const vector<int>		y = {4, 5, 6};
   vector<int>				z(4);
@@ -239,7 +247,7 @@ TEST(Integer, multiplies_digits3 ) {
 	const list<int>       a = {5, 4, 7, 2};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
-TEST(Integer, multiplies_digits4 ) {
+TEST(Integer, multiplies_digits5 ) {
 	const vector<int>       x = {1, 2, 3};
   const vector<int>		y = {4, 5};
   vector<int>				z(4);
@@ -247,7 +255,7 @@ TEST(Integer, multiplies_digits4 ) {
 	const list<int>       a = {5, 5, 3, 5};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
-TEST(Integer, multiplies_digits5 ) {
+TEST(Integer, multiplies_digits6 ) {
 	const vector<int>       x = {1, 2, 3, 4, 5, 6};
   const vector<int>		y = {4, 5};
   vector<int>				z(5);
@@ -255,14 +263,13 @@ TEST(Integer, multiplies_digits5 ) {
 	const list<int>       a = {1, 5, 5, 2, 5};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
-TEST(Integer, multiplies_digits6 ) {
+TEST(Integer, multiplies_digits7 ) {
 	const vector<int>       x = {1, 2, 3, 4, 5, 6};
   const vector<int>		y = {4, 5, 6, 7, 8, 9};
   vector<int>				z(5);
   multiplies_digits(x.begin()+2, x.begin()+5, y.begin()+4, y.end(), z.begin());
 	const list<int>       a = {3, 0, 7, 0, 5};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
-
 */
 // --------------
 // divides_digits
@@ -364,7 +371,7 @@ TEST(Integer, equal_to5) {
 
 TEST(Integer, equal_to6) {
   const Integer<int> x("1");
-  const Integer<int> y("1");
+  const Integer<int> y = 1;
   ASSERT_TRUE(x == y);
   ASSERT_FALSE(x != y);}
 
@@ -451,6 +458,11 @@ TEST(Integer, less_than12) {
   const Integer<int> x = -2000000000;
   const Integer<int> y = -100;
   ASSERT_TRUE(x < y);}
+
+TEST(Integer, less_than13) {
+  const Integer<int> x = -2000000000;
+  const Integer<int> y("-100");
+  ASSERT_TRUE(x < y);}
 //-----------
 // operator -
 //-----------
@@ -480,6 +492,12 @@ TEST(Integer, negation4) {
     ASSERT_EQ(a, r);
 }
 
+TEST(Integer, negation5) {
+    Integer<int> a("10");
+    Integer<int> r = -10;
+    a = -a; 
+    ASSERT_EQ(a, r);
+}
 //-----------
 // abs
 //-----------
@@ -544,6 +562,12 @@ TEST(Integer, ostream5) {
     w << n << endl;
     ASSERT_EQ("-215204524605487065486704654864703543720647867086786745346540231523745312300000\n", w.str());}
 
+TEST(Integer, ostream6) {
+    ostringstream w;
+    Integer<int> n = 154321;
+    w << n << endl;
+    ASSERT_EQ("154321\n", w.str());
+}
 TEST(Integer, left_shift_equals) {
     Integer<int> a("1");
     int n = 3;
@@ -565,6 +589,20 @@ TEST(Integer, left_shift_equals3) {
     int n = -45;
     a <<= n;
     Integer<int> b("88");
+    ASSERT_EQ(b, a);}
+
+TEST(Integer, left_shift_equals4) {
+    Integer<int> a("88888888888888888888888888888888888888888888888");
+    int n = -45;
+    a <<= n;
+    Integer<int> b = 88;
+    ASSERT_EQ(b, a);}
+
+TEST(Integer, left_shift_equals5) {
+    Integer<int> a = 141540;
+    int n = 50;
+    a <<= n;
+    Integer<int> b("14154000000000000000000000000000000000000000000000000000");
     ASSERT_EQ(b, a);}
 
 TEST(Integer, right_shift_equals) {
@@ -627,9 +665,28 @@ TEST(Integer, plus_equals4) {
 // operator -= 
 //------------
 
-TEST(Integer, minus_equals) {
+/*TEST(Integer, minus_equals) {
     Integer<int> a(20);
     Integer<int> b(5);
     a -= b;
     ASSERT_EQ(a, 15);}
+*/
+
+TEST(Integer, right_shift_equals4) {
+    Integer<int> a = 1000;
+    int n = 3;
+    a >>= n;
+    Integer<int> b = 1;
+    ASSERT_EQ(b, a);
+}
+
+
+TEST(Integer, right_shift_equals5) {
+    Integer<int> a = 1000;
+    int n = 3;
+    a >>= n;
+    Integer<int> b("1");
+    ASSERT_EQ(b, a);
+}
+
 
