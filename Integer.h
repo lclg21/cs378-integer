@@ -602,6 +602,8 @@ template < typename T, typename C = std::vector<T> >
    * <your documentation>
    */
   Integer (int value) {
+  str v = to_string(value);
+  Integer(v);/*
   if (value < 0){
     neg = true;
     value = 0 - value;
@@ -626,7 +628,7 @@ template < typename T, typename C = std::vector<T> >
     _x[numdigits] = value%10;
     value /= 10;
     --numdigits;
-  }
+  }*/
     assert(valid());}
 
   /**
