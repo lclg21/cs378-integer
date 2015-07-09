@@ -560,12 +560,12 @@ TEST(Integer, left_shift_equals2) {
     ASSERT_EQ(b, a);
 }
 
-/*TEST(Integer, left_shift_equals3) {
+TEST(Integer, left_shift_equals3) {
     Integer<int> a("88888888888888888888888888888888888888888888888");
     int n = -45;
-    Integer<int> b = a <<= n;
-    ASSERT_EQ(88, a);
-    ASSERT_EQ(88, b);*/
+    a <<= n;
+    Integer<int> b("88");
+    ASSERT_EQ(b, a);}
 
 TEST(Integer, right_shift_equals) {
     Integer<int> a("1000");
