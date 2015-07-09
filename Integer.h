@@ -854,17 +854,17 @@ template < typename T, typename C = std::vector<T> >
    */
   Integer& operator += (const Integer& rhs) {
     Integer lhs = *this;
-    C sum(lhs._x.size() + rhs._x.size() + 1, 0);
+    C container(lhs._x.size() + rhs._x.size() + 1, 0);
             
-    typename C::iterator x = sum.begin();
-    typename C::iterator p;
+    typename C::iterator x = container.begin();
+    typename C::iterator digits;
     
     if(lhs.neg == rhs.neg){
-      p = plus_digits(lhs._x.begin(),lhs._x.end(),rhs._x.begin(),rhs._x.end(),x);
+      digits = plus_digits(lhs._x.begin(),lhs._x.end(),rhs._x.begin(),rhs._x.end(),x);
       this->neg = rhs.neg;
     }
     else{
-      p = minus_digits(lhs._x.begin(),lhs._x.end(),rhs._x.begin(),rhs._x.end(),x);
+      digits = minus_digits(lhs._x.begin(),lhs._x.end(),rhs._x.begin(),rhs._x.end(),x);
       if(lhs > rhs){
         this->neg = lhs.neg;
       }
@@ -872,28 +872,10 @@ template < typename T, typename C = std::vector<T> >
         this->neg = rhs.neg;
       }
     }
-    C sum_result = C(x,p);
-    this->_x = sum_result;
+    C sum = C(x,digits);
+    this->_x = sum;
 
     return *this;}
-
-
-    // Integer lhs = *this;
-    // if (lhs.neg == rhs.neg){
-    //   plus_digits(lhs._x.begin(), lhs._x.end(), rhs._x.begin(), rhs._x.end(), _x.begin());
-    //   this->neg = rhs.neg;
-    // }
-    // else{
-    //   minus_digits(lhs._x.begin(), lhs._x.end(), rhs._x.begin(), rhs._x.end(), _x.begin() );
-    //   if (lhs > rhs){
-    //     this->neg = lhs.neg;
-    //   }
-    //   else{
-    //     this->neg = rhs.neg;
-    //   }
-    // }
-    // cout << *this;
-    // return *this;}
 
   // -----------
   // operator -=
@@ -904,25 +886,16 @@ template < typename T, typename C = std::vector<T> >
    */
   Integer& operator -= (const Integer& rhs) {
     Integer lhs = *this;
+    C container(lhs._x.size() + rhs._x.size() + 1, 0);
 
-    if (lhs.neg == rhs.neg){
-      minus_digits(lhs._x.begin(), lhs._x.end(), rhs._x.begin(), rhs._x.end(), _x.begin());
-      if (lhs > rhs){
-        this->neg = true;
-      }
-      else{
-        this->neg = false;
-      }    
+    typename C::iterator x = container.begin();
+    typename C::iterator digits;    
+
+    if ((lhs.neg == rhs.neg)){
+      digits = minus_digits(lhs._x.begin(),lhs._x.end(),rhs._x.begin(),rhs._x.end(),x);
+      //working on this rt now......
     }
-    else{
-      plus_digits(lhs._x.begin(), lhs._x.end(), rhs._x.begin(), rhs._x.end(), _x.begin());
-      if (lhs > rhs){
-        this->neg = false;
-      }
-      else{
-        this->neg = true;
-      }
-    }
+
     return *this;}
 
   // -----------
