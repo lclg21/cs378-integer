@@ -217,7 +217,7 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
 
         vector<int> topshiftedproduct(2+topshift);
         vector<int> bottomshiftedproduct(distance(topshiftedproduct.begin(),topshiftedproduct.end()) + bottomshift);
-        vector<int> runningtotal(total + 1);
+        vector<int> runningtotal(total.size() + 1);
         
 
       	shift_left_digits(producttosum.begin(), producttosum.end(), topshift, topshiftedproduct.begin());
@@ -225,11 +225,26 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
         shift_left_digits(topshiftedproduct.begin(), topshiftedproduct.end(), bottomshift, bottomshiftedproduct.begin());
 
         plus_digits(total.begin(), total.end(), bottomshiftedproduct.begin(), bottomshiftedproduct.end(), runningtotal.begin());
-        total.reize(runningtotal);
+        total.resize(runningtotal.size());
 	      copy(runningtotal.begin(), runningtotal.end(), total.begin());
         --e1;
         ++topshift;
-      }
+	cout << "this is the running total in the inner loop: " << endl;
+	II1 ibeg = total.begin();
+	II1 iend = total.end();
+	while(ibeg != iend){
+	cout << *ibeg << endl;
+	++ibeg;
+      }}
+
+
+	cout << "this is the running total in the outer loop: " << endl;
+	II1 obeg = total.begin();
+	II1 oend = total.end();
+	while(obeg != oend){
+	cout << *obeg << endl;
+	++obeg;
+}
       --e2;
       ++bottomshift;
     }
@@ -252,11 +267,28 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
   shift_left_digits(topshiftedproduct.begin(), topshiftedproduct.end(), bottomshift, bottomshiftedproduct.begin());
   plus_digits(total.begin(), total.end(), bottomshiftedproduct.begin(), bottomshiftedproduct.end(), runningtotal.begin());
   copy(runningtotal.begin(), runningtotal.end(), total.begin());
-        --e2;
+cout << "i reach the part after copy" << endl;      
+  --e2;
         ++bottomshift;
-      }
+   cout << "this is the running total in the inner loop : " << endl;  
+  II1 ibeg = total.begin();
+  II2 iend = total.end();
+  while(ibeg != iend){
+    cout<< *ibeg << endl;
+    ++ibeg;
+  }
+
+ }
       --e1;
       ++topshift;
+	cout<< "this is the running total of the outer loop: " <<endl;
+
+  II1 obeg = total.begin();
+  II2 oend = total.end();
+  while(obeg != oend){
+    cout<< *obeg << endl;
+    ++obeg;
+  }
     }
   }
   II1 beg = total.begin();
