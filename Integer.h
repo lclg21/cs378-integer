@@ -193,14 +193,15 @@ FI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
  * output the product of the two input sequences into the output sequence
  * ([b1, e1) * [b2, e2)) => x
  */
-template <typename II1, typename II2, typename FI, typename BI>
-FI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) { 
+/*
+template <typename II1, typename II2, typename BI>
+BI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, BI x) { 
   int length1 = distance(b1,e1);
   int length2 = distance(b2,e2);
   vector<int> productstoadd;
   vector<int> sum = {0};
   BI copy1;
-  BI copy2
+  BI copy2;
   int topshift = 0;
   int bottomshift = 0;
   while(b1 != e1){
@@ -217,6 +218,7 @@ FI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
   --copy2;
   if(length1 >= length2){
     while(length2 != 0){
+
       while(length1 != 0){
         vector<int> temp(2);
         int product = *copy1 * *copy2;
@@ -235,7 +237,71 @@ FI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
     }
   }
 return x = copy(sum.begin(), sum.end(), x);}
+*/
+template <typename II>
+std::vector<int> multiply_helper(II b1, II e1, int n) {
+    using namespace std;
+    vector<int> result;
+    if(n == 0){
+        result.push_back(0);
+        return result;
+    }
+    int carryOver = 0;
+    int temp;
+    //int len = e1-b1;
+    //OI endx = x+len;
+    while(b1 != e1){
+        temp = (*(e1-1) * n) + carryOver;
+        carryOver = 0;
+        if(temp >= 10){
+            result.push_back(temp%10);
+            carryOver = temp / 10;
+        } else{
+            result.push_back(temp);
+        }
+        //--len;
+        --e1;
+    }
+    if(carryOver != 0){
+        result.push_back(carryOver);
+    }
+    return result;
+}
 
+template <typename II1, typename II2, typename OI>
+OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
+    using namespace std;
+    vector< vector<int> > cache(10);
+    for(int i=0; i<10; ++i){
+        vector<int> temp = multiply_helper(b1, e1, i);
+        cache[i] = temp;
+    }
+    
+   
+    vector<int>::reverse_iterator productb = cache[*(e2-1)].rbegin();
+    vector<int>::reverse_iterator producte = cache[*(e2-1)].rend();
+    int len = (e2-b2);
+    vector<int> tempCons((e1-b1) + len + 1);
+    
+    for(int i=1; i<len; ++i){
+        --e2;
+        vector<int>::reverse_iterator cb = cache[*(e2-1)].rbegin();
+        vector<int>::reverse_iterator ce = cache[*(e2-1)].rend();
+        vector<int> temp((e1-b1)+1+i);
+        vector<int>::iterator tempe = shift_left_digits (cb, ce, i, temp.begin());      
+        producte = plus_digits(productb, producte, temp.begin(), tempe, tempCons.rbegin());
+        productb = tempCons.rbegin();
+    }
+
+    while(productb != producte){
+        *x = *productb;
+        ++x;
+        ++productb;
+    }
+
+    return x;}
+    
+    
 
 
 // --------------

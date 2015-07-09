@@ -222,7 +222,8 @@ TEST(Integer, minus_digits6 ) {
   multiplies_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
   const list<int>       a = {2, 8, 6, 8};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
-/*TEST(Integer, multiplies_digits ) {
+  
+  TEST(Integer, multiplies_digits2 ) {
 	const vector<int>       x = {1, 2, 3, 4, 5, 6};
   const vector<int>		y = {0, 0, 0, 0, 0, 0};
   vector<int>				z(1);
@@ -230,7 +231,7 @@ TEST(Integer, minus_digits6 ) {
 	const list<int>       a = {0};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
-TEST(Integer, multiplies_digits2 ) {
+TEST(Integer, multiplies_digits3 ) {
 	const vector<int>       x = {1, 2, 3};
   const vector<int>		y = {4, 5, 6};
   vector<int>				z(5);
@@ -238,7 +239,7 @@ TEST(Integer, multiplies_digits2 ) {
 	const list<int>       a = {5, 6, 0, 8, 8};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
-TEST(Integer, multiplies_digits3 ) {
+TEST(Integer, multiplies_digits4 ) {
 	const vector<int>       x = {1, 2};
   const vector<int>		y = {4, 5, 6};
   vector<int>				z(4);
@@ -246,7 +247,7 @@ TEST(Integer, multiplies_digits3 ) {
 	const list<int>       a = {5, 4, 7, 2};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
-TEST(Integer, multiplies_digits4 ) {
+TEST(Integer, multiplies_digits5 ) {
 	const vector<int>       x = {1, 2, 3};
   const vector<int>		y = {4, 5};
   vector<int>				z(4);
@@ -254,7 +255,7 @@ TEST(Integer, multiplies_digits4 ) {
 	const list<int>       a = {5, 5, 3, 5};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
-TEST(Integer, multiplies_digits5 ) {
+TEST(Integer, multiplies_digits6 ) {
 	const vector<int>       x = {1, 2, 3, 4, 5, 6};
   const vector<int>		y = {4, 5};
   vector<int>				z(5);
@@ -262,7 +263,7 @@ TEST(Integer, multiplies_digits5 ) {
 	const list<int>       a = {1, 5, 5, 2, 5};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
-TEST(Integer, multiplies_digits6 ) {
+TEST(Integer, multiplies_digits7 ) {
 	const vector<int>       x = {1, 2, 3, 4, 5, 6};
   const vector<int>		y = {4, 5, 6, 7, 8, 9};
   vector<int>				z(5);
@@ -270,7 +271,6 @@ TEST(Integer, multiplies_digits6 ) {
 	const list<int>       a = {3, 0, 7, 0, 5};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
-*/
 // --------------
 // divides_digits
 // --------------
