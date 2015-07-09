@@ -199,19 +199,26 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
   int length2 = distance(b2,e2);
   int topshift = 0;
   int bottomshift=0;
-  Integer<int> runningtotal;
-  Integer<int> total = 0;
+  
+  vector<int> total = {0};
   if(length1 >= length2){
     while(b2!=e2){
       while(b1 != e1){
         int temp = *(e2-1) * *(e1-1);
-        Integer<int> producttosum = temp;
-        Integer<int> topshiftedproduct;
-        Integer<int> bottomshiftedproduct;
+        int i = 0;
+        vector<int> producttosum = {};
+        while(temp != 0){
+          producttosum[i]=temp%10;
+          temp /= 10;
+          ++i;
+        }
+        vector<int> topshiftedproduct = {};
+        vector<int> bottomshiftedproduct = {};
+        vector<int> runningtotal = {};
         shift_left_digits(producttosum.begin(), producttosum.end(), topshift, topshiftedproduct.begin());
         shift_left_digits(topshiftedproduct.begin(), topshiftedproduct.end(), bottomshift, bottomshiftedproduct.begin());
         plus_digits(total.begin(), total.end(), bottomshiftedproduct.begin(), bottomshiftedproduct.end(), runningtotal.begin());
-        copy(bottomshiftedproduct.begin(),bottomshiftedproduct.end(), total.begin());
+        copy(runningtotal.begin(), runningtotal.end(), total.begin());
         --e1;
         ++topshift;
       }
@@ -220,23 +227,30 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
     }
   }
   else{
-   while(b1!=e1){
+    while(b1!=e1){
       while(b2 != e2){
         int temp = *(e2-1) * *(e1-1);
-        Integer<int> producttosum = temp;
-        Integer<int> topshiftedproduct;
-        Integer<int> bottomshiftedproduct;
+        int i = 0;
+        vector<int> producttosum = {};
+        while(temp != 0){
+          producttosum[i]=temp%10;
+          temp /= 10;
+          ++i;
+        }
+        vector<int> topshiftedproduct = {};
+        vector<int> bottomshiftedproduct = {};
+        vector<int> runningtotal = {};
         shift_left_digits(producttosum.begin(), producttosum.end(), topshift, topshiftedproduct.begin());
         shift_left_digits(topshiftedproduct.begin(), topshiftedproduct.end(), bottomshift, bottomshiftedproduct.begin());
         plus_digits(total.begin(), total.end(), bottomshiftedproduct.begin(), bottomshiftedproduct.end(), runningtotal.begin());
-        copy(bottomshiftedproduct.begin(),bottomshiftedproduct.end(), total.begin());
+        copy(runningtotal.begin(), runningtotal.end(), total.begin());
         --e2;
         ++bottomshift;
       }
       --e1;
       ++topshift;
     }
-  }    
+  }
   x = copy(total.begin(), total.end(), x);
   return x;}
 
