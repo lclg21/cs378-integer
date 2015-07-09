@@ -74,9 +74,10 @@ return copy(b, e - n, x);}
  * ([b1, e1) + [b2, e2)) => x
  */
  template <typename II1, typename II2, typename OI>
-OI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {           
-    int len = e1 - b1;
-    if((e2-b2)>(e1-b1)) len = e2 - b2;
+OI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
+    int len = distance(b1,e1);
+    if(len < distance(b2, e2)){
+      len = distance(b2,e2);}
     OI endx = x+len;
     bool stop = false;
     int carryOver = 0;
@@ -130,60 +131,7 @@ OI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
             }
             return endx;
       }
-/*template <typename II1, typename II2, typename FI, typename BI>
-FI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
-BI second = e2;
-BI first = e1;
-BI final;
-int carry = 0;
-while(b1 != e1 && b2 != e2){
-  *final = *second + *first;
-  if(*final>9){
-    *final = *final-10 + carry;
-    carry = 1;
-  }
-else{
-  carry = 0;
-  }
-  ++b1;
-  ++b2;
-  ++final;
-}
-while(final.begin() != final){
-  *x = *final;
-  --final;
-  ++x;
-}
-return x;}
-/*  int a = 0;
-  int c = 0;
-  while(b1 != e1){                //Took each digit from first iterator and put it into an int
-    a = (a + *b1) * 10;
-    ++b1;
-  }
-  a /= 10;                        //divided by 10 to take away last multiplication of 10
 
-  while(b2 != e2){                //Took each digit from second iterator and put it into an int
-    c = (c + *b2) * 10;
-    ++b2;
-  }
-  c /= 10;                        //divided by 10 to take away last multiplication of 10
-
-  a += c;
-  stack<int> mystack;
-  while(a!=0){                    //push each digit onto stack because we pull them out backwards from a
-    mystack.push(a%10);
-    a = a/10;
-  }
-
-  while(!mystack.empty()){        //pop them off the stack to put them in the right order in the interator.
-    *x=mystack.top();
-    mystack.pop();
-    ++x;
-  }
-
-  return x;}
-  */
 // ------------
 // minus_digits
 // ------------
@@ -246,35 +194,32 @@ FI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
  * ([b1, e1) * [b2, e2)) => x
  */
 template <typename II1, typename II2, typename FI>
-FI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
-  int a = 0;
-  int c = 0;
-  while(b1 != e1){                //Took each digit from first iterator and put it into an int
-    a = (a + *b1) * 10;
+FI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) { return x;}
+  /*int len1 = distance(b1, e1);
+  int len2 = distance(b2, e2);
+  
+  if (len1 > len2){
+
+
+    for (int i = 0; i <= [?]; ++i){
+      x =  plus_digits(b1, e1, b1, e1, x);
+
+    }
+  }
+}
+  /*for(){
+    x = plus_digits(b1,e1,b1,e1,x);
+  }
+  vector<int> myvect(distance(b1,e1));
+  while(b1 != e1){
+    myvect.push_back(*b1);
     ++b1;
   }
-  a /= 10;                        //divided by 10 to take away last multiplication of 10
 
-  while(b2 != e2){                //Took each digit from second iterator and put it into an int
-    c = (c + *b2) * 10;
-    ++b2;
-  }
-  c /= 10;                        //divided by 10 to take away last multiplication of 10
+    x = plus_digits(b1,e1,b1,e1,x);
 
-  a *= c;
-  
-  stack<int> mystack;
-  while(a!=0){                    //push each digit onto stack because we pull them out backwards from a
-    mystack.push(a%10);
-    a = a/10;
-  }
+  }*/
 
-  while(!mystack.empty()){        //pop them off the stack to put them in the right order in the interator.
-    *x=mystack.top();
-    mystack.pop();
-    ++x;
-  }
-  return x;}
 
 // --------------
 // divides_digits
@@ -384,7 +329,77 @@ template < typename T, typename C = std::vector<T> >
    * @return true if lhs Intger is less than the rhs Integer  
    */
   friend bool operator < (const Integer& lhs, const Integer& rhs) {
-   return(!(&lhs >= &rhs));}
+    if(rhs == 0 && lhs.neg == true){
+      return true;
+    }
+    if(rhs == 0 && lhs.neg ==false){
+      return false;
+    }
+    if(lhs == 0 && rhs.neg == true){
+      return false;
+    }
+    if(lhs == 0 && rhs.neg == false){
+      return true;
+    }
+    if(lhs.neg != rhs.neg){
+      if(lhs.neg == true){
+        return true;
+      }
+      else{
+        return false;
+      }
+    }
+    else{
+      if(lhs.neg == true){
+        if(lhs._x.size() != rhs._x.size()){
+          if(lhs._x.size()>rhs._x.size()){
+            return true;
+          }
+          else{
+            return false;
+          }
+        }
+
+        typename C::const_iterator left = lhs._x.begin();
+        typename C::const_iterator right = rhs._x.begin();
+        typename C::const_iterator leftend = lhs._x.end();
+        while(left != leftend){
+          if(*left < *right){
+            return false;
+          }
+          if(*right < *left){
+            return true;
+          }
+          ++left;
+          ++right;
+        }
+      return false;}
+      else{
+        if(lhs._x.size() != rhs._x.size()){
+          if(lhs._x.size()>rhs._x.size()){
+            return false;
+          }
+          else{
+            return true;
+          }
+        }
+
+        typename C::const_iterator left = lhs._x.begin();
+        typename C::const_iterator right = rhs._x.begin();
+        typename C::const_iterator leftend = lhs._x.end();
+        while(left != leftend){
+          if(*left > *right){
+            return false;
+          }
+          if(*right > *left){
+            return true;
+          }
+          ++left;
+          ++right;
+        }
+      }
+    }
+    return false;}
   // -----------
   // operator <=
   // -----------
@@ -519,8 +534,15 @@ template < typename T, typename C = std::vector<T> >
    * @return ostream 
    */
   friend std::ostream& operator << (std::ostream& lhs, const Integer& rhs) {
-
-    return lhs << "0";}
+    if (rhs.neg == true){
+      lhs << "-";
+    }
+    typename C::const_iterator right = rhs._x.begin();
+    while(right != rhs._x.end()){
+      lhs << *right;
+      ++right;
+    }
+    return lhs;}
 
   // ---
   // abs
@@ -552,9 +574,8 @@ template < typename T, typename C = std::vector<T> >
   // data
   // ----
 
-  C _x; // the backing container
-  T _i; // 
-  bool neg;
+  C _x; // the backing container 
+  bool neg; //negative flag
 
  private:
   // -----
@@ -562,11 +583,14 @@ template < typename T, typename C = std::vector<T> >
   // -----
 
   bool valid () const { // class invariant
-//    string str = to_string(_x);
-//    if (std::all_of(str.begin(), str.end(), ::isdigit)){
- //   return true;}
-
-
+    typename C::const_iterator b = _x.begin();
+    typename C::const_iterator e = _x.end();
+    while(b != e){
+      if((*b)>9 || (*b)<0){
+        return false;
+      }
+      ++b;
+    }
     return true;}
 
  public:
@@ -618,9 +642,9 @@ template < typename T, typename C = std::vector<T> >
     else{
       neg = false;
     }
-    for(int i = value.length()-1; i >= 1; --i){
 
-      while(numdigits != value.length()-1){
+
+      while(numdigits != value.length()){
         if(isdigit(value[numdigits])){
           _x.push_back(value[numdigits]-'0');
         }
@@ -629,7 +653,7 @@ template < typename T, typename C = std::vector<T> >
         }
         ++numdigits;
       }
-    }
+    
     if (!valid())
       throw std::invalid_argument("Integer::Integer()");}
 
@@ -649,9 +673,17 @@ template < typename T, typename C = std::vector<T> >
    * <your documentation>
    */
   Integer operator - () const {
-    cout << *(_x.begin());
-    Integer i = 0-*this;
-    return i;}
+    if (*this == 0){
+      return *this;}
+    Integer negation(*this);
+    if(negation.neg == true){
+      negation.neg = false;
+    }
+    else{
+      negation.neg = true;
+    }
+    return negation;
+    }
 
   // -----------
   // operator ++
@@ -700,7 +732,7 @@ template < typename T, typename C = std::vector<T> >
    */
   Integer& operator += (const Integer& rhs) {
         // <your code>
-    *this =*this + &rhs;
+    Integer lhs = *this;
     return *this;}
 
   // -----------
@@ -787,8 +819,9 @@ template < typename T, typename C = std::vector<T> >
    * <your documentation>
    */
   Integer& abs () {
-    // <your code>
-    return *this;}
+      neg = false;
+      return *this;
+    }
 
   // ---
   // pow

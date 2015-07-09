@@ -151,6 +151,14 @@ TEST(Integer, plus_digits7 ) {
   plus_digits(x.begin(), x.end(), y.begin()+4, y.end(), z.begin());
   const list<int>       a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 0};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
+
+TEST(Integer, plus_digits8 ) {
+  const vector<int>   x = {9, 9, 9};
+  const vector<int>   y = {4, 5, 6};
+  vector<int>       z(4);
+  plus_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
+  const list<int>       a = {1, 4, 5, 5};
+  ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 // ------------
 // minus_digits
 // ------------
@@ -207,8 +215,7 @@ TEST(Integer, minus_digits6 ) {
 // -----------------
 // multiplies_digits
 // -----------------
-
-TEST(Integer, multiplies_digits ) {
+/*TEST(Integer, multiplies_digits ) {
 	const vector<int>       x = {1, 2, 3, 4, 5, 6};
   const vector<int>		y = {0, 0, 0, 0, 0, 0};
   vector<int>				z(1);
@@ -256,7 +263,7 @@ TEST(Integer, multiplies_digits6 ) {
 	const list<int>       a = {3, 0, 7, 0, 5};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
-
+*/
 // --------------
 // divides_digits
 // --------------
@@ -356,21 +363,17 @@ TEST(Integer, equal_to5) {
   ASSERT_TRUE((x != y));}
 
 TEST(Integer, equal_to6) {
-  Integer<int> x("1");
-  Integer<int> y("1");
-  //ASSERT_TRUE(x == 1);
-  //ASSERT_TRUE(y == 1);
+  const Integer<int> x("1");
+  const Integer<int> y("1");
   ASSERT_TRUE(x == y);
   ASSERT_FALSE(x != y);}
 
 
 
 TEST(Integer, equal_to7) {
-  const Integer<int> x("123");
-  const Integer<int> y("123");
+  const Integer<int> x ("123");
+  const Integer<int> y ("123");
   ASSERT_TRUE(x == y);
-  //ASSERT_TRUE(x == 123);
-  //ASSERT_TRUE(y == 123);
   ASSERT_FALSE((x != y));}
 
 TEST(Integer, equal_to8) {
@@ -384,20 +387,20 @@ TEST(Integer, equal_to9) {
   const Integer<int> y("23000000000000000000000000");
   ASSERT_FALSE(x == y);
   ASSERT_TRUE(x != y);}
+
 // ----------
 
 // ----------
-/*
 
 TEST(Integer, less_than) {
-  const Integer<int> x = 5;
-  const Integer<int> y = 0;
+  const Integer<int> x("5");
+  const Integer<int> y("1");
   ASSERT_TRUE(y < x);}
 
 TEST(Integer, less_than2) {
   const Integer<int> x = -125;
   const Integer<int> y = -125;
-  ASSERT_TRUE(x < y);}
+  ASSERT_FALSE(x < y);}
 
 TEST(Integer, less_than3) {
   const Integer<int> x = 100;
@@ -409,7 +412,45 @@ TEST(Integer, less_than4) {
   const Integer<int> y = 100;
   ASSERT_FALSE(x < y);}
 
+TEST(Integer, less_than5) {
+  const Integer<int> x("-5");
+  const Integer<int> y("-1");
+  ASSERT_FALSE(y < x);}
 
+TEST(Integer, less_than6) {
+  const Integer<int> x("-50000");
+  const Integer<int> y("-1");
+  ASSERT_FALSE(y < x);}
+
+TEST(Integer, less_than7) {
+  const Integer<int> x("50000");
+  const Integer<int> y("1");
+  ASSERT_TRUE(y < x);}
+
+TEST(Integer, less_than8) {
+  const Integer<int> x("5");
+  const Integer<int> y("-1");
+  ASSERT_TRUE(y < x);}
+
+TEST(Integer, less_than9) {
+  const Integer<int> x("-5");
+  const Integer<int> y("1");
+  ASSERT_FALSE(y < x);}
+
+TEST(Integer, less_than10) {
+  const Integer<int> x("-5");
+  const Integer<int> y("0");
+  ASSERT_FALSE(y < x);}
+
+TEST(Integer, less_than11) {
+  const Integer<int> x = 2000000000;
+  const Integer<int> y = -100;
+  ASSERT_FALSE(x < y);}
+
+TEST(Integer, less_than12) {
+  const Integer<int> x = -2000000000;
+  const Integer<int> y = -100;
+  ASSERT_TRUE(x < y);}
 //-----------
 // operator -
 //-----------
@@ -421,20 +462,84 @@ TEST(Integer, negation) {
     ASSERT_EQ(a, r);}
 
 TEST(Integer, negation2) {
-    Integer<int> a("10");
-    Integer<int> r = -10;
+    Integer<int> a("-10");
+    Integer<int> r("10");
     a = -a;
     ASSERT_EQ(a, r);}
 
 TEST(Integer, negation3) {
     Integer<int> a = -10;
-    Integer<int> r = -10;
+    Integer<int> r = 10;
     a = -a;
     ASSERT_EQ(r, a);}
+
 TEST(Integer, negation4) {
     Integer<int> a("10");
     Integer<int> r("-10");
     a = -a; 
     ASSERT_EQ(a, r);
 }
-*/
+
+//-----------
+// abs
+//-----------
+
+TEST(Integer, abs1) {
+    Integer<int> a = -10;
+    Integer<int> r = 10;
+    a = abs(a);
+    ASSERT_EQ(a, r);}
+
+TEST(Integer, abs2) {
+    Integer<int> a("-10");
+    Integer<int> r("10");
+    a = abs(a);
+    ASSERT_EQ(a, r);}
+
+TEST(Integer, abs3) {
+    Integer<int> a = 10;
+    Integer<int> r = 10;
+    a = abs(a);
+    ASSERT_EQ(a, r);}
+
+TEST(Integer, abs4) {
+    Integer<int> a("10");
+    Integer<int> r("10");
+    a = abs(a);
+    ASSERT_EQ(a, r);
+}
+
+
+TEST(IntegerConstructorFixture, test_constructor_string_0) {
+    ostringstream w;
+    Integer<int> n("0");
+    w << n << endl;
+    ASSERT_EQ("0\n", w.str());
+}
+
+TEST(IntegerConstructorFixture, test_constructor_string_1) {
+    ostringstream w;
+    Integer<int> n("1048");
+    w << n << endl;
+    ASSERT_EQ("1048\n", w.str());
+}
+
+TEST(IntegerConstructorFixture, test_constructor_string_2) {
+    ostringstream w;
+    Integer<int> n("-42");
+    w << n << endl;
+    ASSERT_EQ("-42\n", w.str());
+}
+
+TEST(IntegerConstructorFixture, test_constructor_string_3) {
+    ostringstream w;
+    Integer<int> n("6234809082340692304958236405723456820348962304523465765845674");
+    w << n << endl;
+    ASSERT_EQ("6234809082340692304958236405723456820348962304523465765845674\n", w.str());
+}
+
+TEST(IntegerConstructorFixture, test_constructor_string_4) {
+    ostringstream w;
+    Integer<int> n("8093486738465092384679283645780324698273459823465823490698248");
+    w << n << endl;
+    ASSERT_EQ("8093486738465092384679283645780324698273459823465823490698248\n", w.str());}
