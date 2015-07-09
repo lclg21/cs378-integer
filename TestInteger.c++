@@ -590,3 +590,26 @@ TEST(Integer, right_shift_equals3) {
     Integer<int> b("14545513000");
     ASSERT_EQ(b, a);
 }
+
+
+//------------
+// operator += 
+//------------
+
+TEST(Integer, plus_equals) {
+    Integer<int> a(-24);
+    Integer<int> b(-15);
+    a += b;
+    ASSERT_EQ(a, -39);}
+
+
+//------------
+// operator -= 
+//------------
+
+TEST(Integer, minus_equals) {
+    Integer<int> a(20);
+    Integer<int> b(5);
+    a -= b;
+    ASSERT_EQ(a, 15);}
+

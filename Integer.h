@@ -147,9 +147,62 @@ OI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
  * output the difference of the two input sequences into the output sequence
  * ([b1, e1) - [b2, e2)) => x
  */
-template <typename II1, typename II2, typename FI>
-FI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
-  int a = 0;
+template <typename II1, typename II2, typename OI>
+OI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
+     int len1 = e1 - b1;
+    //b1 is the larger number at the point
+    --len1;
+    OI endx = x+len1;
+    
+    bool stop = false;
+    int carryOver = 0;
+    while(!stop){   
+                if (b1 != e1 && b2 != e2){
+                    //std::cout << "Normal Case" << std::endl;
+                    int temp = *(e1-1) - *(e2-1) + carryOver;
+                    carryOver = 0;
+                    if(temp < 0){
+                        carryOver = -1;
+                        temp += 10;
+                    }
+                    *(x+len1) = temp;
+                    --e1;
+                    --e2;
+                    --len1;
+                } else if(b1 != e1){
+                    //std::cout << "b1 longer Case" << std::endl;
+                    int temp = *(e1-1) + carryOver;
+                    carryOver = 0;
+                    if(temp < 0){
+                        carryOver = -1;
+                        temp += 10;
+                    }
+                     *(x+len1) = temp;
+                    --e1;
+                    --len1;
+                } else{
+                    //std::cout << "Else Case" << std::endl;
+                    if(carryOver != 0){
+                        *(x+len1) = carryOver;
+                        carryOver = 0;
+                    } else{
+                        int counter = 0;
+                        OI counterX = x;
+                        while(counterX != endx){
+                            if(*counterX != 0) break;
+                            ++counter;
+                            ++counterX;
+                        }
+                        endx = shift_left_digits (x+counter, endx+1, counter, x);
+                        endx -= counter;
+                    }
+                    stop = true;
+                }
+            }
+            return endx;}
+
+  // }
+  /*int a = 0;
   int c = 0;
   while(b1 != e1){                //Took each digit from first iterator and put it into an int
     a = (a + *b1) * 10;
@@ -176,7 +229,7 @@ FI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
     mystack.pop();
     ++x;
   }
-  return x;}
+  return x;}*/
 
 // -----------------
 // multiplies_digits
@@ -731,8 +784,22 @@ template < typename T, typename C = std::vector<T> >
    * <your documentation>
    */
   Integer& operator += (const Integer& rhs) {
-        // <your code>
     Integer lhs = *this;
+ 
+    if (lhs.neg == rhs.neg){
+      plus_digits(lhs._x.begin(), lhs._x.end(), rhs._x.begin(), rhs._x.end(), _x.begin());
+      this->neg = rhs.neg;
+    }
+    else{
+      minus_digits(lhs._x.begin(), lhs._x.end(), rhs._x.begin(), rhs._x.end(), _x.begin() );
+      if (lhs > rhs){
+        this->neg = lhs.neg;
+      }
+      else{
+        this->neg = rhs.neg;
+      }
+    }
+    cout << *this;
     return *this;}
 
   // -----------
@@ -743,8 +810,27 @@ template < typename T, typename C = std::vector<T> >
    * <your documentation>
    */
   Integer& operator -= (const Integer& rhs) {
-        // <your code>
-    //*this = *this - &rhs;
+    Integer lhs = *this;
+
+    if (lhs.neg == rhs.neg){
+      minus_digits(lhs._x.begin(), lhs._x.end(), rhs._x.begin(), rhs._x.end(), _x.begin());
+      if (lhs > rhs){
+        this->neg = true;
+      }
+      else{
+        this->neg = false;
+      }    
+    }
+    else{
+      plus_digits(lhs._x.begin(), lhs._x.end(), rhs._x.begin(), rhs._x.end(), _x.begin());
+      if (lhs > rhs){
+        this->neg = false;
+      }
+      else{
+        this->neg = true;
+      }
+    }
+    cout << *this;
     return *this;}
 
   // -----------
