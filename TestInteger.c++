@@ -215,6 +215,13 @@ TEST(Integer, minus_digits6 ) {
 // -----------------
 // multiplies_digits
 // -----------------
+  TEST(Integer, multiplies_digits ) {
+  const vector<int>       x = {2, 3, 9};
+  const vector<int>   y = {1, 2};
+  vector<int>       z(4);
+  multiplies_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
+  const list<int>       a = {2, 8, 6, 8};
+  ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 /*TEST(Integer, multiplies_digits ) {
 	const vector<int>       x = {1, 2, 3, 4, 5, 6};
   const vector<int>		y = {0, 0, 0, 0, 0, 0};

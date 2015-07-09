@@ -193,8 +193,48 @@ FI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
  * output the product of the two input sequences into the output sequence
  * ([b1, e1) * [b2, e2)) => x
  */
-template <typename II1, typename II2, typename FI>
-FI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) { return x;}
+template <typename II1, typename II2, typename FI, typename BI>
+FI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) { 
+  int length1 = distance(b1,e1);
+  int length2 = distance(b2,e2);
+  vector<int> productstoadd;
+  vector<int> sum = {0};
+  BI copy1;
+  BI copy2
+  int topshift = 0;
+  int bottomshift = 0;
+  while(b1 != e1){
+    *copy1 = *b1;
+    ++b1;
+    ++copy1;
+  }
+  while(b2 != e2){
+    *copy2 = *b2;
+    ++b2;
+    ++copy2;
+  }
+  --copy1;
+  --copy2;
+  if(length1 >= length2){
+    while(length2 != 0){
+      while(length1 != 0){
+        vector<int> temp(2);
+        int product = *copy1 * *copy2;
+        temp.push_back(product/10);
+        temp.push_back(product%10);
+        shift_left_digits (temp.begin(), temp.end(), topshift, productstoadd.begin());
+        shift_left_digits (productstoadd.begin(), productstoadd.end(), bottomshift, productstoadd.begin());
+        plus_digits(productstoadd.begin(), productstoadd.end(), sum.begin(), sum.end(), sum.begin());
+        --length1;
+        --copy1;
+        ++topshift;  
+      }
+      --length2;
+      --copy2;
+      ++bottomshift;
+    }
+  }
+return x = copy(sum.begin(), sum.end(), x);}
 
 
 
