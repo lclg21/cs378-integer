@@ -294,16 +294,21 @@ cout << "i reach the part after copy" << endl;
     cout<< *obeg << endl;
     ++obeg;
   }
-    }
-  }
-  II1 beg = total.begin();
+    }}
+ int count = 0;
+ II1 countzeroes = total.begin();
+while(*countzeroes == 0){
+++count;
+++countzeroes;
+}
+  II1 beg = total.begin()+count;
   II2 end = total.end();
   while(beg != end){
     cout<< *beg << endl;
     ++beg;
   }
   cout<< "thats what was in total at the end" << endl;
-  x = copy(total.begin(), total.end(), x);
+  x = copy(total.begin()+count, total.end(), x);
   return x;}
 
 
