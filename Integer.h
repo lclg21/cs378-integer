@@ -797,7 +797,18 @@ template < typename T, typename C = std::vector<T> >
    */
   Integer& operator <<= (int n) {
     // <your code>
-    return *this;}
+    if(n < 0){
+      return *this>>=(-n);
+    }
+    else if(n==0){
+      return *this;
+    }
+    else{
+    Integer lhs = *this;
+    _x.resize(lhs._x.size()+n);
+    shift_left_digits (lhs._x.begin(), lhs._x.end(), n, _x.begin());
+
+    return *this;}}
 
   // ------------
   // operator >>=
@@ -808,7 +819,18 @@ template < typename T, typename C = std::vector<T> >
    */
   Integer& operator >>= (int n) {
     // <your code>
-    return *this;}
+    if(n < 0){
+      return *this<<=(-n);
+    }
+    else if(n==0){
+      return *this;
+    }
+    else{
+    Integer lhs = *this;
+    _x.resize(lhs._x.size()-n);
+    shift_right_digits (lhs._x.begin(), lhs._x.end(), n, _x.begin());
+
+    return *this;}}
 
   // ---
   // abs

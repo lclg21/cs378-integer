@@ -510,36 +510,83 @@ TEST(Integer, abs4) {
 }
 
 
-TEST(IntegerConstructorFixture, test_constructor_string_0) {
+TEST(Integer, ostream1) {
     ostringstream w;
     Integer<int> n("0");
     w << n << endl;
     ASSERT_EQ("0\n", w.str());
 }
 
-TEST(IntegerConstructorFixture, test_constructor_string_1) {
+TEST(Integer, ostream2) {
     ostringstream w;
-    Integer<int> n("1048");
+    Integer<int> n("154321");
     w << n << endl;
-    ASSERT_EQ("1048\n", w.str());
+    ASSERT_EQ("154321\n", w.str());
 }
 
-TEST(IntegerConstructorFixture, test_constructor_string_2) {
+TEST(Integer, ostream3) {
     ostringstream w;
-    Integer<int> n("-42");
+    Integer<int> n("-5000");
     w << n << endl;
-    ASSERT_EQ("-42\n", w.str());
+    ASSERT_EQ("-5000\n", w.str());
 }
 
-TEST(IntegerConstructorFixture, test_constructor_string_3) {
+TEST(Integer, ostream4) {
     ostringstream w;
-    Integer<int> n("6234809082340692304958236405723456820348962304523465765845674");
+    Integer<int> n("654035125304053241654032165347053035470354158054325470641");
     w << n << endl;
-    ASSERT_EQ("6234809082340692304958236405723456820348962304523465765845674\n", w.str());
+    ASSERT_EQ("654035125304053241654032165347053035470354158054325470641\n", w.str());
 }
 
-TEST(IntegerConstructorFixture, test_constructor_string_4) {
+TEST(Integer, ostream5) {
     ostringstream w;
-    Integer<int> n("8093486738465092384679283645780324698273459823465823490698248");
+    Integer<int> n("-215204524605487065486704654864703543720647867086786745346540231523745312300000");
     w << n << endl;
-    ASSERT_EQ("8093486738465092384679283645780324698273459823465823490698248\n", w.str());}
+    ASSERT_EQ("-215204524605487065486704654864703543720647867086786745346540231523745312300000\n", w.str());}
+
+TEST(Integer, left_shift_equals) {
+    Integer<int> a("1");
+    int n = 3;
+    a <<= n;
+    Integer<int> b("1000");
+    ASSERT_EQ(b, a);
+}
+
+TEST(Integer, left_shift_equals2) {
+    Integer<int> a("141540");
+    int n = 50;
+    a <<= n;
+    Integer<int> b("14154000000000000000000000000000000000000000000000000000");
+    ASSERT_EQ(b, a);
+}
+
+/*TEST(Integer, left_shift_equals3) {
+    Integer<int> a("88888888888888888888888888888888888888888888888");
+    int n = -45;
+    Integer<int> b = a <<= n;
+    ASSERT_EQ(88, a);
+    ASSERT_EQ(88, b);*/
+
+TEST(Integer, right_shift_equals) {
+    Integer<int> a("1000");
+    int n = 3;
+    a >>= n;
+    Integer<int> b("1");
+    ASSERT_EQ(b, a);
+}
+
+TEST(Integer, right_shift_equals2) {
+    Integer<int> a("14154000000000000000000000000000000000000000000000000000");
+    int n = 50;
+    a >>= n;
+    Integer<int> b("141540");
+    ASSERT_EQ(b, a);
+}
+
+TEST(Integer, right_shift_equals3) {
+    Integer<int> a("14545513");
+    int n = -3;
+    a >>= n;
+    Integer<int> b("14545513000");
+    ASSERT_EQ(b, a);
+}
