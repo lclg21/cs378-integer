@@ -199,12 +199,14 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
   int length2 = distance(b2,e2);
   int topshift = 0;
   int bottomshift=0;
-  
+  II1 e1copy = e1;
   vector<int> total = {0};
   if(length1 >= length2){
    while(b2!=e2){
-      while(b1 != e1){
-        int temp = *(e2-1) * *(e1-1);
+      topshift = 0;
+      e1copy = e1;
+      while(b1 != e1copy){
+        int temp = *(e2-1) * *(e1copy-1);
         vector<int> producttosum(2);
 	     int i = 2;
         while(i != 0){
@@ -227,7 +229,7 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
         plus_digits(total.begin(), total.end(), bottomshiftedproduct.begin(), bottomshiftedproduct.end(), runningtotal.begin());
         total.resize(runningtotal.size());
 	      copy(runningtotal.begin(), runningtotal.end(), total.begin());
-        --e1;
+        --e1copy;
         ++topshift;
 	cout << "this is the running total in the inner loop: " << endl;
 	II1 ibeg = total.begin();
