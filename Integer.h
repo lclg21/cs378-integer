@@ -318,8 +318,9 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
       int count = 0;
       while(*zeroes == 0 && zeroes != finalx.end()){
         ++count;
-      }
-      copy(finalx.begin()+count; finalx.end(), x);
+     	++zeroes;
+	 }
+      copy(finalx.begin()+count, finalx.end(), x);
   return x;}
 
 
