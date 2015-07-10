@@ -664,20 +664,20 @@ TEST(Integer, right_shift_equals5) {
 // operator *=
 // -----------
 
-TEST(Integer_Fixture, test_mult_eq_1) {
+TEST(Integer, test_mult_eq_1) {
     Integer<int> n(12);
     n *= 5;
     Integer<int> w("60");
     ASSERT_EQ(w, n);}
 
-TEST(Integer_Fixture, test_mult_eq_2) {
+TEST(Integer, test_mult_eq_2) {
     Integer<int> n1("-5000000000");
     Integer<int> n2("400000000");
     n1 *= n2;
     Integer<int> w("-2000000000000000000");
     ASSERT_EQ(w, n1);}
 
-TEST(Integer_Fixture, test_mult_eq_3) {
+TEST(Integer, test_mult_eq_3) {
     Integer<int> n1(11);
     Integer<int> n2(11);
     n1 *= n2;
@@ -741,7 +741,7 @@ TEST(Integer, minus_equals3) {
 // pow
 //----
 
-TEST(IntegerFunctionFixture, test_operator_pow_1) {
+TEST(Integer, test_operator_pow_1) {
    Integer<int> a = 1;
    int p = -1;
    bool got_exception = false;
@@ -752,35 +752,35 @@ TEST(IntegerFunctionFixture, test_operator_pow_1) {
    }
    ASSERT_EQ(true, got_exception);}
 
-TEST(IntegerFunctionFixture, test_operator_pow_2) {
+TEST(Integer, test_operator_pow_2) {
    Integer<int> a = 0;
    int p = 1000;
    Integer<int> b = pow(a, p);
    ASSERT_EQ(0, a);
    ASSERT_EQ(0, b);}
 
-TEST(IntegerFunctionFixture, test_operator_pow_3) {
+TEST(Integer, test_operator_pow_3) {
    Integer<int> a = 1000;
    int p = 0;
    Integer<int> b = pow(a, p);
    ASSERT_EQ(1000, a);
    ASSERT_EQ(1, b);}
 
-TEST(IntegerFunctionFixture, test_operator_pow_4) {
+TEST(Integer, test_operator_pow_4) {
    Integer<int> a = 2;
    int p = 2;
    Integer<int> b = pow(a, p);
    ASSERT_EQ(2, a);
    ASSERT_EQ(4, b);}
 
-TEST(IntegerFunctionFixture, test_operator_pow_5) {
+TEST(Integer, test_operator_pow_5) {
    Integer<int> a = 5;
    int p = 9;
    Integer<int> b = pow(a, p);
    ASSERT_EQ(5, a);
    ASSERT_EQ(1953125, b);}
 
-TEST(IntegerFunctionFixture, test_operator_pow_6) {
+TEST(Integer, test_operator_pow_6) {
    Integer<int> a = 10;
    int p = 10;
    Integer<int> b = pow(a, p);
@@ -793,7 +793,7 @@ TEST(IntegerFunctionFixture, test_operator_pow_6) {
    ASSERT_EQ(10, a);
    ASSERT_EQ(expected, b_out.str());}
 
-TEST(IntegerFunctionFixture, test_operator_pow_7) {
+TEST(Integer, test_operator_pow_7) {
    Integer<int> a = 10;
    int p = 1000;
    Integer<int> b = pow(a, p);
