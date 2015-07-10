@@ -36,7 +36,7 @@ using namespace std;
  * ([b, e) << n) => x
  */
 template <typename II, typename FI>
-FI shift_left_digits (II b, II e, int n, FI x) {
+FI shift_left_digits (II b, II e, int n, FI x) {  
   x = copy(b, e, x);
   fill(x, x+n, 0);
   return x+n;}
@@ -56,7 +56,7 @@ FI shift_left_digits (II b, II e, int n, FI x) {
  */
 template <typename II, typename FI>
 FI shift_right_digits (II b, II e, int n, FI x) {
-return copy(b, e - n, x);}
+  return copy(b, e - n, x);}
 
 // -----------
 // plus_digits
@@ -83,11 +83,14 @@ OI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
   deque<int> container;
 
   if (length1 == length2){
+    assert(length1 == length2);
     while(b1 != e1){
+      assert(b1 != e1);
       num = *(e1-1) + *(e2-1) + carry;
       sum = num % 10;
       container.push_front(sum);
       if (num > 9){
+        assert(num > 9);
         carry = 1;
       }
       else{
@@ -188,8 +191,7 @@ OI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
     }
   }
   return x;}
-
-
+  
 
 // ------------
 // minus_digits
@@ -214,7 +216,6 @@ OI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
 
   int carry = 0;
   int num = 0;
-  int diff = 0;
   int length1 = distance(b1, e1);
   int length2 = distance(b2, e2); 
   deque<int> container;
@@ -260,11 +261,14 @@ OI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
         container.push_front(num);
         --e1;
     }
+
     for (deque<int>::iterator v = container.begin(); v != container.end(); ++v){
       *x++ = *v;
       
     }
   }
+
+
 
   return x;}
 
@@ -283,7 +287,7 @@ OI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
  * output the product of the two input sequences into the output sequence
  * ([b1, e1) * [b2, e2)) => x
  */
- template <typename II>
+  template <typename II>
  vector<int> find_multiples(II b1, II e1, int n) {
    vector<int> multiples;
    if (n == 0){
@@ -311,32 +315,35 @@ OI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
 template <typename II1, typename II2, typename OI>
 OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
     vector<vector<int>> listofmultiples(10);
-    for(int i=0; i<10; ++i){
-        vector<int> temp = find_multiples(b1, e1, i);
-        listofmultiples[i] = temp;
-    }
+    int bottomlength = distance(b2, e2);
+    int toplength = distance(b1, e1);
+    vector<int> currenttotal(toplength+bottomlength+1);
+    int i = 0;
+
+    while(i < 10){
+        vector<int> multipleofi = find_multiples(b1, e1, i);
+        listofmultiples[i] = multipleofi;
+      ++i;
+  }
     
-   
-    vector<int>::reverse_iterator productb = listofmultiples[*(e2-1)].rbegin();
-    vector<int>::reverse_iterator producte = listofmultiples[*(e2-1)].rend();
-    int len = (e2-b2);
-    vector<int> tempCons((e1-b1) + len + 1);
-    
-    for(int i=1; i<len; ++i){
+    vector<int>::reverse_iterator currentsumbeg = listofmultiples[*(e2-1)].rbegin();
+    vector<int>::reverse_iterator currentsumend = listofmultiples[*(e2-1)].rend();
+
+    --e2;
+    int j = 1;
+    vector<int> currentvalue(toplength+j+1);
+    while(j < bottomlength){
+        vector<int>::reverse_iterator begbottom = listofmultiples[*(e2-1)].rbegin();
+        vector<int>::reverse_iterator endbottom = listofmultiples[*(e2-1)].rend();
+        currentvalue.resize(currentvalue.size()+1);
+        vector<int>::iterator leftshifted = shift_left_digits (begbottom, endbottom, j, currentvalue.begin());      
+        currentsumend = plus_digits(currentsumbeg, currentsumend, currentvalue.begin(), leftshifted, currenttotal.rbegin());
+        currentsumbeg = currenttotal.rbegin();
         --e2;
-        vector<int>::reverse_iterator cb = listofmultiples[*(e2-1)].rbegin();
-        vector<int>::reverse_iterator ce = listofmultiples[*(e2-1)].rend();
-        vector<int> temp((e1-b1)+1+i);
-        vector<int>::iterator tempe = shift_left_digits (cb, ce, i, temp.begin());      
-        producte = plus_digits(productb, producte, temp.begin(), tempe, tempCons.rbegin());
-        productb = tempCons.rbegin();
+        ++j;
     }
 
-    while(productb != producte){
-        *x = *productb;
-        ++x;
-        ++productb;
-    }
+    x = copy(currentsumbeg, currentsumend, x);
 
     return x;}
 
@@ -926,9 +933,39 @@ template < typename T, typename C = std::vector<T> >
    * <your documentation>
    */
   Integer& operator *= (const Integer& rhs) {
-        // <your code>
-      Integer  i = *this * &rhs;
-    return i;}
+    Integer negative(*this);
+    if(negative.neg == true && rhs.neg == true){
+      neg = false;
+    }
+    if(negative.neg == true && rhs.neg == false){
+      neg = true;
+    }
+    if(negative.neg == false && rhs.neg == true){
+      neg = true;
+    }
+    if(negative.neg == false && rhs.neg == false){
+      neg = false;
+    }
+    C container(1);
+    if(_x.size() > rhs._x.size()){
+      container.resize(_x.size()*2);
+    }
+    else{
+      container.resize(rhs._x.size()*2);
+    }
+
+    Integer lhs = *this;
+            
+    typename C::iterator x = container.begin();
+    typename C::iterator digits;
+    
+    digits = multiplies_digits(lhs._x.begin(),lhs._x.end(),rhs._x.begin(),rhs._x.end(),x);
+     
+  
+    C product = C(x,digits);
+    this->_x = product;
+
+    return *this;}
 
   // -----------
   // operator /=
@@ -1016,6 +1053,7 @@ template < typename T, typename C = std::vector<T> >
       return *this;
     }
 
+
   // ---
   // pow
   // ---
@@ -1025,6 +1063,8 @@ template < typename T, typename C = std::vector<T> >
    * <your documentation>
    * @throws invalid_argument if ((this == 0) && (e == 0)) or (e < 0)
    */
+
+  
   Integer& pow (int e) {
     // your code
     if( (*this == 0) && (e == 0) ){
@@ -1033,6 +1073,20 @@ template < typename T, typename C = std::vector<T> >
     if (e < 0) {
       throw std::invalid_argument("Integer::Integer()");
     }
-    return *this;}};
+
+
+    if(e == 0){
+      *this = 1;
+      return *this;
+    }  
+    Integer j = *this;
+    for(int i = 1; i<e; ++i){
+      j *= *this;
+    }
+
+    *this = j;
+    return *this;}
+  };
+
 
 #endif // Integer_h
