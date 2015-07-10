@@ -215,7 +215,7 @@ TEST(Integer, minus_digits6 ) {
 // -----------------
 // multiplies_digits
 // -----------------
-  TEST(Integer, multiplies_digits ) {
+TEST(Integer, multiplies_digits ) {
   const vector<int>       x = {2, 3, 9};
   const vector<int>   y = {1, 2};
   vector<int>       z(4);
@@ -223,7 +223,7 @@ TEST(Integer, minus_digits6 ) {
   const list<int>       a = {2, 8, 6, 8};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
   
-  /*TEST(Integer, multiplies_digits2 ) {
+TEST(Integer, multiplies_digits2 ) {
 	const vector<int>       x = {1, 2, 3, 4, 5, 6};
   const vector<int>		y = {0, 0, 0, 0, 0, 0};
   vector<int>				z(1);
@@ -270,7 +270,7 @@ TEST(Integer, multiplies_digits7 ) {
   multiplies_digits(x.begin()+2, x.begin()+5, y.begin()+4, y.end(), z.begin());
 	const list<int>       a = {3, 0, 7, 0, 5};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
-*/
+
 // --------------
 // divides_digits
 // --------------
@@ -665,20 +665,37 @@ TEST(Integer, plus_equals4) {
 // operator -= 
 //------------
 
-/*TEST(Integer, minus_equals) {
+TEST(Integer, minus_equals) {
     Integer<int> a(20);
     Integer<int> b(5);
     a -= b;
     ASSERT_EQ(a, 15);}
+
+/*TEST(Integer, minus_equals2) {
+    Integer<int> a(-20);
+    Integer<int> b(-15);
+    a -= b;
+    ASSERT_EQ(a, -5);}
 */
+TEST(Integer, minus_equals3) {
+    Integer<int> a(-2);
+    Integer<int> b(7);
+    a -= b;
+    ASSERT_EQ(a, -9);}
+
+TEST(Integer, minus_equals4) {
+    Integer<int> a(20);
+    Integer<int> b(-10);
+    a -= b;
+    ASSERT_EQ(a, 30);}
+
 
 TEST(Integer, right_shift_equals4) {
     Integer<int> a = 1000;
     int n = 3;
     a >>= n;
     Integer<int> b = 1;
-    ASSERT_EQ(b, a);
-}
+    ASSERT_EQ(b, a);}
 
 
 TEST(Integer, right_shift_equals5) {
@@ -686,7 +703,6 @@ TEST(Integer, right_shift_equals5) {
     int n = 3;
     a >>= n;
     Integer<int> b("1");
-    ASSERT_EQ(b, a);
-}
+    ASSERT_EQ(b, a);}
 
 

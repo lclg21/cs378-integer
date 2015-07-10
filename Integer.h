@@ -885,6 +885,9 @@ template < typename T, typename C = std::vector<T> >
    * <your documentation>
    */
   Integer& operator -= (const Integer& rhs) {
+
+    //case with leding Zeros on result is not fixed.
+
     Integer lhs = *this;
     C container(lhs._x.size() + rhs._x.size() + 1, 0);
 
@@ -893,9 +896,26 @@ template < typename T, typename C = std::vector<T> >
 
     if ((lhs.neg == rhs.neg)){
       digits = minus_digits(lhs._x.begin(),lhs._x.end(),rhs._x.begin(),rhs._x.end(),x);
-      //working on this rt now......
+      if (lhs.neg == true && lhs < rhs){
+        this->neg = lhs.neg;
+      }
+      else if (lhs.neg == false && lhs < rhs){
+        this->neg = true;
+      }
+      else if (lhs.neg == true && lhs > rhs){
+        this->neg = false;
+      }
+      else if (lhs.neg == false && lhs > rhs){
+        this->neg = false;
+      }
     }
+    else{
+      digits = plus_digits(lhs._x.begin(),lhs._x.end(),rhs._x.begin(),rhs._x.end(),x);
+      this->neg = lhs.neg;
 
+    }
+    C diff = C(x, digits);
+    this->_x = diff;
     return *this;}
 
   // -----------
