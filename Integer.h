@@ -284,15 +284,10 @@ OI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
         container.push_front(num);
         --e1;
     }
-
     for (deque<int>::iterator v = container.begin(); v != container.end(); ++v){
-      *x++ = *v;
-      
+      *x++ = *v;  
     }
   }
-
-
-
   return x;}
 
 // -----------------
@@ -747,6 +742,7 @@ template < typename T, typename C = std::vector<T> >
    * power
    * @param x Integer
    * @param e int 
+   * @return Integer x to the power of e
    * @throws invalid_argument if ((x == 0) && (e == 0)) || (e < 0)
    */
   friend Integer pow (Integer x, int e) {
@@ -784,7 +780,7 @@ template < typename T, typename C = std::vector<T> >
   // ------------
 
   /**
-   * <your documentation>
+   * Integer Constructor when given an int value.
    */
   Integer (int value) {
   
@@ -820,7 +816,7 @@ template < typename T, typename C = std::vector<T> >
     assert(valid());}
 
   /**
-   * <your documentation>
+   * Explicit integer constructor when given a valid string value
    * @throws invalid_argument if value is not a valid representation of an Integer
    */
   explicit Integer (const std::string& value) {
@@ -863,7 +859,8 @@ template < typename T, typename C = std::vector<T> >
   // ----------
 
   /**
-   * <your documentation>
+   * @return Integer in its negated form.
+   * -1 -> 1
    */
   Integer operator - () const {
     if (*this == 0){
@@ -885,14 +882,18 @@ template < typename T, typename C = std::vector<T> >
   // -----------
 
   /**
-   * <your documentation>
+   * @return Integer incremented by 1 (prefix)
+   * a = 1
+   * ++a -> a = 2
    */
   Integer& operator ++ () {
     *this += 1;
     return *this;}
 
   /**
-   * <your documentation>
+   * @return Integer incremented by 1 (postfix)
+   * a = 1
+   * a++ -> a = 2
    */
   Integer operator ++ (int) {
     Integer x = *this;
@@ -904,14 +905,18 @@ template < typename T, typename C = std::vector<T> >
   // -----------
 
   /**
-   * <your documentation>
+   * @return Integer decremented by 1 (prefix)
+   * a = 2
+   * --a -> a = 1
    */
   Integer& operator -- () {
     *this -= 1;
     return *this;}
 
   /**
-   * <your documentation>
+   * @return Integer decremented by 1 (postfix)
+   * a = 2
+   * a-- -> a = 1
    */
   Integer operator -- (int) {
     Integer x = *this;
@@ -923,7 +928,9 @@ template < typename T, typename C = std::vector<T> >
   // -----------
 
   /**
-   * <your documentation>
+   * @return Integer lhs added with rhs and stored into lhs.
+   * lhs = 1, rhs = 2
+   * lhs += rhs -> lhs = 3
    */
   Integer& operator += (const Integer& rhs) {
     Integer lhs = *this;
@@ -957,7 +964,9 @@ template < typename T, typename C = std::vector<T> >
   // -----------
 
   /**
-   * <your documentation>
+   * @return Integer lhs subtracted with const rhs and stored into lhs.
+   * lhs = 2, rhs = 1
+   * lhs -= rhs -> lhs = 1
    */
   Integer& operator -= (const Integer& rhs) {
     Integer lhs = *this;
@@ -1000,7 +1009,9 @@ template < typename T, typename C = std::vector<T> >
   // -----------
 
   /**
-   * <your documentation>
+   * @return Integer lhs multiplied by const rhs and stored into lhs
+   * lhs = 2, rhs = 2
+   * lhs *= rhs -> lhs = 4
    */
   Integer& operator *= (const Integer& rhs) {
     Integer negative(*this);
@@ -1044,8 +1055,10 @@ template < typename T, typename C = std::vector<T> >
   // -----------
 
   /**
-   * <your documentation>
+   * @return Integer lhs divided by rhs and stored into lhs
    * @throws invalid_argument if (rhs == 0)
+   * lhs = 10, rhs = 2
+   * lhs /= rhs -> lhs = 5
    */
   Integer& operator /= (const Integer& rhs) {
     if(rhs == 0){
@@ -1060,11 +1073,17 @@ template < typename T, typename C = std::vector<T> >
   // -----------
 
   /**
-   * <your documentation>
+   * @return Integer lhs mod by const rhs and store into lhs.
    * @throws invalid_argument if (rhs <= 0)
+   * lhs = 10, rhs = 3
+   * lhs %= rhs -> lhs = 1
    */
   Integer& operator %= (const Integer& rhs) {
- //    *this = *this % &rhs;
+    if (rhs <= 0){
+      assert(rhs <= 0);
+      throw std::invalid_argument("Integer::Integer()");
+    }
+  //    *this = *this % &rhs;
     return *this;}
 
   // ------------
@@ -1072,7 +1091,9 @@ template < typename T, typename C = std::vector<T> >
   // ------------
 
   /**
-   * <your documentation>
+   * @return Integer lhs shifted n places to the left and stored into lhs
+   * lhs = 111, n = 2
+   * lhs <<= 2 -> lhs = 11100
    */
   Integer& operator <<= (int n) {
     if(n < 0){
@@ -1095,7 +1116,9 @@ template < typename T, typename C = std::vector<T> >
   // ------------
 
   /**
-   * <your documentation>
+   * @return Integer lhs shifted n place to the right and stored into lhs.
+   * lhs = 111, n = 2
+   * lhs >>= 2 -> lhs = 001
    */
   Integer& operator >>= (int n) {
     if(n < 0){
@@ -1118,8 +1141,9 @@ template < typename T, typename C = std::vector<T> >
   // ---
 
   /**
-   * absolute value
-   * <your documentation>
+   * @return absolute value of an Integer
+   * lhs = -9 
+   * lhs.abs() -> 9
    */
   Integer& abs () {
       neg = false;
@@ -1133,7 +1157,7 @@ template < typename T, typename C = std::vector<T> >
 
   /**
    * power
-   * <your documentation>
+   * @return Integer value raised to the e power.
    * @throws invalid_argument if ((this == 0) && (e == 0)) or (e < 0)
    */
 
