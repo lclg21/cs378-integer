@@ -159,6 +159,8 @@ TEST(Integer, plus_digits8 ) {
   plus_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
   const list<int>       a = {1, 4, 5, 5};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
+
+
 // ------------
 // minus_digits
 // ------------
@@ -187,15 +189,7 @@ TEST(Integer, minus_digits3 ) {
   const list<int>       a = {4, 4, 4};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
-/*TEST(Integer, minus_digits4 ) {
-  const vector<int>       x = {1, 2, 3};
-  const vector<int>   y = {4, 5};
-  vector<int>       z(2);
-  minus_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
-  const list<int>       a = {7, 8};
-  ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
-*/
-TEST(Integer, minus_digits5 ) {
+TEST(Integer, minus_digits4 ) {
   const vector<int>       x = {1, 2, 3, 4, 5, 6};
   const vector<int>   y = {4, 5};
   vector<int>       z(3);
@@ -203,7 +197,7 @@ TEST(Integer, minus_digits5 ) {
   const list<int>       a = {3, 0, 0};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
-TEST(Integer, minus_digits6 ) {
+TEST(Integer, minus_digits5 ) {
   const vector<int>       x = {4, 2, 3, 4, 5, 6};
   const vector<int>   y = {1, 5, 6, 7, 8, 9};
   vector<int>       z(3);
@@ -215,6 +209,7 @@ TEST(Integer, minus_digits6 ) {
 // -----------------
 // multiplies_digits
 // -----------------
+
   TEST(Integer, multiplies_digits ) {
   const vector<int>       x = {2, 3, 9};
   const vector<int>   y = {1, 2};
@@ -278,6 +273,8 @@ TEST(Integer, multiplies_digits8 ) {
   multiplies_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
   const list<int>       a = {5, 5, 5, 5, 5, 2, 0};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
+
+
 
 // --------------
 // divides_digits
@@ -404,7 +401,7 @@ TEST(Integer, equal_to9) {
   ASSERT_TRUE(x != y);}
 
 // ----------
-
+// operator <
 // ----------
 
 TEST(Integer, less_than) {
@@ -471,8 +468,10 @@ TEST(Integer, less_than13) {
   const Integer<int> x = -2000000000;
   const Integer<int> y("-100");
   ASSERT_TRUE(x < y);}
+
+
 //-----------
-// operator -
+// operator -(negation)
 //-----------
 
 TEST(Integer, negation) {
@@ -506,9 +505,12 @@ TEST(Integer, negation5) {
     a = -a; 
     ASSERT_EQ(a, r);
 }
+
+
 //-----------
 // abs
 //-----------
+
 
 TEST(Integer, abs1) {
     Integer<int> a = -10;
@@ -532,23 +534,24 @@ TEST(Integer, abs4) {
     Integer<int> a("10");
     Integer<int> r("10");
     a = abs(a);
-    ASSERT_EQ(a, r);
-}
+    ASSERT_EQ(a, r);}
 
+
+//---------
+// ostream
+//---------
 
 TEST(Integer, ostream1) {
     ostringstream w;
     Integer<int> n("0");
     w << n << endl;
-    ASSERT_EQ("0\n", w.str());
-}
+    ASSERT_EQ("0\n", w.str());}
 
 TEST(Integer, ostream2) {
     ostringstream w;
     Integer<int> n("154321");
     w << n << endl;
-    ASSERT_EQ("154321\n", w.str());
-}
+    ASSERT_EQ("154321\n", w.str());}
 
 TEST(Integer, ostream3) {
     ostringstream w;
@@ -574,23 +577,26 @@ TEST(Integer, ostream6) {
     ostringstream w;
     Integer<int> n = 154321;
     w << n << endl;
-    ASSERT_EQ("154321\n", w.str());
-}
+    ASSERT_EQ("154321\n", w.str());}
+
+
+//-------------
+// operator <<=
+//-------------
+
 TEST(Integer, left_shift_equals) {
     Integer<int> a("1");
     int n = 3;
     a <<= n;
     Integer<int> b("1000");
-    ASSERT_EQ(b, a);
-}
+    ASSERT_EQ(b, a);}
 
 TEST(Integer, left_shift_equals2) {
     Integer<int> a("141540");
     int n = 50;
     a <<= n;
     Integer<int> b("14154000000000000000000000000000000000000000000000000000");
-    ASSERT_EQ(b, a);
-}
+    ASSERT_EQ(b, a);}
 
 TEST(Integer, left_shift_equals3) {
     Integer<int> a("88888888888888888888888888888888888888888888888");
@@ -613,46 +619,47 @@ TEST(Integer, left_shift_equals5) {
     Integer<int> b("14154000000000000000000000000000000000000000000000000000");
     ASSERT_EQ(b, a);}
 
+
+//-------------
+// operator >>=
+//-------------
+
 TEST(Integer, right_shift_equals) {
     Integer<int> a("1000");
     int n = 3;
     a >>= n;
     Integer<int> b("1");
-    ASSERT_EQ(b, a);
-}
+    ASSERT_EQ(b, a);}
 
 TEST(Integer, right_shift_equals2) {
     Integer<int> a("14154000000000000000000000000000000000000000000000000000");
     int n = 50;
     a >>= n;
     Integer<int> b("141540");
-    ASSERT_EQ(b, a);
-}
+    ASSERT_EQ(b, a);}
 
 TEST(Integer, right_shift_equals3) {
     Integer<int> a("14545513");
     int n = -3;
     a >>= n;
     Integer<int> b("14545513000");
-    ASSERT_EQ(b, a);
-}
+    ASSERT_EQ(b, a);}
 
 TEST(Integer, right_shift_equals4) {
     Integer<int> a = 1000;
     int n = 3;
     a >>= n;
     Integer<int> b = 1;
-    ASSERT_EQ(b, a);
-}
-
+    ASSERT_EQ(b, a);}
 
 TEST(Integer, right_shift_equals5) {
     Integer<int> a = 1000;
     int n = 3;
     a >>= n;
     Integer<int> b("1");
-    ASSERT_EQ(b, a);
-}
+    ASSERT_EQ(b, a);}
+
+
 // -----------
 // operator *=
 // -----------
@@ -661,16 +668,21 @@ TEST(Integer_Fixture, test_mult_eq_1) {
     Integer<int> n(12);
     n *= 5;
     Integer<int> w("60");
-    ASSERT_EQ(w, n);
-}
+    ASSERT_EQ(w, n);}
 
 TEST(Integer_Fixture, test_mult_eq_2) {
     Integer<int> n1("-5000000000");
     Integer<int> n2("400000000");
     n1 *= n2;
     Integer<int> w("-2000000000000000000");
-    ASSERT_EQ(w, n1);
-}
+    ASSERT_EQ(w, n1);}
+
+TEST(Integer_Fixture, test_mult_eq_3) {
+    Integer<int> n1(11);
+    Integer<int> n2(11);
+    n1 *= n2;
+    Integer<int> w(121);
+    ASSERT_EQ(w, n1);}
 
 
 //------------
@@ -701,9 +713,6 @@ TEST(Integer, plus_equals4) {
     a += b;
     ASSERT_EQ(a, 1536);}
 
-
-
-
 //------------
 // operator -= 
 //------------
@@ -728,6 +737,10 @@ TEST(Integer, minus_equals3) {
     ASSERT_EQ(a, 30);}
 
 
+//----
+// pow
+//----
+
 TEST(IntegerFunctionFixture, test_operator_pow_1) {
    Integer<int> a = 1;
    int p = -1;
@@ -737,40 +750,35 @@ TEST(IntegerFunctionFixture, test_operator_pow_1) {
    } catch (std::invalid_argument ia) {
        got_exception = true;
    }
-   ASSERT_EQ(true, got_exception);
-}
+   ASSERT_EQ(true, got_exception);}
 
 TEST(IntegerFunctionFixture, test_operator_pow_2) {
    Integer<int> a = 0;
    int p = 1000;
    Integer<int> b = pow(a, p);
    ASSERT_EQ(0, a);
-   ASSERT_EQ(0, b);
-}
+   ASSERT_EQ(0, b);}
 
 TEST(IntegerFunctionFixture, test_operator_pow_3) {
    Integer<int> a = 1000;
    int p = 0;
    Integer<int> b = pow(a, p);
    ASSERT_EQ(1000, a);
-   ASSERT_EQ(1, b);
-}
+   ASSERT_EQ(1, b);}
 
 TEST(IntegerFunctionFixture, test_operator_pow_4) {
    Integer<int> a = 2;
    int p = 2;
    Integer<int> b = pow(a, p);
    ASSERT_EQ(2, a);
-   ASSERT_EQ(4, b);
-}
+   ASSERT_EQ(4, b);}
 
 TEST(IntegerFunctionFixture, test_operator_pow_5) {
    Integer<int> a = 5;
    int p = 9;
    Integer<int> b = pow(a, p);
    ASSERT_EQ(5, a);
-   ASSERT_EQ(1953125, b);
-}
+   ASSERT_EQ(1953125, b);}
 
 TEST(IntegerFunctionFixture, test_operator_pow_6) {
    Integer<int> a = 10;
@@ -783,8 +791,7 @@ TEST(IntegerFunctionFixture, test_operator_pow_6) {
        expected += "0";
    }
    ASSERT_EQ(10, a);
-   ASSERT_EQ(expected, b_out.str());
-}
+   ASSERT_EQ(expected, b_out.str());}
 
 TEST(IntegerFunctionFixture, test_operator_pow_7) {
    Integer<int> a = 10;
@@ -797,6 +804,5 @@ TEST(IntegerFunctionFixture, test_operator_pow_7) {
        expected += "0";
    }
    ASSERT_EQ(10, a);
-   ASSERT_EQ(expected, b_out.str());
-}
+   ASSERT_EQ(expected, b_out.str());}
 
