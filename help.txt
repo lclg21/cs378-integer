@@ -1,1 +1,0 @@
-https://github.com/ztschir/Generic-Programming-and-the-STL/blob/master/project3/cs378-integer/Integer.h

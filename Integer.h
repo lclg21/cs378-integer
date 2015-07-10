@@ -101,6 +101,7 @@ OI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
     }
 
     if (carry == 1){
+      assert(carry ==1);
       container.resize(length1 + 1);
       container.push_front(carry);
     }
@@ -113,33 +114,41 @@ OI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
     }
   }
   else if (length1 > length2){
+    assert(length1 > length2);
     while (b2 != e2){
+      assert(b2 != e2);
       num = *(e1-1) + *(e2-1) + carry;
       sum = num % 10;
       container.push_front(sum);
       if (num > 9){
+        assert(num > 9);
         carry = 1;
       }
       else{
+        assert (num <= 9);
         carry = 0;
       }
       --e1;
       --e2;
     }
     while (b1 != e1){
+      assert(b1 != e1);
       num = *(e1 - 1) + carry;
       sum = num % 10;
       container.push_front(sum);
       if (num > 9){
+        assert(num > 9);
         carry = 1;
       }
       else {
+        assert(num <= 9);
         carry = 0;
       }
       --e1;
     }
         
     if (carry == 1){
+      assert(carry == 1);
       container.resize(length1 + 1);
       container.push_front(carry);
     }
@@ -152,33 +161,41 @@ OI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
     }
   }
   else if (length2 > length1){
+    assert(length2 > length1);
     while (b1 != e1){
+      assert(b1 != e1);
       num = *(e1-1) + *(e2-1) + carry;
       sum = num % 10;
       container.push_front(sum);
       if (num > 9){
+        assert(num > 9);
         carry = 1;
       }
       else{
+        assert(num <= 9);
         carry = 0;
       }
       --e1;
       --e2;
     }
     while (b2 != e2){
+      assert(b2 != e2);
       num = *(e2 - 1) + carry;
       sum = num % 10;
       container.push_front(sum);
       if (num > 9){
+        assert(num > 9);
         carry = 1;
       }
       else {
+        assert(num <= 9);
         carry = 0;
       }
       --e2;
     }
         
     if (carry == 1){
+      assert(carry == 1);
       container.resize(length2 + 1);
       container.push_front(carry);
     }
@@ -221,8 +238,10 @@ OI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
   deque<int> container;
 
   if (length1 == length2){
+    assert(length1 == length2);
     while(b1 != e1){
-       if (*(e1 -1) < *(e2-1)){
+      assert(b1 != e1);
+      if (*(e1 -1) < *(e2-1)){
         num = (*(e1-1) + 10) - (*(e2-1) + carry);
         container.push_front(num);
         carry = 1; 
@@ -241,8 +260,11 @@ OI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
     }
   }
   else if (length1 > length2){
+    assert(length1 > length2);
     while (b2 != e2){
+      assert(b2 != e2);
       if (*(e1 -1) < *(e2-1)){
+        assert(*(e1 -1) < *(e2-1));
         num = (*(e1-1) + 10) - (*(e2-1) + carry);
         container.push_front(num);
         carry = 1; 
@@ -256,6 +278,7 @@ OI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
       --e2;
     }
     while (b1 != e1){
+        assert(b1 != e1);
         num = *(e1 - 1) - carry;
         carry = 0;
         container.push_front(num);
@@ -287,18 +310,22 @@ OI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
  * output the product of the two input sequences into the output sequence
  * ([b1, e1) * [b2, e2)) => x
  */
-  template <typename II>
+ template <typename II>
  vector<int> find_multiples(II b1, II e1, int n) {
    vector<int> multiples;
    if (n == 0){
+    assert(n == 0);
     multiples.push_back(0);
    }
    else{
+    assert(n != 0);
     int carry = 0;
     while(b1 != e1){
+      assert(b1 != e1);
       int temp = *(e1-1) * n;
       multiples.push_back(temp%10 + carry);
       if(temp>9){
+        assert(temp > 9);
         carry = temp/10;
       }
       else{
@@ -307,6 +334,7 @@ OI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
       --e1;
     }
    if (carry > 0){
+    assert(carry > 0);
     multiples.push_back(carry);
     }
    }
@@ -368,19 +396,22 @@ template <typename II1, typename II2, typename FI>
 FI divides_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
   int a = 0;
   int c = 0;
-  while(b1 != e1){                //Took each digit from first iterator and put it into an int
+  while(b1 != e1){
+    assert(b1 != e1);                //Took each digit from first iterator and put it into an int
     a = (a + *b1) * 10;
     ++b1;
   }
   a /= 10;                        //divided by 10 to take away last multiplication of 10
 
-  while(b2 != e2){                //Took each digit from second iterator and put it into an int
+  while(b2 != e2){ 
+    assert(b2 != e2);               //Took each digit from second iterator and put it into an int
     c = (c + *b2) * 10;
     ++b2;
   }
   c /= 10;                        //divided by 10 to take away last multiplication of 10
 
   if(c > a){
+    assert(c > a);
     *x=0;
     return x;
   }
@@ -388,7 +419,8 @@ FI divides_digits (II1 b1, II1 e1, II2 b2, II2 e2, FI x) {
   a /= c;
   
   stack<int> mystack;
-  while(a!=0){                    //push each digit onto stack because we pull them out backwards from a
+  while(a!=0){  
+    assert(a != 0);                  //push each digit onto stack because we pull them out backwards from a
     mystack.push(a%10);
     a = a/10;
   }
@@ -419,15 +451,19 @@ template < typename T, typename C = std::vector<T> >
    */
   friend bool operator == (const Integer& lhs, const Integer& rhs) {
      if(lhs._x.size() != rhs._x.size() ){
+      assert(lhs._x.size() != rhs._x.size());
       return false;
     }
     if(lhs.neg != rhs.neg){
+      assert(lhs.neg != rhs.neg);
       return false;
     }
     typename C::const_iterator left = lhs._x.begin();
     typename C::const_iterator right = rhs._x.begin();
     while(left != lhs._x.end()){
+      assert(left != lhs._x.end());
       if(*left != *right){
+        assert(*left != *right);
         return false;
       }
       ++left;
@@ -458,19 +494,25 @@ template < typename T, typename C = std::vector<T> >
    */
   friend bool operator < (const Integer& lhs, const Integer& rhs) {
     if(rhs == 0 && lhs.neg == true){
+      assert(rhs == 0 && lhs.neg == true);
       return true;
     }
     if(rhs == 0 && lhs.neg ==false){
+      assert(rhs == 0 && lhs.neg ==false);
       return false;
     }
     if(lhs == 0 && rhs.neg == true){
+      assert(lhs == 0 && rhs.neg == true);
       return false;
     }
     if(lhs == 0 && rhs.neg == false){
+      assert(lhs == 0 && rhs.neg == false);
       return true;
     }
     if(lhs.neg != rhs.neg){
+      assert(lhs.neg != rhs.neg);
       if(lhs.neg == true){
+        assert(lhs.neg == true);
         return true;
       }
       else{
@@ -479,8 +521,11 @@ template < typename T, typename C = std::vector<T> >
     }
     else{
       if(lhs.neg == true){
+        assert(lhs.neg == true);
         if(lhs._x.size() != rhs._x.size()){
+          assert(lhs._x.size() != rhs._x.size());
           if(lhs._x.size()>rhs._x.size()){
+            assert(lhs._x.size()>rhs._x.size());
             return true;
           }
           else{
@@ -492,10 +537,13 @@ template < typename T, typename C = std::vector<T> >
         typename C::const_iterator right = rhs._x.begin();
         typename C::const_iterator leftend = lhs._x.end();
         while(left != leftend){
+          assert(left != leftend);
           if(*left < *right){
+            assert(*left < *right);
             return false;
           }
           if(*right < *left){
+            assert(*right < *left);
             return true;
           }
           ++left;
@@ -504,7 +552,9 @@ template < typename T, typename C = std::vector<T> >
       return false;}
       else{
         if(lhs._x.size() != rhs._x.size()){
+          assert(lhs._x.size() != rhs._x.size());
           if(lhs._x.size()>rhs._x.size()){
+            assert(lhs._x.size()>rhs._x.size());
             return false;
           }
           else{
@@ -516,10 +566,13 @@ template < typename T, typename C = std::vector<T> >
         typename C::const_iterator right = rhs._x.begin();
         typename C::const_iterator leftend = lhs._x.end();
         while(left != leftend){
+          assert(left != leftend);
           if(*left > *right){
+            assert(*left > *right);
             return false;
           }
           if(*right > *left){
+            assert(*right > *left);
             return true;
           }
           ++left;
@@ -663,10 +716,12 @@ template < typename T, typename C = std::vector<T> >
    */
   friend std::ostream& operator << (std::ostream& lhs, const Integer& rhs) {
     if (rhs.neg == true){
+      assert(rhs.neg == true);
       lhs << "-";
     }
     typename C::const_iterator right = rhs._x.begin();
     while(right != rhs._x.end()){
+      assert(right != rhs._x.end());
       lhs << *right;
       ++right;
     }
@@ -714,7 +769,9 @@ template < typename T, typename C = std::vector<T> >
     typename C::const_iterator b = _x.begin();
     typename C::const_iterator e = _x.end();
     while(b != e){
+      assert(b != e);
       if((*b)>9 || (*b)<0){
+        assert((*b)>9 || (*b)<0);
         return false;
       }
       ++b;
@@ -732,10 +789,12 @@ template < typename T, typename C = std::vector<T> >
   Integer (int value) {
   
   if (value < 0){
+    assert(value < 0);
     neg = true;
     value = -value;
   }
   else if(value == 0){
+    assert(value == 0);
     neg = false;
     _x = C(1);
     _x.push_back(0);
@@ -747,11 +806,13 @@ template < typename T, typename C = std::vector<T> >
   int copyvalue = value;
   int numdigits = 0;
   while(copyvalue != 0){
+    assert(copyvalue != 0);
     copyvalue = copyvalue/10;
     ++numdigits;
     }
   _x = C(numdigits);
   while(value != 0){
+    assert(value != 0);
     _x[numdigits-1] = value%10;
     value /= 10;
     --numdigits;
@@ -765,6 +826,7 @@ template < typename T, typename C = std::vector<T> >
   explicit Integer (const std::string& value) {
     int numdigits = 0;
     if(value[0] == '-'){
+      assert(value[0] == '-');
       neg = true;
       numdigits = 1;
     }
@@ -774,7 +836,9 @@ template < typename T, typename C = std::vector<T> >
 
 
       while(numdigits != value.length()){
+        assert(numdigits != value.length());
         if(isdigit(value[numdigits])){
+          assert(isdigit(value[numdigits]));
           _x.push_back(value[numdigits]-'0');
         }
         else{
@@ -803,9 +867,11 @@ template < typename T, typename C = std::vector<T> >
    */
   Integer operator - () const {
     if (*this == 0){
+      assert(*this == 0);
       return *this;}
     Integer negation(*this);
     if(negation.neg == true){
+      assert(negation.neg == true);
       negation.neg = false;
     }
     else{
@@ -867,12 +933,14 @@ template < typename T, typename C = std::vector<T> >
     typename C::iterator digits;
     
     if(lhs.neg == rhs.neg){
+      assert(lhs.neg == rhs.neg);
       digits = plus_digits(lhs._x.begin(),lhs._x.end(),rhs._x.begin(),rhs._x.end(),x);
       this->neg = rhs.neg;
     }
     else{
       digits = minus_digits(lhs._x.begin(),lhs._x.end(),rhs._x.begin(),rhs._x.end(),x);
       if(lhs > rhs){
+        assert(lhs > rhs);
         this->neg = lhs.neg;
       }
       else{
@@ -892,9 +960,6 @@ template < typename T, typename C = std::vector<T> >
    * <your documentation>
    */
   Integer& operator -= (const Integer& rhs) {
-
-    //case with leding Zeros on result is not fixed.
-
     Integer lhs = *this;
     C container(lhs._x.size() + rhs._x.size() + 1, 0);
 
@@ -902,17 +967,22 @@ template < typename T, typename C = std::vector<T> >
     typename C::iterator digits;    
 
     if ((lhs.neg == rhs.neg)){
+      assert(lhs.neg == rhs.neg);
       digits = minus_digits(lhs._x.begin(),lhs._x.end(),rhs._x.begin(),rhs._x.end(),x);
       if (lhs.neg == true && lhs < rhs){
+        assert(lhs.neg == true && lhs < rhs);
         this->neg = lhs.neg;
       }
       else if (lhs.neg == false && lhs < rhs){
+        assert(lhs.neg == false && lhs < rhs);
         this->neg = true;
       }
       else if (lhs.neg == true && lhs > rhs){
+        assert(lhs.neg == true && lhs > rhs);
         this->neg = false;
       }
       else if (lhs.neg == false && lhs > rhs){
+        assert(lhs.neg == false && lhs > rhs);
         this->neg = false;
       }
     }
@@ -935,33 +1005,35 @@ template < typename T, typename C = std::vector<T> >
   Integer& operator *= (const Integer& rhs) {
     Integer negative(*this);
     if(negative.neg == true && rhs.neg == true){
+      assert(negative.neg == true && rhs.neg == true);
       neg = false;
     }
     if(negative.neg == true && rhs.neg == false){
+      assert(negative.neg == true && rhs.neg == false);
       neg = true;
     }
     if(negative.neg == false && rhs.neg == true){
+      assert(negative.neg == false && rhs.neg == true);
       neg = true;
     }
     if(negative.neg == false && rhs.neg == false){
+      assert(negative.neg == false && rhs.neg == false);
       neg = false;
     }
     C container(1);
     if(_x.size() > rhs._x.size()){
+      assert(_x.size() > rhs._x.size());
       container.resize(_x.size()*2);
     }
     else{
       container.resize(rhs._x.size()*2);
     }
 
-    Integer lhs = *this;
-            
+    Integer lhs = *this;            
     typename C::iterator x = container.begin();
     typename C::iterator digits;
-    
     digits = multiplies_digits(lhs._x.begin(),lhs._x.end(),rhs._x.begin(),rhs._x.end(),x);
      
-  
     C product = C(x,digits);
     this->_x = product;
 
@@ -976,8 +1048,8 @@ template < typename T, typename C = std::vector<T> >
    * @throws invalid_argument if (rhs == 0)
    */
   Integer& operator /= (const Integer& rhs) {
-    //your code
     if(rhs == 0){
+      assert(rhs == 0);
       throw std::invalid_argument("Integer::Integer()");
     }
   //   *this = *this / &rhs;
@@ -992,7 +1064,6 @@ template < typename T, typename C = std::vector<T> >
    * @throws invalid_argument if (rhs <= 0)
    */
   Integer& operator %= (const Integer& rhs) {
-    // <your code>
  //    *this = *this % &rhs;
     return *this;}
 
@@ -1004,11 +1075,12 @@ template < typename T, typename C = std::vector<T> >
    * <your documentation>
    */
   Integer& operator <<= (int n) {
-    // <your code>
     if(n < 0){
+      assert(n < 0);
       return *this>>=(-n);
     }
     else if(n==0){
+      assert(n == 0);
       return *this;
     }
     else{
@@ -1026,11 +1098,12 @@ template < typename T, typename C = std::vector<T> >
    * <your documentation>
    */
   Integer& operator >>= (int n) {
-    // <your code>
     if(n < 0){
+      assert(n < 0);
       return *this<<=(-n);
     }
     else if(n==0){
+      assert(n == 0);
       return *this;
     }
     else{
@@ -1066,16 +1139,18 @@ template < typename T, typename C = std::vector<T> >
 
   
   Integer& pow (int e) {
-    // your code
     if( (*this == 0) && (e == 0) ){
+      assert((*this == 0) && (e == 0));
       throw std::invalid_argument("Integer::Integer()");
     }
     if (e < 0) {
+      assert(e < 0);
       throw std::invalid_argument("Integer::Integer()");
     }
 
 
     if(e == 0){
+      assert(e == 0);
       *this = 1;
       return *this;
     }  
