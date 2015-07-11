@@ -1183,6 +1183,7 @@ template < typename T, typename C = std::vector<T> >
 
     while(e != 0){
       if (e%22 == 0){
+	assert(e%22 == 0);
         Integer eleven = *this * *this * *this * *this * *this * *this * *this * *this * *this * *this * *this;
         Integer twtwo = eleven * eleven;
         for (int i = 0; i < e/22; ++i){
@@ -1192,6 +1193,7 @@ template < typename T, typename C = std::vector<T> >
         return *this;
       }
       else if (e%21 == 0){
+        assert (e%21 == 0);
         Integer ten = *this * *this * *this * *this * *this * *this * *this * *this * *this * *this;
         Integer twone = ten *ten * *this;
         for (int i = 0; i < e/21; ++i){
@@ -1201,6 +1203,7 @@ template < typename T, typename C = std::vector<T> >
         return *this;
       }
       else if (e%20 == 0){
+	assert (e%20 == 0);
         Integer ten = *this * *this * *this * *this * *this * *this * *this * *this * *this * *this;
         Integer tw = ten *ten;
         for (int i = 0; i < e/20; ++i){
@@ -1210,6 +1213,7 @@ template < typename T, typename C = std::vector<T> >
         return *this;
       }
       else if (e%19 == 0){
+	assert (e%19 == 0);
         Integer nine = *this * *this * *this * *this * *this * *this * *this * *this * *this;
         Integer nteen = nine * nine * *this;
         for (int i = 0; i < e/19; ++i){
@@ -1219,6 +1223,7 @@ template < typename T, typename C = std::vector<T> >
         return *this;
       }
       else if (e%18 == 0){
+	assert (e%18 == 0);
         Integer nine = *this * *this * *this * *this * *this * *this * *this * *this * *this;
         Integer eteen = nine * nine;
         for (int i = 0; i < e/18; ++i){
@@ -1228,6 +1233,7 @@ template < typename T, typename C = std::vector<T> >
         return *this;
       }
       else if (e%17 == 0){
+	assert (e%17 == 0);
         Integer eight =*this * *this * *this * *this * *this * *this * *this * *this;
         Integer seteen = eight * eight * *this;
         for (int i = 0; i < e/17; ++i){
@@ -1237,6 +1243,7 @@ template < typename T, typename C = std::vector<T> >
         return *this;
       }
       else if (e%16 == 0){
+	assert (e%16 == 0);
         Integer eight =*this * *this * *this * *this * *this * *this * *this * *this;
         Integer sixteen = eight * eight;
         for (int i = 0; i < e/16; ++i){
@@ -1246,6 +1253,7 @@ template < typename T, typename C = std::vector<T> >
         return *this;
       }
       else if (e%15 == 0){
+	assert (e%15 == 0);
         Integer seven =*this * *this * *this * *this * *this * *this * *this;
         Integer fifteen = seven * seven * *this;
         for (int i = 0; i < e/15; ++i){
@@ -1255,6 +1263,7 @@ template < typename T, typename C = std::vector<T> >
         return *this;
       }
       else if (e%14 == 0){
+	assert (e%14 == 0);
         Integer seven =*this * *this * *this * *this * *this * *this * *this;
         Integer fourteen = seven * seven;
         for (int i = 0; i < e/14; ++i){
@@ -1264,6 +1273,7 @@ template < typename T, typename C = std::vector<T> >
         return *this;
       }
       else if (e%13 == 0){
+	assert (e%13 == 0);
         Integer six =*this * *this * *this * *this * *this * *this;
         Integer thteen = six * six * *this;
         for (int i = 0; i < e/13; ++i){
@@ -1273,6 +1283,7 @@ template < typename T, typename C = std::vector<T> >
         return *this;
       }
       else if (e%12 == 0){
+	assert (e%12 == 0);
         Integer six =*this * *this * *this * *this * *this * *this;
         Integer twelve = six * six;
         for (int i = 0; i < e/12; ++i){
@@ -1282,6 +1293,7 @@ template < typename T, typename C = std::vector<T> >
         return *this;
       }
       else if (e%11 == 0){
+	assert (e%11 == 0);
         Integer five =*this * *this * *this * *this * *this;
         Integer eleven = five * five * *this;
         for (int i = 0; i < e/11; ++i){
@@ -1291,6 +1303,7 @@ template < typename T, typename C = std::vector<T> >
         return *this;
       }
       else if (e%10 == 0){
+	assert (e%10 == 0);
         Integer five =*this * *this * *this * *this * *this;
         Integer ten = five * five;
         for (int i = 0; i < e/10; ++i){
@@ -1300,6 +1313,7 @@ template < typename T, typename C = std::vector<T> >
         return *this;
       }
       else if (e%9 == 0){
+	assert (e%9 == 0);
         Integer four =*this * *this * *this * *this;
         Integer nine = four * four * *this;
         for (int i = 0; i < e/9; ++i){
@@ -1309,6 +1323,7 @@ template < typename T, typename C = std::vector<T> >
         return *this;
       }
       else if (e%8 == 0){
+	assert (e%8 == 0);
         Integer four =*this * *this * *this * *this;
         Integer eight = four * four;
         for (int i = 0; i < e/8; ++i){
@@ -1318,6 +1333,7 @@ template < typename T, typename C = std::vector<T> >
         return *this;
       }
       else if (e%7 == 0){
+	assert (e%7 == 0);
         Integer three =*this * *this * *this;
         Integer seven = three * three * *this;
         for (int i = 0; i < e/7; ++i){
@@ -1327,6 +1343,7 @@ template < typename T, typename C = std::vector<T> >
         return *this;
       }
       else if (e%6 == 0){
+	assert (e%6 == 0);
         Integer three =*this * *this * *this;
         Integer six = three * three;
         for (int i = 0; i < e/6; ++i){
@@ -1336,6 +1353,7 @@ template < typename T, typename C = std::vector<T> >
         return *this;
       }
       else if (e%5 == 0){
+	assert (e%5 == 0);
         Integer two =*this * *this;
         Integer five = two * two * *this;
         for (int i = 0; i < e/5; ++i){
@@ -1345,6 +1363,7 @@ template < typename T, typename C = std::vector<T> >
         return *this;
       }
       else if (e%4 == 0){
+	assert (e%4 == 0);
         Integer two =*this * *this;
         Integer four = two * two;
         for (int i = 0; i < e/4; ++i){
@@ -1354,6 +1373,7 @@ template < typename T, typename C = std::vector<T> >
         return *this;
       }
       else if (e%3 == 0){
+	assert (e%3 == 0);
         Integer three = *this * *this * *this;
         for (int i = 0; i < e/3; ++i){
           j *= three;
@@ -1362,6 +1382,7 @@ template < typename T, typename C = std::vector<T> >
         return *this;
       }
     else if (e%2 == 0) {
+      assert (e%2 == 0);
         for (int i = 0; i < e/2; ++i){
           j *= *this * *this;
         }
