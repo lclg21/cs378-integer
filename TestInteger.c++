@@ -743,6 +743,7 @@ TEST(Integer, test_mult_eq_5) {
     Integer<int> w(-512);
     ASSERT_EQ(w, a);}
 
+
 TEST(Integer, test_mult_eq_6) {
     Integer<int> a(-8);
     Integer<int> b(-64);
