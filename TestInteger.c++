@@ -220,7 +220,7 @@ TEST(Integer, minus_digits5 ) {
   
   TEST(Integer, multiplies_digits2 ) {
   const vector<int>       x = {1, 2, 3, 4, 5, 6};
-  const vector<int>   y = {0, 0, 0, 0, 0, 0};
+  const vector<int>   y = {0};
   vector<int>       z(1);
   multiplies_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
   const list<int>       a = {0};
@@ -379,7 +379,6 @@ TEST(Integer, equal_to6) {
   const Integer<int> y = 1;
   ASSERT_TRUE(x == y);
   ASSERT_FALSE(x != y);}
-
 
 
 TEST(Integer, equal_to7) {
@@ -685,6 +684,34 @@ TEST(Integer, test_mult_eq_3) {
     ASSERT_EQ(w, n1);}
 
 
+TEST(Integer, test_mult_eq_4) {
+    Integer<int> a(8);
+    Integer<int> b(64);
+    a *= b;;
+    Integer<int> w(512);
+    ASSERT_EQ(w, a);}
+
+//------------
+// operator /=
+//------------
+
+// TEST(Integer, divide_equals) {
+//     Integer<int> n(9);
+//     n /= 3;
+//     Integer<int> w("3");
+//     ASSERT_EQ(w, n);}
+
+// TEST(Integer, divide_equals2) {
+//     Integer<int> n(100);
+//     n /= 1;
+//     Integer<int> w = 100;
+//     ASSERT_EQ(w, n);}
+
+// TEST(Integer, divide_equals3) {
+//     Integer<int> n(25);
+//     n /= 5;
+//     Integer<int> w = 5;
+//     ASSERT_EQ(w, n);}
 //------------
 // operator += 
 //------------
@@ -712,6 +739,12 @@ TEST(Integer, plus_equals4) {
     Integer<int> b(1512);
     a += b;
     ASSERT_EQ(a, 1536);}
+
+TEST(Integer, plus_equals5) {
+    Integer<int> a(8);
+    Integer<int> b(9);
+    a += b;
+    ASSERT_EQ(a, 17);}
 
 //------------
 // operator -= 
@@ -741,7 +774,14 @@ TEST(Integer, minus_equals3) {
 // pow
 //----
 
-TEST(Integer, test_operator_pow_1) {
+TEST(Integer, pow) {
+    Integer<int> a = 2;
+    int b = 3;
+    Integer<int> r = 8;
+    a = a.pow(b);
+    ASSERT_EQ(a, r);
+}
+TEST(Integer,pow2) {
    Integer<int> a = 1;
    int p = -1;
    bool got_exception = false;
@@ -752,35 +792,35 @@ TEST(Integer, test_operator_pow_1) {
    }
    ASSERT_EQ(true, got_exception);}
 
-TEST(Integer, test_operator_pow_2) {
-   Integer<int> a = 0;
-   int p = 1000;
-   Integer<int> b = pow(a, p);
-   ASSERT_EQ(0, a);
-   ASSERT_EQ(0, b);}
+TEST(Integer, pow3) {
+   Integer<int> a = 3;
+   int b = 4;
+   Integer<int> r = 81;
+   a = a.pow(b);
+   ASSERT_EQ(a, r);}
 
-TEST(Integer, test_operator_pow_3) {
+TEST(Integer, pow4) {
    Integer<int> a = 1000;
-   int p = 0;
-   Integer<int> b = pow(a, p);
-   ASSERT_EQ(1000, a);
-   ASSERT_EQ(1, b);}
+   int b = 0;
+   Integer<int> r = 1;
+   a = a.pow(b);
+   ASSERT_EQ(a, r);}
 
-TEST(Integer, test_operator_pow_4) {
+TEST(Integer, pow5) {
    Integer<int> a = 2;
-   int p = 2;
-   Integer<int> b = pow(a, p);
-   ASSERT_EQ(2, a);
-   ASSERT_EQ(4, b);}
+   int b = 2;
+   Integer<int> r = 4;
+   a = a.pow(b);
+   ASSERT_EQ(a, r);}
 
-TEST(Integer, test_operator_pow_5) {
-   Integer<int> a = 5;
-   int p = 9;
-   Integer<int> b = pow(a, p);
-   ASSERT_EQ(5, a);
-   ASSERT_EQ(1953125, b);}
+TEST(Integer, pow6) {
+   Integer<int> a("5");
+   int b = 9;
+   Integer<int> r = 1953125;
+   a = a.pow(b);
+   ASSERT_EQ(a, r);}
 
-TEST(Integer, test_operator_pow_6) {
+TEST(Integer, pow7) {
    Integer<int> a = 10;
    int p = 10;
    Integer<int> b = pow(a, p);
@@ -790,10 +830,9 @@ TEST(Integer, test_operator_pow_6) {
    for (int i = 0; i < p; ++i) {
        expected += "0";
    }
-   ASSERT_EQ(10, a);
    ASSERT_EQ(expected, b_out.str());}
 
-TEST(Integer, test_operator_pow_7) {
+TEST(Integer, pow8) {
    Integer<int> a = 10;
    int p = 1000;
    Integer<int> b = pow(a, p);
@@ -803,6 +842,7 @@ TEST(Integer, test_operator_pow_7) {
    for (int i = 0; i < p; ++i) {
        expected += "0";
    }
-   ASSERT_EQ(10, a);
    ASSERT_EQ(expected, b_out.str());}
+
+
 

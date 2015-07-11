@@ -82,6 +82,13 @@ OI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
   int length2 = distance(b2, e2); 
   deque<int> container;
 
+  // if (length1 == 1 && length2 == length2){
+  //   num = *(e1 -1) + *(e2 -1);
+  //   sum = num % 10;
+  //   container.push_front(sum);
+
+  // }
+
   if (length1 == length2){
     assert(length1 == length2);
     while(b1 != e1){
@@ -102,7 +109,6 @@ OI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
 
     if (carry == 1){
       assert(carry ==1);
-      container.resize(length1 + 1);
       container.push_front(carry);
     }
     else{
@@ -149,7 +155,6 @@ OI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
         
     if (carry == 1){
       assert(carry == 1);
-      container.resize(length1 + 1);
       container.push_front(carry);
     }
     else{
@@ -196,7 +201,6 @@ OI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
         
     if (carry == 1){
       assert(carry == 1);
-      container.resize(length2 + 1);
       container.push_front(carry);
     }
     else{
@@ -341,9 +345,10 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
     int bottomlength = distance(b2, e2);
     int toplength = distance(b1, e1);
     vector<int> currenttotal(toplength+bottomlength+1);
-    int i = 0;
 
+    int i = 0;
     while(i < 10){
+        assert(i < 10);
         vector<int> multipleofi = find_multiples(b1, e1, i);
         listofmultiples[i] = multipleofi;
       ++i;
@@ -356,6 +361,7 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
     int j = 1;
     vector<int> currentvalue(toplength+j+1);
     while(j < bottomlength){
+        assert(j < bottomlength);
         vector<int>::reverse_iterator begbottom = listofmultiples[*(e2-1)].rbegin();
         vector<int>::reverse_iterator endbottom = listofmultiples[*(e2-1)].rend();
         currentvalue.resize(currentvalue.size()+1);
@@ -365,7 +371,6 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
         --e2;
         ++j;
     }
-
     x = copy(currentsumbeg, currentsumend, x);
 
     return x;}
@@ -1065,7 +1070,23 @@ template < typename T, typename C = std::vector<T> >
       assert(rhs == 0);
       throw std::invalid_argument("Integer::Integer()");
     }
-  //   *this = *this / &rhs;
+    
+    Integer lhs = *this;
+     C container(lhs._x.size() + rhs._x.size() + 1, 0);
+
+    typename C::iterator x = container.begin();
+    typename C::iterator digits;  
+
+    if (lhs.neg == false && rhs.neg == false){
+      digits = divides_digits(lhs._x.begin(),lhs._x.end(),rhs._x.begin(),rhs._x.end(),x);
+      this->neg = false;
+    }
+    else if(lhs.neg == true && rhs.neg == true){
+      digits = divides_digits(lhs._x.begin(),lhs._x.end(),rhs._x.begin(),rhs._x.end(),x);
+      this->neg = true;
+    }
+    C quotient = C(x, digits);
+    this->_x = quotient;
     return *this;}
 
   // -----------
@@ -1172,20 +1193,28 @@ template < typename T, typename C = std::vector<T> >
       throw std::invalid_argument("Integer::Integer()");
     }
 
-
     if(e == 0){
       assert(e == 0);
       *this = 1;
       return *this;
     }  
-    Integer j = *this;
-    for(int i = 1; i<e; ++i){
-      j *= *this;
+    else if (e == 1){
+      return *this;
     }
 
-    *this = j;
-    return *this;}
-  };
+    Integer j = 1;
+    while(e != 0){
+      if (e%2 == 0) {
+        for (int i = 0; i < e/2; ++i){
+          j *= *this * *this;
+        }
+      *this = j;
+      return *this;
+      }
+      j *= *this;
+      --e;
+    }
+    return *this;}};
 
 
 #endif // Integer_h
