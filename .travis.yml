@@ -36,6 +36,7 @@ before_script:
 script:
     - date
     - ls -al
+    - make clean
     - make Integer.log
     - make integer-tests
     - ls -al
