@@ -81,13 +81,8 @@ OI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
   int length1 = distance(b1, e1);
   int length2 = distance(b2, e2); 
   deque<int> container;
-
-  // if (length1 == 1 && length2 == length2){
-  //   num = *(e1 -1) + *(e2 -1);
-  //   sum = num % 10;
-  //   container.push_front(sum);
-
-  // }
+/*if lengths are equal add up each digit and keep track of numbers you are carrying.
+  if lengths are not equal then just keep going on longer length alone, making sure you add carry.*/
 
   if (length1 == length2){
     assert(length1 == length2);
@@ -232,8 +227,7 @@ OI plus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
 template <typename II1, typename II2, typename OI>
 OI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
 
-  //Need to remove leading 00s from the actual result
-  //example 123 - 122 = 001 -> 1
+
 
   int carry = 0;
   int num = 0;
@@ -258,8 +252,13 @@ OI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
       --e1;
       --e2;
     }
-
-    for (deque<int>::iterator v = container.begin(); v != container.end(); ++v){
+    deque<int>::iterator p = container.begin();
+    int count0 = 0;
+    while(*p == 0 && p != container.end()-1){         //get rid of any possible leading 0s
+      ++count0;
+      ++p;
+    }
+    for (deque<int>::iterator v = container.begin()+count0; v != container.end(); ++v){
       *x++ = *v;
     }
   }
@@ -288,7 +287,13 @@ OI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
         container.push_front(num);
         --e1;
     }
-    for (deque<int>::iterator v = container.begin(); v != container.end(); ++v){
+    deque<int>::iterator p = container.begin();
+    int count0 = 0;
+    while(*p == 0 && p != container.end()-1){           // get rid of any possible leading 0s
+      ++count0;
+      ++p;
+    }
+    for (deque<int>::iterator v = container.begin()+count0; v != container.end(); ++v){
       *x++ = *v;  
     }
   }
@@ -309,69 +314,65 @@ OI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
  * output the product of the two input sequences into the output sequence
  * ([b1, e1) * [b2, e2)) => x
  */
- template <typename II>
-std::vector<int> multiply_helper(II b1, II e1, int n) {
-    using namespace std;
-    vector<int> result;
-    if(n == 0){
-        result.push_back(0);
-        return result;
+ template <typename II1>
+ vector<int> find_multiples(II1 b1, II1 e1, int i) {
+    vector<int> listofmultiples;
+    if(i == 0){
+        listofmultiples.push_back(0);
+        return listofmultiples;
     }
-    int carryOver = 0;
-    int temp;
-    //int len = e1-b1;
-    //OI endx = x+len;
+    int carry = 0;
     while(b1 != e1){
-        temp = (*(e1-1) * n) + carryOver;
-        carryOver = 0;
-        if(temp >= 10){
-            result.push_back(temp%10);
-            carryOver = temp / 10;
-        } else{
-            result.push_back(temp);
-        }
-        //--len;
-        --e1;
+      int product = (*(e1-1) * i) + carry;
+      if(product/10 == 0){
+        listofmultiples.push_back(product);
+        carry = 0;
+      }
+      else{
+        listofmultiples.push_back(product%10);
+        carry = product/10;
+      }
+      --e1;
     }
-    if(carryOver != 0){
-        result.push_back(carryOver);
+    if(carry != 0){
+      listofmultiples.push_back(carry);
     }
-    return result;
-}
+    return listofmultiples;}
+
 
 template <typename II1, typename II2, typename OI>
 OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
-    using namespace std;
-    vector< vector<int> > cache(10);
-    for(int i=0; i<10; ++i){
-        vector<int> temp = multiply_helper(b1, e1, i);
-        cache[i] = temp;
-    }
-    
-   
-    vector<int>::reverse_iterator productb = cache[*(e2-1)].rbegin();
-    vector<int>::reverse_iterator producte = cache[*(e2-1)].rend();
-    int len = (e2-b2);
-    vector<int> tempCons((e1-b1) + len + 1);
-    
-    for(int i=1; i<len; ++i){
-        --e2;
-        vector<int>::reverse_iterator cb = cache[*(e2-1)].rbegin();
-        vector<int>::reverse_iterator ce = cache[*(e2-1)].rend();
-        vector<int> temp((e1-b1)+1+i);
-        vector<int>::iterator tempe = shift_left_digits (cb, ce, i, temp.begin());      
-        producte = plus_digits(productb, producte, temp.begin(), tempe, tempCons.rbegin());
-        productb = tempCons.rbegin();
-    }
+  vector<vector<int>> multiples(10);                        //find list of multiples from 0 through 9 for top number
+  for(int i = 0; i<10; ++i){
+    vector<int> product = find_multiples(b1,e1,i);
+    multiples[i] = product;
+  }
 
-    while(productb != producte){
-        *x = *productb;
-        ++x;
-        ++productb;
-    }
+  vector<int>::reverse_iterator runningtotal = multiples[*(e2-1)].rbegin();
+  vector<int>::reverse_iterator total = multiples[*(e2-1)].rend();
 
-    return x;}
-    
+  vector<int> currentsum(distance(b1,e1) + distance(b2,e2) + 1);
+
+  int shift = distance(b2,e2);
+  int i = 1;
+  while(i < shift){                                         //find multiple of top number and shift that number the correct number of times
+    --e2;
+    vector<int> shiftednum((e1-b1) + 1 + i);
+    vector<int>::reverse_iterator multiplytopb = multiples[*(e2-1)].rbegin();
+    vector<int>::reverse_iterator multiplytope = multiples[*(e2-1)].rend();
+    vector<int>::iterator shifted_product = shift_left_digits(multiplytopb, multiplytope, i, shiftednum.begin());
+    total = plus_digits(runningtotal, total, shiftednum.begin(),shifted_product,currentsum.rbegin()); //add up the running total
+    runningtotal = currentsum.rbegin();
+    ++i;
+  }
+  while(runningtotal != total){
+    *x = *runningtotal;
+    ++x;
+    ++runningtotal;
+  }
+
+   return x;}
+
 
 // --------------
 // divides_digits
@@ -785,7 +786,7 @@ template < typename T, typename C = std::vector<T> >
    */
   Integer (int value) {
   
-  if (value < 0){
+  if (value < 0){           //we want to get rid of the negative sign, but change our neg bool to true to track it
     assert(value < 0);
     neg = true;
     value = -value;
@@ -793,8 +794,7 @@ template < typename T, typename C = std::vector<T> >
   else if(value == 0){
     assert(value == 0);
     neg = false;
-    _x = C(1);
-    _x.push_back(0);
+    _x = C(1,0);
     return;
   }
   else{
@@ -802,7 +802,7 @@ template < typename T, typename C = std::vector<T> >
   }
   int copyvalue = value;
   int numdigits = 0;
-  while(copyvalue != 0){
+  while(copyvalue != 0){      //count how many digits so we know how big to make the container
     assert(copyvalue != 0);
     copyvalue = copyvalue/10;
     ++numdigits;
@@ -822,7 +822,7 @@ template < typename T, typename C = std::vector<T> >
    */
   explicit Integer (const std::string& value) {
     int numdigits = 0;
-    if(value[0] == '-'){
+    if(value[0] == '-'){            //if the string starts with a - we know it is negative so we set neg to true and continue with the next char
       assert(value[0] == '-');
       neg = true;
       numdigits = 1;
@@ -866,7 +866,7 @@ template < typename T, typename C = std::vector<T> >
   Integer operator - () const {
     if (*this == 0){
       assert(*this == 0);
-      return *this;}
+      return Integer(0);} //if 0 we want to make sure we return it unsigned
     Integer negation(*this);
     if(negation.neg == true){
       assert(negation.neg == true);
@@ -1177,13 +1177,15 @@ template < typename T, typename C = std::vector<T> >
     }
 
 
-    Integer j = 1;
+    Integer j = 1;          //have a base number to start with
 
-    
+    /*
+    check to see if it is a multiple of any of the following numbers to cut down amount of times it has to go through the loop
+    */
 
     while(e != 0){
       if (e%22 == 0){
-	assert(e%22 == 0);
+	      assert(e%22 == 0);
         Integer eleven = *this * *this * *this * *this * *this * *this * *this * *this * *this * *this * *this;
         Integer twtwo = eleven * eleven;
         for (int i = 0; i < e/22; ++i){

@@ -41,8 +41,8 @@ script:
     - ls -al
     - make html
     - ls -al
-    - make test
+    - make TestInteger.out
     - make clean
-    - make test CXX=clang++
+    - make TestInteger.out CXX=clang++
     - ls -al
     - make check
