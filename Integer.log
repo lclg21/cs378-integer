@@ -1,0 +1,727 @@
+commit a71fa2648c110a7968c70324907c764874756494
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Sat Jul 11 12:48:51 2015 -0500
+
+    added dyoxgen documentation and fixed some functions and unit tests
+
+commit 6669198917a0433980d2200de588c9e0f4f4c39b
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Sat Jul 11 11:55:40 2015 -0500
+
+    added unit tests and updated minus digits, multiplies digits, and constructor. edited makefile and travis.yml for travis
+
+commit a422efa3d28cbd4947a2c3b558009830a2e56b23
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Sat Jul 11 07:25:37 2015 -0500
+
+    closes #4 closes #5
+
+commit 8968e3ba2e5e7cf3d97d8bf1ad01cdb3fcc9991d
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Sat Jul 11 07:19:27 2015 -0500
+
+    closes #6 closes #7 closes #17 closes #20
+
+commit 464cbbb20d6771af2f7af245ee31c68e80a2fff9
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Sat Jul 11 07:17:50 2015 -0500
+
+    closes #12
+
+commit d6a5ba126c5fe22b0f0671831c5f51ada4c4c214
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Sat Jul 11 07:05:48 2015 -0500
+
+    implemented pow function
+
+commit 5a0c4b261609278d5057869b202f1fe90bb9550c
+Merge: 66a83c2 3efabc4
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Sat Jul 11 06:57:14 2015 -0500
+
+    Merge branch 'master' of https://github.com/lclg21/cs378-integer
+
+commit 66a83c2dab47d0621fcae1e41cf81d6d22a425ba
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Fri Jul 10 21:44:32 2015 -0500
+
+    finish adding more tests
+
+commit 5cac80af4b919f72cc9d534be2c10b075945e430
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Fri Jul 10 20:05:51 2015 -0500
+
+    fixed plus_digits
+
+commit 00f949ad29b21146fa9619ce4abf029c9274f4cf
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Fri Jul 10 12:41:38 2015 -0500
+
+    added more unit tests
+
+commit 5196dcbada74a4a6ffdf03d46eba88f4749744e4
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Fri Jul 10 12:35:24 2015 -0500
+
+    added more unit tests
+
+commit 3d844d53782085a8f85e7c2ba73b78069ac898ac
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Fri Jul 10 12:22:48 2015 -0500
+
+    added documentation to Integer.h
+
+commit 2b9b15972848126f1ef89ebb2baa8b817a034784
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Fri Jul 10 11:47:52 2015 -0500
+
+    inseted asserts on all functions
+
+commit 9e0aefffd033e67c069fc6ce57bd633db91cdeb5
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Fri Jul 10 00:30:16 2015 -0500
+
+    implemented the pow function with correct output
+
+commit cc1c1eff1f8baee0e9301d413e18e5c71945afe7
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Thu Jul 9 19:16:44 2015 -0500
+
+    Fixed operator -=
+
+commit 703860ec1310c0ea549acc1fb458ac2e01b5b07a
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Thu Jul 9 18:41:21 2015 -0500
+
+    finished operator +=
+
+commit 22654066350b5c2d8dae5b525444c2aee12a3db4
+Merge: cc6a129 8bddc45
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Thu Jul 9 18:15:48 2015 -0500
+
+    fixed += operator
+
+commit cc6a1292b9797db351af395399e9f66f9dc7708f
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Thu Jul 9 17:41:59 2015 -0500
+
+    trying to fix  +=, -=
+
+commit d05de2ac7b26be864749a9b3f05f959ea10134f1
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Thu Jul 9 17:37:29 2015 -0500
+
+    trying oto fix += and -=
+
+commit 8bddc457003079d7c6323796cf37fd4744459301
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Thu Jul 9 17:15:37 2015 -0500
+
+    md
+
+commit 394ba6c9cec548c1555b7bdfb0a75098e3d488ae
+Author: Alex Babar <Alex@Alexs-Mac-Pro.local>
+Date:   Thu Jul 9 17:10:33 2015 -0500
+
+    md
+
+commit 88c678ef227dd92c9f1a547c4f964a5706de8ae1
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Thu Jul 9 16:56:31 2015 -0500
+
+    implemented a working plus_digits function
+
+commit ff990a56759f8ba7c6bb3511438f20888b6c2d3c
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Thu Jul 9 16:48:45 2015 -0500
+
+    md
+
+commit ab8166af60c4572fc8ea0a5a690779b29b273450
+Author: Alex Babar <Alex@Alexs-Mac-Pro.local>
+Date:   Thu Jul 9 16:43:07 2015 -0500
+
+    md
+
+commit f4fbb3cbc250a584c3eb0b75479e60618509003d
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Thu Jul 9 16:39:52 2015 -0500
+
+    md
+
+commit 78090ccf47c00f532c5af70fa9524851fc107650
+Author: Alex Babar <Alex@Alexs-Mac-Pro.local>
+Date:   Thu Jul 9 16:36:43 2015 -0500
+
+    md
+
+commit 23b5fde21bcedddb51d27a90f8c9aea1119b9c91
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Thu Jul 9 16:31:02 2015 -0500
+
+    md
+
+commit 4e63f4aebd325ae7ba9d029dd379121d279f756d
+Author: Alex Babar <Alex@Alexs-Mac-Pro.local>
+Date:   Thu Jul 9 16:22:13 2015 -0500
+
+    multiplies digits
+
+commit 2d006d3aab8de118f2d578c1e84cd4bc82be273d
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Thu Jul 9 15:52:47 2015 -0500
+
+    multiplies digits
+
+commit a94b17952d882791c88b0b6698bc0c54c87474ee
+Author: Alex Babar <Alex@Alexs-Mac-Pro.local>
+Date:   Thu Jul 9 15:44:07 2015 -0500
+
+    multiplies digits
+
+commit 82b1da2e4f20d8dbf9ecd547e371e86890400791
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Thu Jul 9 15:42:38 2015 -0500
+
+    multiplies digits
+
+commit 05f9946b651421e89cf082777ac703aa2c960f37
+Author: Alex Babar <Alex@Alexs-Mac-Pro.local>
+Date:   Thu Jul 9 15:17:51 2015 -0500
+
+    fixing multiplies digits
+
+commit d2929db5af23cb7c2ecaef6c90c261b0f11094ac
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Thu Jul 9 15:13:12 2015 -0500
+
+    debugging multiplies digits
+
+commit edb14c810b4907e00c94fd4cfe47f06d2ff95485
+Author: Alex Babar <Alex@Alexs-Mac-Pro.local>
+Date:   Thu Jul 9 14:49:56 2015 -0500
+
+    attempting to fix multiplies digits
+
+commit 307fb1f7717586f7bb33126ff315ac1db7ed9fda
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Thu Jul 9 14:34:33 2015 -0500
+
+    working on multiplies digits
+
+commit e702136d996df00951cba3badfa82a6bd71d5c3b
+Author: Alex Babar <Alex@Alexs-Mac-Pro.local>
+Date:   Thu Jul 9 14:16:09 2015 -0500
+
+    attempt to fix multiplies digits
+
+commit 735c9c798a860fbd4327f1da0859029193618947
+Author: Alex Babar <Alex@Alexs-Mac-Pro.local>
+Date:   Thu Jul 9 14:08:18 2015 -0500
+
+    attempting to debug multiplies digits
+
+commit a1e210e01acfe515bfc341ac69db749a6779eb47
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Thu Jul 9 14:02:23 2015 -0500
+
+    debugging multiplies digits
+
+commit 9ff0c6092f5dcce43cc1b8afcd072931ebf8fdc0
+Author: Alex Babar <Alex@Alexs-Mac-Pro.local>
+Date:   Thu Jul 9 13:41:15 2015 -0500
+
+    attempt to fix multiplies digits
+
+commit caca8f6af2695ed96b13cc9f62fa983696f259e4
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Thu Jul 9 13:36:55 2015 -0500
+
+    working on fixing issues with multpiplies digits
+
+commit dcb21a18b0bdd0eb5270760a57d77aeb40debea8
+Author: Alex Babar <Alex@Alexs-Mac-Pro.local>
+Date:   Thu Jul 9 12:57:19 2015 -0500
+
+    attempt to fix multiplies digits
+
+commit 280cb28f120f5a5ba5ac66eb0573f9b87066c62e
+Author: Alex Babar <Alex@Alexs-Mac-Pro.local>
+Date:   Thu Jul 9 12:45:02 2015 -0500
+
+    attempt to fix multiply digits
+
+commit e95845cdf9b866760fed6b383917c8000cc83ff3
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Thu Jul 9 11:55:03 2015 -0500
+
+    attempted multiplies digits function
+
+commit 410c2389ad4a485ae1db7b5440371121296803ea
+Author: Alex Babar <Alex@Alexs-Mac-Pro.local>
+Date:   Thu Jul 9 11:34:49 2015 -0500
+
+    attempted the beginning of a multiplies digies function
+
+commit 07eed265d6489507e13d9c0bdf59da9229814b9d
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Thu Jul 9 11:16:35 2015 -0500
+
+    need to finish +=, -=
+
+commit 93c99606c72a22f8c13c62063d9ad8eded77cfeb
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Thu Jul 9 10:49:42 2015 -0500
+
+    fixed unit tests to include constructor
+
+commit 5175146a0c904b80d537a663376e5097618a53ab
+Author: Alex Babar <Alex@Alexs-Mac-Pro.local>
+Date:   Thu Jul 9 10:32:59 2015 -0500
+
+    Fixed constructor with int
+
+commit a09d2533272327077c6f924c175726d1abbff466
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Thu Jul 9 10:27:49 2015 -0500
+
+    updated constructor funciton
+
+commit 426f27c63cdc7a7a6cc6b958c362859ee395c727
+Author: Alex Babar <Alex@Alexs-Mac-Pro.local>
+Date:   Thu Jul 9 10:17:48 2015 -0500
+
+    fixed comment problems causing to not compile
+
+commit 15961ae304adda3c1833190a17df8851c6b058a1
+Author: Alex Babar <Alex@Alexs-Mac-Pro.local>
+Date:   Thu Jul 9 10:16:44 2015 -0500
+
+    fixed comment problems causing to not compile
+
+commit 5258bb01d6d6ac81745a474bbc26723f4a36116b
+Author: Alex Babar <Alex@Alexs-Mac-Pro.local>
+Date:   Thu Jul 9 10:14:13 2015 -0500
+
+    fixed problem with comment in multiplies digits
+
+commit b00a8ba53bc6c2d56d3f0fe140b3921e9ecabdcf
+Author: Alex Babar <Alex@Alexs-Mac-Pro.local>
+Date:   Thu Jul 9 10:04:12 2015 -0500
+
+    fixed constructor function. closes #18
+
+commit eaab335f1842533400d6396a1a278ff2ca3bf0a5
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Wed Jul 8 21:50:44 2015 -0500
+
+    added negative test for left shift
+
+commit 6cfc3b545470b15934280703999df9443416d2de
+Merge: 488056a 206eaa4
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Wed Jul 8 21:44:56 2015 -0500
+
+    Merge branch 'master' into dev
+    
+    merge
+
+commit 488056ad553b8dda7813ff98f1a0a0d1a5c6ee90
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Wed Jul 8 21:42:39 2015 -0500
+
+    added functions and tests for <<= and >>+
+
+commit 40b27a44dbb9ddd1e1029226077ca874b4f90cac
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Wed Jul 8 21:07:16 2015 -0500
+
+    fixed string constructor, made ostream function, <, abs, negation functions
+
+commit 807e6eaec13126a5e8424b4ecdbf3caeb7f3907e
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Wed Jul 8 11:39:53 2015 -0500
+
+    fixed issues with equal to test.  closes #19.  closes #16. closes #15. closes #13.
+
+commit 439dd73d94cfa754d1ce46a6f3f01a4558156f69
+Author: Alex Babar <Alex@Alexs-Mac-Pro.local>
+Date:   Wed Jul 8 11:13:40 2015 -0500
+
+    fixed equal to test cases
+
+commit d65f991c164ad1a27913007a40efb2d00b9c923d
+Author: Alex Babar <Alex@Alexs-Mac-Pro.local>
+Date:   Wed Jul 8 11:07:13 2015 -0500
+
+    added function for string constructor
+
+commit 3efabc4e382fb7fee7f12473b774ed000db0cf20
+Merge: 206eaa4 297f12f
+Author: Alex Babar <Alex@Alexs-Mac-Pro.local>
+Date:   Wed Jul 8 10:47:08 2015 -0500
+
+    Merge branch 'dev'
+    
+    Conflicts:
+    	TestInteger
+    	TestInteger.out
+    
+    conflicts
+
+commit 297f12f310c61fa5f80ed8187bf1c73a82da7b8a
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Tue Jul 7 21:30:37 2015 -0500
+
+    edited plus digits, constructors, and equal operator
+
+commit a7b4827e4a345ad32862968d1b8c5599f96fceb1
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Tue Jul 7 20:43:04 2015 -0500
+
+    modified all the files
+
+commit 8be98de9abebe68b6a6adbd92e3b4437adb6e650
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Tue Jul 7 11:47:31 2015 -0500
+
+    modified makefile
+
+commit 4678554768d50bbde01ef43c3ec714531e3d0be7
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Tue Jul 7 01:39:43 2015 -0500
+
+    modified makefile
+
+commit 14daacd97c3e8b769de0992c63856e9099a68c02
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Tue Jul 7 01:22:36 2015 -0500
+
+    testing makefile on travis CI
+
+commit 889b0c1a86abd3a5cd574b7c2056fd725287b6db
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Tue Jul 7 01:16:18 2015 -0500
+
+    added more asserts to unused variables in TestInteger.c++
+
+commit 4589e57328ab026efb788eaba8db5d29129c8683
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Tue Jul 7 01:05:41 2015 -0500
+
+    modified TestInteger.c++ with more asserts
+
+commit 6dd780469d341d70167d45d038e99eb1fa9c8f1d
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Tue Jul 7 00:44:24 2015 -0500
+
+    modifed makefile
+
+commit e71b007f48d2c5ae06aea0c18eb1f73060dc4655
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Tue Jul 7 00:22:24 2015 -0500
+
+    modified makefile
+
+commit 05b10f580d7a08c0d0fe514f5755bd54fb9fcb7e
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Mon Jul 6 22:09:17 2015 -0500
+
+    added in Integer methods
+
+commit 43561767c5ccae24abf50e274a54f0d22debf78b
+Author: samador88 <Sam@wireless-10-147-39-89.public.utexas.edu>
+Date:   Mon Jul 6 21:14:48 2015 -0500
+
+    edited  < operator
+
+commit 2531d3d399a22e060ac086695be8433c66a4788c
+Author: samador88 <Sam@wireless-10-147-39-89.public.utexas.edu>
+Date:   Mon Jul 6 21:13:58 2015 -0500
+
+    edited  < operator
+
+commit f9f807284ffc77c36f76e4c1c1492a4540a5cc3e
+Author: samador88 <Sam@wireless-10-147-39-89.public.utexas.edu>
+Date:   Mon Jul 6 21:13:13 2015 -0500
+
+    edited  < operator
+
+commit 993db9d42dc72b5b9c58aad3ff793b8334981a9e
+Author: samador88 <Sam@wireless-10-147-39-89.public.utexas.edu>
+Date:   Mon Jul 6 21:12:44 2015 -0500
+
+    edited  < operator
+
+commit 5c806a6b5db6dc8cd1347d5fac67a85bab3cbc5a
+Author: samador88 <Sam@wireless-10-147-39-89.public.utexas.edu>
+Date:   Mon Jul 6 21:11:05 2015 -0500
+
+    edited  < operator
+
+commit 9d3cf8b92084e0cd8aa9d1efead270a890f61ef8
+Author: samador88 <Sam@wireless-10-147-39-89.public.utexas.edu>
+Date:   Mon Jul 6 21:09:46 2015 -0500
+
+    edited  < operator
+
+commit 7d27fe8487a3ba07fac35e45c1a4a63fb4ccc86a
+Author: samador88 <Sam@wireless-10-147-39-89.public.utexas.edu>
+Date:   Mon Jul 6 21:08:38 2015 -0500
+
+    edited  < operator
+
+commit dc864e0ca823dda6ad8d22aba58b6c0a994a29b7
+Author: samador88 <Sam@wireless-10-147-39-89.public.utexas.edu>
+Date:   Mon Jul 6 21:03:47 2015 -0500
+
+    edited right shift
+
+commit bebc6367d92cf210cb1e6e45587f6b57167f9f73
+Author: samador88 <Sam@wireless-10-147-39-89.public.utexas.edu>
+Date:   Mon Jul 6 21:00:20 2015 -0500
+
+    edited right shift
+
+commit 831e7d2af810ec66898c055da870865507eccd0b
+Author: samador88 <Sam@wireless-10-147-39-89.public.utexas.edu>
+Date:   Mon Jul 6 20:59:28 2015 -0500
+
+    edited right shift
+
+commit ccec69ae34db25c614fa6d4f96c8def02cdf6998
+Author: samador88 <Sam@wireless-10-147-39-89.public.utexas.edu>
+Date:   Mon Jul 6 20:58:01 2015 -0500
+
+    edited right shift
+
+commit 17b6170abbabe57b23a1dee4094ebda753f2aef9
+Author: samador88 <Sam@wireless-10-147-39-89.public.utexas.edu>
+Date:   Mon Jul 6 20:55:04 2015 -0500
+
+    edited right shift
+
+commit 24503186908ce9997e2d408c96eb6b14f95e01a3
+Author: samador88 <Sam@wireless-10-147-39-89.public.utexas.edu>
+Date:   Mon Jul 6 20:53:14 2015 -0500
+
+    edited right shift
+
+commit c4911dfa8158ae8b488f8d6b5c89a7d7539f0b54
+Author: samador88 <Sam@wireless-10-147-39-89.public.utexas.edu>
+Date:   Mon Jul 6 20:52:28 2015 -0500
+
+    edited right shift
+
+commit 3bcb1bf6d21fc0d51aec43b2bb3a9ed24f30e3d4
+Author: samador88 <Sam@wireless-10-147-39-89.public.utexas.edu>
+Date:   Mon Jul 6 20:50:31 2015 -0500
+
+    edited right shift
+
+commit 9a4f39a8a6de396eb0915e0df256a4b78bf24076
+Author: samador88 <Sam@wireless-10-147-39-89.public.utexas.edu>
+Date:   Mon Jul 6 20:48:36 2015 -0500
+
+    edited left shift
+
+commit 45045f9e3ab75bad5c4ebfe3aa0e3236cffa41d4
+Author: samador88 <Sam@wireless-10-147-39-89.public.utexas.edu>
+Date:   Mon Jul 6 20:47:13 2015 -0500
+
+    edited left shift
+
+commit 19286fa6f5379a27882d9fb71958d1afdd0dfc9c
+Author: samador88 <Sam@wireless-10-147-39-89.public.utexas.edu>
+Date:   Mon Jul 6 20:46:39 2015 -0500
+
+    edited left shift
+
+commit 9f7329ceaea8bfbe20cbad0e9cd5b32c80d34408
+Author: samador88 <Sam@wireless-10-147-39-89.public.utexas.edu>
+Date:   Mon Jul 6 20:45:27 2015 -0500
+
+    edited left shift
+
+commit 9c2a8f6d8c145de0b0c68e52c427dee91e000191
+Author: samador88 <Sam@wireless-10-147-39-89.public.utexas.edu>
+Date:   Mon Jul 6 20:43:30 2015 -0500
+
+    changed shift left
+
+commit 8fce38df06df2f8ec0154ed9edad5fd73252c7dc
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Mon Jul 6 20:34:26 2015 -0500
+
+    attempt to fix makefile
+
+commit 87bf6d7928c8ec6ae4ab8079a20205753b17b985
+Author: samador88 <Sam@wireless-10-147-39-89.public.utexas.edu>
+Date:   Mon Jul 6 20:29:10 2015 -0500
+
+    attempt to fix makefile
+
+commit 919825e34125ad8c1211818e70fa562e88ad435f
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Mon Jul 6 20:21:54 2015 -0500
+
+    attempt to fix makefile
+
+commit ab7bc4f3810e6ed87ac1b33d64a74f77789f4787
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Mon Jul 6 16:13:06 2015 -0500
+
+    testing makefile travis #3
+
+commit 9ef6740df2ebda5d17a871c43fb7baa813eafa3f
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Mon Jul 6 15:56:26 2015 -0500
+
+    testing makefile on travis #2
+
+commit f3a3372cc0bb6fe5f17ae560c5779a86aa1df4f8
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Mon Jul 6 15:36:09 2015 -0500
+
+    testing makefile on travis CI
+
+commit f1bcc669016a97a51107390cebfd495d0853578e
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Mon Jul 6 12:23:55 2015 -0500
+
+    tried to implement < operator
+
+commit bd24db0eed60b966f35bf3cc346f4346829bc0b0
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Mon Jul 6 01:34:39 2015 -0500
+
+    attempt to fix travis CI failed
+
+commit 726408623558179b01091c32781e1d133a77558a
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Mon Jul 6 01:22:47 2015 -0500
+
+    added unit tests for == and implemented the == function
+
+commit b2638b14747958280bf2777a7601337801b30531
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Sun Jul 5 19:23:26 2015 -0500
+
+    attempt to fix travis ci  build
+
+commit b2b78709e3b15b36babb2353d2c19e5e9cfaf11b
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Sun Jul 5 19:03:32 2015 -0500
+
+    attempt to fix travis ci build in makefile
+
+commit 820dd46ac683e7c9d5882b6527e10b1f19cac072
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Sun Jul 5 18:48:21 2015 -0500
+
+    attempt to fix makefile for travis ci
+
+commit 1f433a673f44c6f533562e2fe81b9d8543849dda
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Sun Jul 5 18:36:39 2015 -0500
+
+    attempt to fix makefil for travis ci
+
+commit 193a998e0f732bcb97f2ed8c3cd8ba5e933a408f
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Sun Jul 5 18:26:52 2015 -0500
+
+    edited make file to fix travis ci build error
+
+commit 7359224d565990bff996dd15f85983ee3fad8f53
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Sun Jul 5 18:18:25 2015 -0500
+
+    added divides_digits function and unit tests.  closes #14
+
+commit 6e1b402cc8e24a3811310a315460e2146badbac6
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Sun Jul 5 18:06:25 2015 -0500
+
+    added multiplies digit function and unit tests
+
+commit 9d3dd6b003a3158b5a88c1cdb43d363896668a08
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Sun Jul 5 18:00:20 2015 -0500
+
+    closes #1 closes #2 closes #3
+
+commit 8c66b9556770af9844dcf0a45f10c7185f7db168
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Sun Jul 5 17:58:00 2015 -0500
+
+    closes #11 added functions for minus digits and plus digits and unit tests
+
+commit c72f52b928fbae22eda9be60d3c0d5c05c7146d1
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Sun Jul 5 16:43:58 2015 -0500
+
+    added in shift right function and tests
+
+commit a01472e497043f398d89c30fda7dcbeaffea12bf
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Sun Jul 5 14:33:17 2015 -0500
+
+    added shift left digits function
+
+commit 206eaa4ffddf9341008cc42ad44336c7bd0010ad
+Merge: 731d46e 71cbc5a
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Thu Jul 2 12:05:39 2015 -0500
+
+    Merge branch 'dev'
+
+commit 71cbc5ac39f7c37edbb6244ad8811642f22de185
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Thu Jul 2 12:05:09 2015 -0500
+
+    modified skeleton for TestInteger.c++ by adding more test functions
+
+commit 731d46ea3090a8dd69a174ca4cf1254c9e805ab7
+Merge: d7b1490 dc0eaba
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Thu Jul 2 10:43:57 2015 -0500
+
+    fixed syntax error on shift_left
+
+commit dc0eaba294112f24cd49e8084b45826129854250
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Thu Jul 2 10:34:59 2015 -0500
+
+    added a test skeleton for TestInteger.c++
+
+commit d7b1490b94175b76f0aced188f02139635f6915e
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Thu Jul 2 09:32:32 2015 -0500
+
+    merge with dev after a succesful run on Travis CI
+
+commit 536319e00a1abc56d3305573e93714f1f8da78d0
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Thu Jul 2 09:27:58 2015 -0500
+
+    Added .out files to repo
+
+commit bfe727c481227a59c95ee25bd7b11225da53a653
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Thu Jul 2 09:22:18 2015 -0500
+
+    modified TestInteger.c++ and makefile to be able to run and compile
+
+commit 7373f0200841b439a3eb85032436cd20f19dd13a
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Thu Jul 2 09:11:49 2015 -0500
+
+    added files to the private code repo
+
+commit 69fc727207b77be0e2aea44fea8aa66c7a0b9e36
+Author: lclg21 <lclg21@utexas.edu>
+Date:   Thu Jul 2 07:50:08 2015 -0500
+
+    Initial commit
