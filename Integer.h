@@ -341,7 +341,7 @@ std::vector<int> multiply_helper(II b1, II e1, int n) {
 
 template <typename II1, typename II2, typename OI>
 OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
-    using namespace std;
+  /*  using namespace std;
     vector< vector<int> > cache(10);
     for(int i=0; i<10; ++i){
         vector<int> temp = multiply_helper(b1, e1, i);
@@ -369,7 +369,57 @@ OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
         ++x;
         ++productb;
     }
+*/
+  int carry = 0;
+  int num = 0;
+  int length1 = distance(b1, e1);
+  int length2 = distance(b2, e2);
+  deque<int> container;
+  deque<int> extracontainer;
+  deque<int>::iterator y;
 
+ 
+  if (length1 == length2){
+    while(b1 != e1){
+      assert(b1 != e1);
+      while (b2 != e2){
+        num = *(e1-1) * (*(e2-1) + carry);
+	num = num / 10;
+        container.push_front(num);
+        carry = num % 10;
+	--e2;
+      }
+      if (carry != 0){
+	container.push_front(carry);
+      }
+      plus_digit(container.begin(), container.end(), extracontainer.begin(), extracontainer.end(), y.begin() );
+      --e1;
+    }
+    for (deque<int>::iterator v = x.begin(); v != x.end(); ++v){
+      *x++ = *v;
+    }    
+  }
+  else  if (length2 > length1){
+    while(b2 != e2){
+      assert(b2 != e2);
+      while (b1 != e1){
+        num = *(e2-1) * (*(e1-1) + carry);
+        num = num / 10;
+        container.push_front(num);
+        carry = num % 10;
+        --e1;
+      }
+      if (carry != 0){
+        container.push_front(carry);
+      }
+      --e2;
+    }
+    for (deque<int>::iterator v = container.begin(); v != container.end(); ++v){
+      *x++ = *v;
+    }
+  }
+
+ 
     return x;}
     
 
