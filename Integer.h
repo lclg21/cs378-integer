@@ -934,6 +934,9 @@ template < typename T, typename C = std::vector<T> >
    * lhs += rhs -> lhs = 3
    */
   Integer& operator += (const Integer& rhs) {
+    if(rhs == 0){
+      return *this;
+    }
     Integer lhs = *this;
     C container(lhs._x.size() + rhs._x.size() + 1, 0);
             
@@ -970,13 +973,16 @@ template < typename T, typename C = std::vector<T> >
    * lhs -= rhs -> lhs = 1
    */
   Integer& operator -= (const Integer& rhs) {
+    if(rhs == 0){
+      return *this;
+    }
     Integer lhs = *this;
     C container(lhs._x.size() + rhs._x.size() + 1, 0);
 
     typename C::iterator x = container.begin();
     typename C::iterator digits;    
 
-    if ((lhs.neg == rhs.neg)){
+    if (lhs.neg == rhs.neg){
       assert(lhs.neg == rhs.neg);
       digits = minus_digits(lhs._x.begin(),lhs._x.end(),rhs._x.begin(),rhs._x.end(),x);
       if (lhs.neg == true && lhs < rhs){
@@ -1015,6 +1021,10 @@ template < typename T, typename C = std::vector<T> >
    * lhs *= rhs -> lhs = 4
    */
   Integer& operator *= (const Integer& rhs) {
+    if(rhs == 0){
+      *this = 0;
+      return *this;
+    }
     Integer negative(*this);
     if(negative.neg == true && rhs.neg == true){
       assert(negative.neg == true && rhs.neg == true);
@@ -1062,6 +1072,13 @@ template < typename T, typename C = std::vector<T> >
    * lhs /= rhs -> lhs = 5
    */
   Integer& operator /= (const Integer& rhs) {
+      if (rhs == 0){
+      assert(rhs == 0);
+      throw std::invalid_argument("Integer::Integer()");
+    }
+    else if(rhs ==1){
+      return *this;
+    }
     return *this;}
   // -----------
   // operator %=
@@ -1074,6 +1091,10 @@ template < typename T, typename C = std::vector<T> >
    * lhs %= rhs -> lhs = 1
    */
   Integer& operator %= (const Integer& rhs) {
+    if (rhs == 0){
+      assert(rhs <= 0);
+      throw std::invalid_argument("Integer::Integer()");
+    }
     if (rhs <= 0){
       assert(rhs <= 0);
       throw std::invalid_argument("Integer::Integer()");
@@ -1184,17 +1205,7 @@ template < typename T, typename C = std::vector<T> >
     */
 
     while(e != 0){
-      if (e%22 == 0){
-	      assert(e%22 == 0);
-        Integer eleven = *this * *this * *this * *this * *this * *this * *this * *this * *this * *this * *this;
-        Integer twtwo = eleven * eleven;
-        for (int i = 0; i < e/22; ++i){
-          j *= twtwo;
-        }
-        *this = j;
-        return *this;
-      }
-      else if (e%21 == 0){
+      if (e%21 == 0){
         assert (e%21 == 0);
         Integer ten = *this * *this * *this * *this * *this * *this * *this * *this * *this * *this;
         Integer twone = ten *ten * *this;
@@ -1204,32 +1215,13 @@ template < typename T, typename C = std::vector<T> >
         *this = j;
         return *this;
       }
-      else if (e%20 == 0){
-	assert (e%20 == 0);
-        Integer ten = *this * *this * *this * *this * *this * *this * *this * *this * *this * *this;
-        Integer tw = ten *ten;
-        for (int i = 0; i < e/20; ++i){
-          j *= tw;
-        }
-        *this = j;
-        return *this;
-      }
+     
       else if (e%19 == 0){
 	assert (e%19 == 0);
         Integer nine = *this * *this * *this * *this * *this * *this * *this * *this * *this;
         Integer nteen = nine * nine * *this;
         for (int i = 0; i < e/19; ++i){
           j *= nteen;
-        }
-        *this = j;
-        return *this;
-      }
-      else if (e%18 == 0){
-	assert (e%18 == 0);
-        Integer nine = *this * *this * *this * *this * *this * *this * *this * *this * *this;
-        Integer eteen = nine * nine;
-        for (int i = 0; i < e/18; ++i){
-          j *= eteen;
         }
         *this = j;
         return *this;
@@ -1244,52 +1236,12 @@ template < typename T, typename C = std::vector<T> >
         *this = j;
         return *this;
       }
-      else if (e%16 == 0){
-	assert (e%16 == 0);
-        Integer eight =*this * *this * *this * *this * *this * *this * *this * *this;
-        Integer sixteen = eight * eight;
-        for (int i = 0; i < e/16; ++i){
-          j *= sixteen;
-        }
-        *this = j;
-        return *this;
-      }
-      else if (e%15 == 0){
-	assert (e%15 == 0);
-        Integer seven =*this * *this * *this * *this * *this * *this * *this;
-        Integer fifteen = seven * seven * *this;
-        for (int i = 0; i < e/15; ++i){
-          j *= fifteen;
-        }
-        *this = j;
-        return *this;
-      }
-      else if (e%14 == 0){
-	assert (e%14 == 0);
-        Integer seven =*this * *this * *this * *this * *this * *this * *this;
-        Integer fourteen = seven * seven;
-        for (int i = 0; i < e/14; ++i){
-          j *= fourteen;
-        }
-        *this = j;
-        return *this;
-      }
       else if (e%13 == 0){
 	assert (e%13 == 0);
         Integer six =*this * *this * *this * *this * *this * *this;
         Integer thteen = six * six * *this;
         for (int i = 0; i < e/13; ++i){
           j *= thteen;
-        }
-        *this = j;
-        return *this;
-      }
-      else if (e%12 == 0){
-	assert (e%12 == 0);
-        Integer six =*this * *this * *this * *this * *this * *this;
-        Integer twelve = six * six;
-        for (int i = 0; i < e/12; ++i){
-          j *= twelve;
         }
         *this = j;
         return *this;
@@ -1304,36 +1256,6 @@ template < typename T, typename C = std::vector<T> >
         *this = j;
         return *this;
       }
-      else if (e%10 == 0){
-	assert (e%10 == 0);
-        Integer five =*this * *this * *this * *this * *this;
-        Integer ten = five * five;
-        for (int i = 0; i < e/10; ++i){
-          j *= ten;
-        }
-        *this = j;
-        return *this;
-      }
-      else if (e%9 == 0){
-	assert (e%9 == 0);
-        Integer four =*this * *this * *this * *this;
-        Integer nine = four * four * *this;
-        for (int i = 0; i < e/9; ++i){
-          j *= nine;
-        }
-        *this = j;
-        return *this;
-      }
-      else if (e%8 == 0){
-	assert (e%8 == 0);
-        Integer four =*this * *this * *this * *this;
-        Integer eight = four * four;
-        for (int i = 0; i < e/8; ++i){
-          j *= eight;
-        }
-        *this = j;
-        return *this;
-      }
       else if (e%7 == 0){
 	assert (e%7 == 0);
         Integer three =*this * *this * *this;
@@ -1344,32 +1266,12 @@ template < typename T, typename C = std::vector<T> >
         *this = j;
         return *this;
       }
-      else if (e%6 == 0){
-	assert (e%6 == 0);
-        Integer three =*this * *this * *this;
-        Integer six = three * three;
-        for (int i = 0; i < e/6; ++i){
-          j *= six;
-        }
-        *this = j;
-        return *this;
-      }
       else if (e%5 == 0){
 	assert (e%5 == 0);
         Integer two =*this * *this;
         Integer five = two * two * *this;
         for (int i = 0; i < e/5; ++i){
           j *= five;
-        }
-        *this = j;
-        return *this;
-      }
-      else if (e%4 == 0){
-	assert (e%4 == 0);
-        Integer two =*this * *this;
-        Integer four = two * two;
-        for (int i = 0; i < e/4; ++i){
-          j *= four;
         }
         *this = j;
         return *this;

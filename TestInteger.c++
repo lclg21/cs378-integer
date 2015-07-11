@@ -175,6 +175,13 @@ TEST(Integer, plus_digits10 ) {
   plus_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
   const list<int>       a = {4, 7, 1};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
+TEST(Integer, plus_digits11 ) {
+  const vector<int>       x = {1, 2};
+  const vector<int>   y = {4, 5, 0};
+  vector<int>       z(3);
+  plus_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
+  const list<int>       a = {4, 6, 2};
+  ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
 
 // ------------
 // minus_digits
@@ -296,7 +303,6 @@ TEST(Integer, multiplies_digits8 ) {
   multiplies_digits(x.begin(), x.end(), y.begin(), y.end(), z.begin());
   const list<int>       a = {5, 5, 5, 5, 5, 2, 0};
   ASSERT_TRUE(equal(z.begin(), z.end(), a.begin()));}
-
 
 
 // --------------
@@ -759,7 +765,7 @@ TEST(Integer, right_shift_equals8) {
     ASSERT_EQ(b, a);}
 TEST(Integer, right_shift_equals9) {
     Integer<int> a = -1000;
-    int n = -0;
+    int n = 0;
     a = a >> n;
     Integer<int> b("-1000");
     ASSERT_EQ(b, a);}
@@ -817,6 +823,12 @@ TEST(Integer, test_mult_eq_7) {
     a *= b;;
     Integer<int> w(512);
     ASSERT_EQ(w, a);}
+TEST(Integer, test_mult_eq_8) {
+    Integer<int> a(64);
+    Integer<int> b(0);
+    a *= b;;
+    Integer<int> w(0);
+    ASSERT_EQ(w, a);}
 //------------
 // operator += 
 //------------
@@ -856,6 +868,11 @@ TEST(Integer, plus_equals6) {
     Integer<int> b(9);
     Integer<int> c = a + b;
     ASSERT_EQ(c, 17);}
+TEST(Integer, plus_equals7) {
+    Integer<int> a(8);
+    Integer<int> b(0);
+    a += b;
+    ASSERT_EQ(a, 8);}
 
 //------------
 // operator -= 
@@ -903,6 +920,11 @@ TEST(Integer, minus_equals7) {
     Integer<int> b(-4);
     a -=b;
     ASSERT_EQ(a, 5);}
+TEST(Integer, minus_equals8) {
+    Integer<int> a(1);
+    Integer<int> b(0);
+    a -=b;
+    ASSERT_EQ(a, 1);}
 
 TEST(Integer, divide_equals){
   Integer<int> a = (1);
@@ -919,6 +941,21 @@ TEST(Integer, divide_equals2){
   Integer<int> a = (1);
   Integer<int> b = a / 1;
   ASSERT_EQ(a,1);}
+
+TEST(Integer, divide_equals3){
+  Integer<int> a = (1);
+  a /= 4;
+  ASSERT_EQ(a,1);}
+
+TEST(Integer, divide_equals4){
+   Integer<int> a = 1;
+   bool got_exception = false;
+   try {
+       a/=0;
+   } catch (std::invalid_argument ia) {
+       got_exception = true;
+   }
+   ASSERT_EQ(true, got_exception);}
 
 TEST(Integer, mod){
   Integer<int> a = (1);
@@ -937,6 +974,15 @@ TEST(Integer, modequals2){
        got_exception = true;
    }
    ASSERT_EQ(true, got_exception);}
+TEST(Integer, modequals3){
+   Integer<int> a = -1;
+   bool got_exception = false;
+   try {
+       a%=0;
+   } catch (std::invalid_argument ia) {
+       got_exception = true;
+   }
+   ASSERT_EQ(true, got_exception);}
 //----
 // pow
 //----
@@ -945,7 +991,7 @@ TEST(Integer, pow) {
     Integer<int> a = 2;
     int b = 3;
     Integer<int> r = 8;
-    a = a.pow(b);
+    a = pow(a,b);
     ASSERT_EQ(a, r);
 }
 TEST(Integer,pow2) {
@@ -963,28 +1009,28 @@ TEST(Integer, pow3) {
    Integer<int> a = 3;
    int b = 4;
    Integer<int> r = 81;
-   a = a.pow(b);
+   a = pow(a,b);
    ASSERT_EQ(a, r);}
 
 TEST(Integer, pow4) {
    Integer<int> a = 1000;
    int b = 0;
    Integer<int> r = 1;
-   a = a.pow(b);
+   a = pow(a,b);
    ASSERT_EQ(a, r);}
 
 TEST(Integer, pow5) {
    Integer<int> a = 2;
    int b = 2;
    Integer<int> r = 4;
-   a = a.pow(b);
+   a = pow(a,b);
    ASSERT_EQ(a, r);}
 
 TEST(Integer, pow6) {
    Integer<int> a("5");
    int b = 9;
    Integer<int> r = 1953125;
-   a = a.pow(b);
+   a = pow(a,b);
    ASSERT_EQ(a, r);}
 
 TEST(Integer, pow7) {
@@ -1015,70 +1061,70 @@ TEST(Integer, pow8) {
    Integer<int> a = 2;
    int b = 11;
    Integer<int> r = 2048;
-   a = a.pow(b);
+   a = pow(a,b);
    ASSERT_EQ(a, r);}
 
    TEST(Integer, pow10) {
    Integer<int> a = 2;
    int b = 21;
    Integer<int> r = 2097152;
-   a = a.pow(b);
+   a = pow(a,b);
    ASSERT_EQ(a, r);}
 
    TEST(Integer, pow11) {
    Integer<int> a = 2;
    int b = 3;
    Integer<int> r = 8;
-   a = a.pow(b);
+   a = pow(a,b);
    ASSERT_EQ(a, r);}
 
    TEST(Integer, pow12) {
    Integer<int> a = 2;
    int b = 1;
    Integer<int> r = 2;
-   a = a.pow(b);
+   a = pow(a,b);
    ASSERT_EQ(a, r);}
 
   TEST(Integer, pow13) {
    Integer<int> a = 2;
    int b = 5;
    Integer<int> r = 32;
-   a = a.pow(b);
+   a = pow(a,b);
    ASSERT_EQ(a, r);}
 
   TEST(Integer, pow14) {
    Integer<int> a = 2;
    int b = 7;
    Integer<int> r = 128;
-   a = a.pow(b);
+   a = pow(a,b);
    ASSERT_EQ(a, r);}
 
   TEST(Integer, pow15) {
    Integer<int> a = 2;
    int b = 13;
    Integer<int> r = 8192;
-   a = a.pow(b);
+   a = pow(a,b);
    ASSERT_EQ(a, r);}
 
   TEST(Integer, pow16) {
    Integer<int> a = 2;
    int b = 15;
    Integer<int> r = 32768;
-   a = a.pow(b);
+   a = pow(a,b);
    ASSERT_EQ(a, r);}
 
   TEST(Integer, pow17) {
    Integer<int> a = 2;
    int b = 17;
    Integer<int> r = 131072;
-   a = a.pow(b);
+   a = pow(a,b);
    ASSERT_EQ(a, r);}
 
   TEST(Integer, pow18) {
    Integer<int> a = 2;
    int b = 19;
    Integer<int> r = 524288;
-   a = a.pow(b);
+   a = pow(a,b);
    ASSERT_EQ(a, r);}
 TEST(Integer,pow19) {
    Integer<int> a = 0;
@@ -1095,13 +1141,13 @@ TEST(Integer, pow20) {
    Integer<int> a = 2;
    int b = 0;
    Integer<int> r = 1;
-   a = a.pow(b);
+   a = pow(a,b);
    ASSERT_EQ(a, r);}
 TEST(Integer, pow21) {
    Integer<int> a = 2;
    int b = 23;
    Integer<int> r = 8388608;
-   a = a.pow(b);
+   a = pow(a,b);
    ASSERT_EQ(a, r);}
 TEST(Integer, pow22) {
    Integer<int> a = 2;
@@ -1109,6 +1155,16 @@ TEST(Integer, pow22) {
    Integer<int> r = 8388608;
    a = pow(a,b);
    ASSERT_EQ(a, r);}
+TEST(Integer,pow23) {
+   Integer<int> a = 1;
+   int p = -1;
+   bool got_exception = false;
+   try {
+       Integer<int> b = a.pow(p);
+   } catch (std::invalid_argument ia) {
+       got_exception = true;
+   }
+   ASSERT_EQ(true, got_exception);}
 //---------
 // valid
 //---------

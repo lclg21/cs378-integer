@@ -1,16 +1,16 @@
-==29453== Memcheck, a memory error detector
-==29453== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
-==29453== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
-==29453== Command: ./TestInteger
-==29453== 
+==31120== Memcheck, a memory error detector
+==31120== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==31120== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==31120== Command: ./TestInteger
+==31120== 
 Running main() from gtest_main.cc
-[==========] Running 159 tests from 1 test case.
+[==========] Running 167 tests from 1 test case.
 [----------] Global test environment set-up.
-[----------] 159 tests from Integer
+[----------] 167 tests from Integer
 [ RUN      ] Integer.shift_left_digits
-[       OK ] Integer.shift_left_digits (34 ms)
+[       OK ] Integer.shift_left_digits (35 ms)
 [ RUN      ] Integer.shift_left_digits2
-[       OK ] Integer.shift_left_digits2 (10 ms)
+[       OK ] Integer.shift_left_digits2 (9 ms)
 [ RUN      ] Integer.shift_left_digits3
 [       OK ] Integer.shift_left_digits3 (5 ms)
 [ RUN      ] Integer.shift_left_digits4
@@ -24,7 +24,7 @@ Running main() from gtest_main.cc
 [ RUN      ] Integer.shift_right_digits4
 [       OK ] Integer.shift_right_digits4 (5 ms)
 [ RUN      ] Integer.plus_digits
-[       OK ] Integer.plus_digits (24 ms)
+[       OK ] Integer.plus_digits (23 ms)
 [ RUN      ] Integer.plus_digits2
 [       OK ] Integer.plus_digits2 (6 ms)
 [ RUN      ] Integer.plus_digits3
@@ -43,24 +43,26 @@ Running main() from gtest_main.cc
 [       OK ] Integer.plus_digits9 (6 ms)
 [ RUN      ] Integer.plus_digits10
 [       OK ] Integer.plus_digits10 (6 ms)
+[ RUN      ] Integer.plus_digits11
+[       OK ] Integer.plus_digits11 (6 ms)
 [ RUN      ] Integer.minus_digits
 [       OK ] Integer.minus_digits (13 ms)
 [ RUN      ] Integer.minus_digits2
-[       OK ] Integer.minus_digits2 (6 ms)
+[       OK ] Integer.minus_digits2 (5 ms)
 [ RUN      ] Integer.minus_digits3
-[       OK ] Integer.minus_digits3 (12 ms)
+[       OK ] Integer.minus_digits3 (13 ms)
 [ RUN      ] Integer.minus_digits4
-[       OK ] Integer.minus_digits4 (7 ms)
+[       OK ] Integer.minus_digits4 (6 ms)
 [ RUN      ] Integer.minus_digits5
-[       OK ] Integer.minus_digits5 (8 ms)
+[       OK ] Integer.minus_digits5 (9 ms)
 [ RUN      ] Integer.minus_digits6
-[       OK ] Integer.minus_digits6 (9 ms)
+[       OK ] Integer.minus_digits6 (8 ms)
 [ RUN      ] Integer.multiplies_digits
 [       OK ] Integer.multiplies_digits (59 ms)
 [ RUN      ] Integer.multiplies_digits2
 [       OK ] Integer.multiplies_digits2 (7 ms)
 [ RUN      ] Integer.multiplies_digits3
-[       OK ] Integer.multiplies_digits3 (7 ms)
+[       OK ] Integer.multiplies_digits3 (6 ms)
 [ RUN      ] Integer.multiplies_digits4
 [       OK ] Integer.multiplies_digits4 (6 ms)
 [ RUN      ] Integer.multiplies_digits5
@@ -72,13 +74,13 @@ Running main() from gtest_main.cc
 [ RUN      ] Integer.multiplies_digits8
 [       OK ] Integer.multiplies_digits8 (7 ms)
 [ RUN      ] Integer.divides_digits
-[       OK ] Integer.divides_digits (17 ms)
+[       OK ] Integer.divides_digits (18 ms)
 [ RUN      ] Integer.divides_digits2
 [       OK ] Integer.divides_digits2 (6 ms)
 [ RUN      ] Integer.divides_digits3
-[       OK ] Integer.divides_digits3 (5 ms)
+[       OK ] Integer.divides_digits3 (6 ms)
 [ RUN      ] Integer.divides_digits4
-[       OK ] Integer.divides_digits4 (6 ms)
+[       OK ] Integer.divides_digits4 (5 ms)
 [ RUN      ] Integer.divides_digits5
 [       OK ] Integer.divides_digits5 (6 ms)
 [ RUN      ] Integer.divides_digits6
@@ -86,21 +88,21 @@ Running main() from gtest_main.cc
 [ RUN      ] Integer.equal_to
 [       OK ] Integer.equal_to (15 ms)
 [ RUN      ] Integer.equal_to2
-[       OK ] Integer.equal_to2 (5 ms)
+[       OK ] Integer.equal_to2 (6 ms)
 [ RUN      ] Integer.equal_to3
 [       OK ] Integer.equal_to3 (6 ms)
 [ RUN      ] Integer.equal_to4
 [       OK ] Integer.equal_to4 (9 ms)
 [ RUN      ] Integer.equal_to5
-[       OK ] Integer.equal_to5 (6 ms)
+[       OK ] Integer.equal_to5 (7 ms)
 [ RUN      ] Integer.equal_to6
 [       OK ] Integer.equal_to6 (4 ms)
 [ RUN      ] Integer.equal_to7
 [       OK ] Integer.equal_to7 (4 ms)
 [ RUN      ] Integer.equal_to8
-[       OK ] Integer.equal_to8 (5 ms)
+[       OK ] Integer.equal_to8 (4 ms)
 [ RUN      ] Integer.equal_to9
-[       OK ] Integer.equal_to9 (4 ms)
+[       OK ] Integer.equal_to9 (5 ms)
 [ RUN      ] Integer.less_than
 [       OK ] Integer.less_than (11 ms)
 [ RUN      ] Integer.less_than2
@@ -112,7 +114,7 @@ Running main() from gtest_main.cc
 [ RUN      ] Integer.less_than5
 [       OK ] Integer.less_than5 (4 ms)
 [ RUN      ] Integer.less_than6
-[       OK ] Integer.less_than6 (5 ms)
+[       OK ] Integer.less_than6 (4 ms)
 [ RUN      ] Integer.less_than7
 [       OK ] Integer.less_than7 (3 ms)
 [ RUN      ] Integer.less_than8
@@ -126,7 +128,7 @@ Running main() from gtest_main.cc
 [ RUN      ] Integer.less_than12
 [       OK ] Integer.less_than12 (3 ms)
 [ RUN      ] Integer.less_than13
-[       OK ] Integer.less_than13 (4 ms)
+[       OK ] Integer.less_than13 (3 ms)
 [ RUN      ] Integer.less_than14
 [       OK ] Integer.less_than14 (3 ms)
 [ RUN      ] Integer.less_than15
@@ -152,13 +154,13 @@ Running main() from gtest_main.cc
 [ RUN      ] Integer.negation6
 [       OK ] Integer.negation6 (4 ms)
 [ RUN      ] Integer.abs1
-[       OK ] Integer.abs1 (4 ms)
+[       OK ] Integer.abs1 (3 ms)
 [ RUN      ] Integer.abs2
-[       OK ] Integer.abs2 (3 ms)
+[       OK ] Integer.abs2 (4 ms)
 [ RUN      ] Integer.abs3
-[       OK ] Integer.abs3 (2 ms)
+[       OK ] Integer.abs3 (3 ms)
 [ RUN      ] Integer.abs4
-[       OK ] Integer.abs4 (3 ms)
+[       OK ] Integer.abs4 (4 ms)
 [ RUN      ] Integer.ostream1
 [       OK ] Integer.ostream1 (9 ms)
 [ RUN      ] Integer.ostream2
@@ -170,19 +172,19 @@ Running main() from gtest_main.cc
 [ RUN      ] Integer.ostream5
 [       OK ] Integer.ostream5 (4 ms)
 [ RUN      ] Integer.ostream6
-[       OK ] Integer.ostream6 (2 ms)
+[       OK ] Integer.ostream6 (3 ms)
 [ RUN      ] Integer.ostream7
-[       OK ] Integer.ostream7 (4 ms)
+[       OK ] Integer.ostream7 (3 ms)
 [ RUN      ] Integer.left_shift_equals
 [       OK ] Integer.left_shift_equals (7 ms)
 [ RUN      ] Integer.left_shift_equals2
-[       OK ] Integer.left_shift_equals2 (3 ms)
+[       OK ] Integer.left_shift_equals2 (4 ms)
 [ RUN      ] Integer.left_shift_equals3
-[       OK ] Integer.left_shift_equals3 (6 ms)
+[       OK ] Integer.left_shift_equals3 (7 ms)
 [ RUN      ] Integer.left_shift_equals4
 [       OK ] Integer.left_shift_equals4 (3 ms)
 [ RUN      ] Integer.left_shift_equals5
-[       OK ] Integer.left_shift_equals5 (4 ms)
+[       OK ] Integer.left_shift_equals5 (3 ms)
 [ RUN      ] Integer.left_shift_equals6
 [       OK ] Integer.left_shift_equals6 (3 ms)
 [ RUN      ] Integer.left_shift_equals7
@@ -192,23 +194,23 @@ Running main() from gtest_main.cc
 [ RUN      ] Integer.left_shift_equals8
 [       OK ] Integer.left_shift_equals8 (3 ms)
 [ RUN      ] Integer.right_shift_equals
-[       OK ] Integer.right_shift_equals (4 ms)
+[       OK ] Integer.right_shift_equals (3 ms)
 [ RUN      ] Integer.right_shift_equals2
-[       OK ] Integer.right_shift_equals2 (3 ms)
+[       OK ] Integer.right_shift_equals2 (4 ms)
 [ RUN      ] Integer.right_shift_equals3
-[       OK ] Integer.right_shift_equals3 (4 ms)
+[       OK ] Integer.right_shift_equals3 (3 ms)
 [ RUN      ] Integer.right_shift_equals4
-[       OK ] Integer.right_shift_equals4 (2 ms)
+[       OK ] Integer.right_shift_equals4 (3 ms)
 [ RUN      ] Integer.right_shift_equals5
-[       OK ] Integer.right_shift_equals5 (3 ms)
+[       OK ] Integer.right_shift_equals5 (2 ms)
 [ RUN      ] Integer.right_shift_equals6
-[       OK ] Integer.right_shift_equals6 (3 ms)
+[       OK ] Integer.right_shift_equals6 (2 ms)
 [ RUN      ] Integer.right_shift_equals7
 [       OK ] Integer.right_shift_equals7 (3 ms)
 [ RUN      ] Integer.right_shift_equals8
 [       OK ] Integer.right_shift_equals8 (4 ms)
 [ RUN      ] Integer.right_shift_equals9
-[       OK ] Integer.right_shift_equals9 (3 ms)
+[       OK ] Integer.right_shift_equals9 (4 ms)
 [ RUN      ] Integer.test_mult_eq_1
 [       OK ] Integer.test_mult_eq_1 (21 ms)
 [ RUN      ] Integer.test_mult_eq_2
@@ -216,17 +218,19 @@ Running main() from gtest_main.cc
 [ RUN      ] Integer.test_mult_eq_3
 [       OK ] Integer.test_mult_eq_3 (4 ms)
 [ RUN      ] Integer.test_mult_eq_4
-[       OK ] Integer.test_mult_eq_4 (4 ms)
+[       OK ] Integer.test_mult_eq_4 (3 ms)
 [ RUN      ] Integer.test_mult_eq_5
-[       OK ] Integer.test_mult_eq_5 (3 ms)
+[       OK ] Integer.test_mult_eq_5 (4 ms)
 [ RUN      ] Integer.test_mult_eq_6
-[       OK ] Integer.test_mult_eq_6 (3 ms)
+[       OK ] Integer.test_mult_eq_6 (4 ms)
 [ RUN      ] Integer.test_mult_eq_7
 [       OK ] Integer.test_mult_eq_7 (4 ms)
+[ RUN      ] Integer.test_mult_eq_8
+[       OK ] Integer.test_mult_eq_8 (3 ms)
 [ RUN      ] Integer.plus_equals
 [       OK ] Integer.plus_equals (12 ms)
 [ RUN      ] Integer.plus_equals2
-[       OK ] Integer.plus_equals2 (2 ms)
+[       OK ] Integer.plus_equals2 (3 ms)
 [ RUN      ] Integer.plus_equals3
 [       OK ] Integer.plus_equals3 (8 ms)
 [ RUN      ] Integer.plus_equals4
@@ -235,6 +239,8 @@ Running main() from gtest_main.cc
 [       OK ] Integer.plus_equals5 (3 ms)
 [ RUN      ] Integer.plus_equals6
 [       OK ] Integer.plus_equals6 (3 ms)
+[ RUN      ] Integer.plus_equals7
+[       OK ] Integer.plus_equals7 (3 ms)
 [ RUN      ] Integer.minus_equals
 [       OK ] Integer.minus_equals (16 ms)
 [ RUN      ] Integer.minus_equals2
@@ -249,18 +255,26 @@ Running main() from gtest_main.cc
 [       OK ] Integer.minus_equals6 (4 ms)
 [ RUN      ] Integer.minus_equals7
 [       OK ] Integer.minus_equals7 (3 ms)
+[ RUN      ] Integer.minus_equals8
+[       OK ] Integer.minus_equals8 (3 ms)
 [ RUN      ] Integer.divide_equals
-[       OK ] Integer.divide_equals (2 ms)
+[       OK ] Integer.divide_equals (3 ms)
 [ RUN      ] Integer.divide
 [       OK ] Integer.divide (4 ms)
 [ RUN      ] Integer.divide_equals2
 [       OK ] Integer.divide_equals2 (3 ms)
+[ RUN      ] Integer.divide_equals3
+[       OK ] Integer.divide_equals3 (2 ms)
+[ RUN      ] Integer.divide_equals4
+[       OK ] Integer.divide_equals4 (38 ms)
 [ RUN      ] Integer.mod
 [       OK ] Integer.mod (4 ms)
 [ RUN      ] Integer.modequals
-[       OK ] Integer.modequals (2 ms)
+[       OK ] Integer.modequals (3 ms)
 [ RUN      ] Integer.modequals2
-[       OK ] Integer.modequals2 (39 ms)
+[       OK ] Integer.modequals2 (4 ms)
+[ RUN      ] Integer.modequals3
+[       OK ] Integer.modequals3 (3 ms)
 [ RUN      ] Integer.pow
 [       OK ] Integer.pow (10 ms)
 [ RUN      ] Integer.pow2
@@ -272,39 +286,41 @@ Running main() from gtest_main.cc
 [ RUN      ] Integer.pow5
 [       OK ] Integer.pow5 (5 ms)
 [ RUN      ] Integer.pow6
-[       OK ] Integer.pow6 (12 ms)
+[       OK ] Integer.pow6 (8 ms)
 [ RUN      ] Integer.pow7
-[       OK ] Integer.pow7 (16 ms)
+[       OK ] Integer.pow7 (14 ms)
 [ RUN      ] Integer.pow8
-[       OK ] Integer.pow8 (1095 ms)
+[       OK ] Integer.pow8 (3707 ms)
 [ RUN      ] Integer.pow9
 [       OK ] Integer.pow9 (12 ms)
 [ RUN      ] Integer.pow10
-[       OK ] Integer.pow10 (23 ms)
+[       OK ] Integer.pow10 (24 ms)
 [ RUN      ] Integer.pow11
-[       OK ] Integer.pow11 (4 ms)
+[       OK ] Integer.pow11 (5 ms)
 [ RUN      ] Integer.pow12
 [       OK ] Integer.pow12 (3 ms)
 [ RUN      ] Integer.pow13
-[       OK ] Integer.pow13 (8 ms)
+[       OK ] Integer.pow13 (6 ms)
 [ RUN      ] Integer.pow14
-[       OK ] Integer.pow14 (9 ms)
+[       OK ] Integer.pow14 (10 ms)
 [ RUN      ] Integer.pow15
-[       OK ] Integer.pow15 (13 ms)
+[       OK ] Integer.pow15 (15 ms)
 [ RUN      ] Integer.pow16
-[       OK ] Integer.pow16 (18 ms)
+[       OK ] Integer.pow16 (8 ms)
 [ RUN      ] Integer.pow17
-[       OK ] Integer.pow17 (16 ms)
+[       OK ] Integer.pow17 (20 ms)
 [ RUN      ] Integer.pow18
-[       OK ] Integer.pow18 (17 ms)
+[       OK ] Integer.pow18 (18 ms)
 [ RUN      ] Integer.pow19
 [       OK ] Integer.pow19 (4 ms)
 [ RUN      ] Integer.pow20
-[       OK ] Integer.pow20 (2 ms)
+[       OK ] Integer.pow20 (3 ms)
 [ RUN      ] Integer.pow21
-[       OK ] Integer.pow21 (20 ms)
+[       OK ] Integer.pow21 (11 ms)
 [ RUN      ] Integer.pow22
-[       OK ] Integer.pow22 (13 ms)
+[       OK ] Integer.pow22 (10 ms)
+[ RUN      ] Integer.pow23
+[       OK ] Integer.pow23 (3 ms)
 [ RUN      ] Integer.valid1
 [       OK ] Integer.valid1 (4 ms)
 [ RUN      ] Integer.constructor1
@@ -325,32 +341,32 @@ Running main() from gtest_main.cc
 [       OK ] Integer.minus_minus1 (4 ms)
 [ RUN      ] Integer.minus_minus2
 [       OK ] Integer.minus_minus2 (3 ms)
-[----------] 159 tests from Integer (2192 ms total)
+[----------] 167 tests from Integer (4814 ms total)
 
 [----------] Global test environment tear-down
-[==========] 159 tests from 1 test case ran. (2221 ms total)
-[  PASSED  ] 159 tests.
-==29453== 
-==29453== HEAP SUMMARY:
-==29453==     in use at exit: 0 bytes in 0 blocks
-==29453==   total heap usage: 19,779 allocs, 19,779 frees, 7,793,216 bytes allocated
-==29453== 
-==29453== All heap blocks were freed -- no leaks are possible
-==29453== 
-==29453== For counts of detected and suppressed errors, rerun with: -v
-==29453== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+[==========] 167 tests from 1 test case ran. (4843 ms total)
+[  PASSED  ] 167 tests.
+==31120== 
+==31120== HEAP SUMMARY:
+==31120==     in use at exit: 0 bytes in 0 blocks
+==31120==   total heap usage: 36,143 allocs, 36,143 frees, 20,142,630 bytes allocated
+==31120== 
+==31120== All heap blocks were freed -- no leaks are possible
+==31120== 
+==31120== For counts of detected and suppressed errors, rerun with: -v
+==31120== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 File 'TestInteger.c++'
-Lines executed:99.89% of 899
-Branches executed:72.23% of 5186
-Taken at least once:36.16% of 5186
-Calls executed:58.19% of 6719
+Lines executed:99.89% of 948
+Branches executed:72.15% of 5408
+Taken at least once:36.11% of 5408
+Calls executed:58.44% of 7059
 Creating 'TestInteger.c++.gcov'
 
 File '/usr/include/gtest/internal/gtest-internal.h'
 Lines executed:60.00% of 5
-Branches executed:49.84% of 638
-Taken at least once:24.92% of 638
-Calls executed:37.41% of 1275
+Branches executed:49.85% of 670
+Taken at least once:24.93% of 670
+Calls executed:37.42% of 1339
 Creating 'gtest-internal.h.gcov'
 
 File '/usr/include/c++/4.8/iostream'
@@ -490,15 +506,15 @@ Creating 'gtest.h.gcov'
 File '/usr/include/c++/4.8/bits/vector.tcc'
 Lines executed:68.89% of 90
 Branches executed:50.00% of 52
-Taken at least once:30.77% of 52
+Taken at least once:28.85% of 52
 Calls executed:57.30% of 89
 Creating 'vector.tcc.gcov'
 
 File 'Integer.h'
-Lines executed:90.72% of 690
-Branches executed:85.28% of 1902
-Taken at least once:51.68% of 1902
-Calls executed:65.46% of 1656
+Lines executed:96.06% of 609
+Branches executed:91.14% of 1626
+Taken at least once:55.66% of 1626
+Calls executed:72.40% of 1377
 Creating 'Integer.h.gcov'
 
 File '/usr/include/c++/4.8/streambuf'
