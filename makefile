@@ -46,7 +46,7 @@ config:
 	git config -l
 
 
-test: RunInteger.out TestInteger.out
+test: TestInteger.out
 
 
 integer-tests:

@@ -310,72 +310,68 @@ OI minus_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
  * ([b1, e1) * [b2, e2)) => x
  */
  template <typename II>
- vector<int> find_multiples(II b1, II e1, int n) {
-   vector<int> multiples;
-   if (n == 0){
-    assert(n == 0);
-    multiples.push_back(0);
-   }
-   else{
-    assert(n != 0);
-    int carry = 0;
+std::vector<int> multiply_helper(II b1, II e1, int n) {
+    using namespace std;
+    vector<int> result;
+    if(n == 0){
+        result.push_back(0);
+        return result;
+    }
+    int carryOver = 0;
+    int temp;
+    //int len = e1-b1;
+    //OI endx = x+len;
     while(b1 != e1){
-      assert(b1 != e1);
-      int temp = *(e1-1) * n;
-      multiples.push_back(temp%10 + carry);
-      if(temp>9){
-        assert(temp > 9);
-        carry = temp/10;
-      }
-      else{
-        carry = 0;
-      }
-      --e1;
+        temp = (*(e1-1) * n) + carryOver;
+        carryOver = 0;
+        if(temp >= 10){
+            result.push_back(temp%10);
+            carryOver = temp / 10;
+        } else{
+            result.push_back(temp);
+        }
+        //--len;
+        --e1;
     }
-   if (carry > 0){
-    assert(carry > 0);
-    multiples.push_back(carry);
+    if(carryOver != 0){
+        result.push_back(carryOver);
     }
-   }
-   return multiples;
+    return result;
 }
+
 template <typename II1, typename II2, typename OI>
 OI multiplies_digits (II1 b1, II1 e1, II2 b2, II2 e2, OI x) {
-    vector<vector<int>> listofmultiples(10);
-    int bottomlength = distance(b2, e2);
-    int toplength = distance(b1, e1);
-    vector<int> currenttotal(toplength+bottomlength+1);
-
-    int i = 0;
-    while(i < 10){
-        assert(i < 10);
-        vector<int> multipleofi = find_multiples(b1, e1, i);
-        listofmultiples[i] = multipleofi;
-      ++i;
-  }
-    
-    vector<int>::reverse_iterator currentsumbeg = listofmultiples[*(e2-1)].rbegin();
-    vector<int>::reverse_iterator currentsumend = listofmultiples[*(e2-1)].rend();
-
-    --e2;
-    int j = 1;
-    vector<int> currentvalue(toplength+j+1);
-    while(j < bottomlength){
-        assert(j < bottomlength);
-        vector<int>::reverse_iterator begbottom = listofmultiples[*(e2-1)].rbegin();
-        vector<int>::reverse_iterator endbottom = listofmultiples[*(e2-1)].rend();
-        currentvalue.resize(currentvalue.size()+1);
-        vector<int>::iterator leftshifted = shift_left_digits (begbottom, endbottom, j, currentvalue.begin());      
-        currentsumend = plus_digits(currentsumbeg, currentsumend, currentvalue.begin(), leftshifted, currenttotal.rbegin());
-        currentsumbeg = currenttotal.rbegin();
-        --e2;
-        ++j;
+    using namespace std;
+    vector< vector<int> > cache(10);
+    for(int i=0; i<10; ++i){
+        vector<int> temp = multiply_helper(b1, e1, i);
+        cache[i] = temp;
     }
-    x = copy(currentsumbeg, currentsumend, x);
+    
+   
+    vector<int>::reverse_iterator productb = cache[*(e2-1)].rbegin();
+    vector<int>::reverse_iterator producte = cache[*(e2-1)].rend();
+    int len = (e2-b2);
+    vector<int> tempCons((e1-b1) + len + 1);
+    
+    for(int i=1; i<len; ++i){
+        --e2;
+        vector<int>::reverse_iterator cb = cache[*(e2-1)].rbegin();
+        vector<int>::reverse_iterator ce = cache[*(e2-1)].rend();
+        vector<int> temp((e1-b1)+1+i);
+        vector<int>::iterator tempe = shift_left_digits (cb, ce, i, temp.begin());      
+        producte = plus_digits(productb, producte, temp.begin(), tempe, tempCons.rbegin());
+        productb = tempCons.rbegin();
+    }
+
+    while(productb != producte){
+        *x = *productb;
+        ++x;
+        ++productb;
+    }
 
     return x;}
-
-
+    
 
 // --------------
 // divides_digits
@@ -1066,29 +1062,7 @@ template < typename T, typename C = std::vector<T> >
    * lhs /= rhs -> lhs = 5
    */
   Integer& operator /= (const Integer& rhs) {
-    if(rhs == 0){
-      assert(rhs == 0);
-      throw std::invalid_argument("Integer::Integer()");
-    }
-    
-    Integer lhs = *this;
-     C container(lhs._x.size() + rhs._x.size() + 1, 0);
-
-    typename C::iterator x = container.begin();
-    typename C::iterator digits;  
-
-    if (lhs.neg == false && rhs.neg == false){
-      digits = divides_digits(lhs._x.begin(),lhs._x.end(),rhs._x.begin(),rhs._x.end(),x);
-      this->neg = false;
-    }
-    else if(lhs.neg == true && rhs.neg == true){
-      digits = divides_digits(lhs._x.begin(),lhs._x.end(),rhs._x.begin(),rhs._x.end(),x);
-      this->neg = true;
-    }
-    C quotient = C(x, digits);
-    this->_x = quotient;
     return *this;}
-
   // -----------
   // operator %=
   // -----------
@@ -1202,9 +1176,192 @@ template < typename T, typename C = std::vector<T> >
       return *this;
     }
 
+
     Integer j = 1;
+
+    
+
     while(e != 0){
-      if (e%2 == 0) {
+      if (e%22 == 0){
+        Integer eleven = *this * *this * *this * *this * *this * *this * *this * *this * *this * *this * *this;
+        Integer twtwo = eleven * eleven;
+        for (int i = 0; i < e/22; ++i){
+          j *= twtwo;
+        }
+        *this = j;
+        return *this;
+      }
+      else if (e%21 == 0){
+        Integer ten = *this * *this * *this * *this * *this * *this * *this * *this * *this * *this;
+        Integer twone = ten *ten * *this;
+        for (int i = 0; i < e/21; ++i){
+          j *= twone;
+        }
+        *this = j;
+        return *this;
+      }
+      else if (e%20 == 0){
+        Integer ten = *this * *this * *this * *this * *this * *this * *this * *this * *this * *this;
+        Integer tw = ten *ten;
+        for (int i = 0; i < e/20; ++i){
+          j *= tw;
+        }
+        *this = j;
+        return *this;
+      }
+      else if (e%19 == 0){
+        Integer nine = *this * *this * *this * *this * *this * *this * *this * *this * *this;
+        Integer nteen = nine * nine * *this;
+        for (int i = 0; i < e/19; ++i){
+          j *= nteen;
+        }
+        *this = j;
+        return *this;
+      }
+      else if (e%18 == 0){
+        Integer nine = *this * *this * *this * *this * *this * *this * *this * *this * *this;
+        Integer eteen = nine * nine;
+        for (int i = 0; i < e/18; ++i){
+          j *= eteen;
+        }
+        *this = j;
+        return *this;
+      }
+      else if (e%17 == 0){
+        Integer eight =*this * *this * *this * *this * *this * *this * *this * *this;
+        Integer seteen = eight * eight * *this;
+        for (int i = 0; i < e/17; ++i){
+          j *= seteen;
+        }
+        *this = j;
+        return *this;
+      }
+      else if (e%16 == 0){
+        Integer eight =*this * *this * *this * *this * *this * *this * *this * *this;
+        Integer sixteen = eight * eight;
+        for (int i = 0; i < e/16; ++i){
+          j *= sixteen;
+        }
+        *this = j;
+        return *this;
+      }
+      else if (e%15 == 0){
+        Integer seven =*this * *this * *this * *this * *this * *this * *this;
+        Integer fifteen = seven * seven * *this;
+        for (int i = 0; i < e/15; ++i){
+          j *= fifteen;
+        }
+        *this = j;
+        return *this;
+      }
+      else if (e%14 == 0){
+        Integer seven =*this * *this * *this * *this * *this * *this * *this;
+        Integer fourteen = seven * seven;
+        for (int i = 0; i < e/14; ++i){
+          j *= fourteen;
+        }
+        *this = j;
+        return *this;
+      }
+      else if (e%13 == 0){
+        Integer six =*this * *this * *this * *this * *this * *this;
+        Integer thteen = six * six * *this;
+        for (int i = 0; i < e/13; ++i){
+          j *= thteen;
+        }
+        *this = j;
+        return *this;
+      }
+      else if (e%12 == 0){
+        Integer six =*this * *this * *this * *this * *this * *this;
+        Integer twelve = six * six;
+        for (int i = 0; i < e/12; ++i){
+          j *= twelve;
+        }
+        *this = j;
+        return *this;
+      }
+      else if (e%11 == 0){
+        Integer five =*this * *this * *this * *this * *this;
+        Integer eleven = five * five * *this;
+        for (int i = 0; i < e/11; ++i){
+          j *= eleven;
+        }
+        *this = j;
+        return *this;
+      }
+      else if (e%10 == 0){
+        Integer five =*this * *this * *this * *this * *this;
+        Integer ten = five * five;
+        for (int i = 0; i < e/10; ++i){
+          j *= ten;
+        }
+        *this = j;
+        return *this;
+      }
+      else if (e%9 == 0){
+        Integer four =*this * *this * *this * *this;
+        Integer nine = four * four * *this;
+        for (int i = 0; i < e/9; ++i){
+          j *= nine;
+        }
+        *this = j;
+        return *this;
+      }
+      else if (e%8 == 0){
+        Integer four =*this * *this * *this * *this;
+        Integer eight = four * four;
+        for (int i = 0; i < e/8; ++i){
+          j *= eight;
+        }
+        *this = j;
+        return *this;
+      }
+      else if (e%7 == 0){
+        Integer three =*this * *this * *this;
+        Integer seven = three * three * *this;
+        for (int i = 0; i < e/7; ++i){
+          j *= seven;
+        }
+        *this = j;
+        return *this;
+      }
+      else if (e%6 == 0){
+        Integer three =*this * *this * *this;
+        Integer six = three * three;
+        for (int i = 0; i < e/6; ++i){
+          j *= six;
+        }
+        *this = j;
+        return *this;
+      }
+      else if (e%5 == 0){
+        Integer two =*this * *this;
+        Integer five = two * two * *this;
+        for (int i = 0; i < e/5; ++i){
+          j *= five;
+        }
+        *this = j;
+        return *this;
+      }
+      else if (e%4 == 0){
+        Integer two =*this * *this;
+        Integer four = two * two;
+        for (int i = 0; i < e/4; ++i){
+          j *= four;
+        }
+        *this = j;
+        return *this;
+      }
+      else if (e%3 == 0){
+        Integer three = *this * *this * *this;
+        for (int i = 0; i < e/3; ++i){
+          j *= three;
+        }
+        *this = j;
+        return *this;
+      }
+    else if (e%2 == 0) {
         for (int i = 0; i < e/2; ++i){
           j *= *this * *this;
         }
